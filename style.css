@@ -24,7 +24,7 @@ h2 {
   margin-bottom: 30px;
 }
 
-.paper::after,.short-bio::after {
+.paper::after,.short-bio::after,.education-items::after {
   content: "";
   clear: both;
   display: table;
@@ -51,6 +51,11 @@ h2 {
   margin-right: 30px;
   padding-bottom:30px;
 }
+
+.leftborder {
+  border-left: solid 1px;
+}
+
 
 .paper img {
   float: left;
@@ -87,5 +92,40 @@ h2 {
   }
   a:link{color:#5bf}
   a:visited{color:#ccf}
+}
+
+.education-items{
+  padding-top: 30px;
+  text-align:center;
+  margin: auto;
+}
+
+.education-item{
+  float:left;
+  width:300px;
+  text-align: center;
+  padding: 0 15px 0 15px;
+}
+
+.education-program {
+  font-weight: 450;
+}
+
+.education-logo {
+  height:75px;
+}
+
+.education-uni {
+  font-size:  16px;
+}
+.education-year {
+  font-size:  16px;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
