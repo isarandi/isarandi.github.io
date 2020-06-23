@@ -11,7 +11,8 @@ h1,h2,h3{
 }
 
 h1 {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
+  text-align: left;
 }
 
 h2 {
@@ -19,9 +20,7 @@ h2 {
 }
 
 .tagline {
-  text-align: center;
-  font-style: italic;
-  margin-bottom: 30px;
+  text-align: left;
 }
 
 .paper::after,.short-bio::after,.education-items::after {
@@ -95,7 +94,8 @@ h2 {
 }
 
 .education-items{
-  padding-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   text-align:center;
   margin: auto;
 }
@@ -115,6 +115,10 @@ h2 {
   height:75px;
 }
 
+.links-top {
+  padding-top: 30px;
+}
+
 .education-uni {
   font-size:  16px;
 }
@@ -122,10 +126,11 @@ h2 {
   font-size:  16px;
 }
 
-a {
+/*a {
   text-decoration: none;
 }
 a:hover {
   text-decoration: underline;
 }
 
+*/
