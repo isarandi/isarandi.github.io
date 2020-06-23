@@ -11,7 +11,7 @@ h1,h2,h3{
 }
 
 h1 {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   text-align: left;
 }
 
@@ -20,7 +20,8 @@ h2 {
 }
 
 .tagline {
-  text-align: left;
+  margin-bottom: 10px;
+  font-size: 20px;
 }
 
 .paper::after,.short-bio::after,.education-items::after {
@@ -41,7 +42,7 @@ h2 {
   width: 170px;
   float: left;
   margin-right: 30px;
-  padding-bottom:30px;
+  padding-bottom:10px;
 }
 
 .vci-logo {
@@ -116,7 +117,7 @@ h2 {
 }
 
 .links-top {
-  padding-top: 30px;
+  padding-top: 20px;
 }
 
 .education-uni {
