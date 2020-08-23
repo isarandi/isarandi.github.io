@@ -2,23 +2,38 @@ body{
   max-width:1000px;
   margin:40px auto;
   padding:0 10px;
-  font:18px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  color:#444}
+  font:17px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  color:#333;
+}
 
 h1,h2,h3{
-  text-align: center;
   line-height:1.1;
+}
+
+h1.name{
+  text-align: left;
 }
 
 h1 {
   margin-bottom: 5px;
-  font-size: 35px;
-  text-align: left;
+  font-size: 38px;
+  text-align: center;
+}
+
+h3.author {
+  text-align: center;
+  font-weight: normal;
+  font-style: italic;
 }
 
 h2 {
   padding-top: 15px;
-  font-size: 35px;
+  font-size: 32px;
+  text-align: left;
+}
+
+h3 {
+  text-align: left;
 }
 
 .tagline {
@@ -146,4 +161,21 @@ a:hover {
 
 .statement {
   margin-top: 7px;
+}
+
+.figure {
+  text-align: center;
+  float:right;
+  width: 50%;
+  margin: 30px;
+
+}
+
+.figure img {
+  width: 100%;
+
+}
+
+.figure .caption {
+  font-style: italic;
 }
