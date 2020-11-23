@@ -87,6 +87,7 @@ h3 {
 
 .paper-title a {
   color:#333;
+  text-decoration: none;
 }
 
 .paper-venue {
