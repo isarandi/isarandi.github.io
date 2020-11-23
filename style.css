@@ -85,6 +85,10 @@ h3 {
   font-weight: 450;
 }
 
+.paper-title a {
+  color:#333;
+}
+
 .paper-venue {
   font-style: italic;
   font-size:  16px;
