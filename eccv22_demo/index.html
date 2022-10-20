@@ -18,7 +18,7 @@
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" href="./static/css/index.css">
-    <link rel="stylesheet" href="./static/css/prism.css" />
+    <link rel="stylesheet" href="./static/css/prism.css"/>
     <link rel="icon" href="./static/images/favicon.ico">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -34,13 +34,14 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered">
                 <div class="column has-text-centered">
-                    <h1 class="title is-1 publication-title">ECCV 2022 Demo:<br>Accurate and Efficient Absolute <br>3D Human Pose
+                    <h1 class="title is-1 publication-title">ECCV 2022 Demo:<br>Accurate and Efficient Absolute <br>3D
+                        Human Pose
                         Estimation Trained on Dozens of Datasets
                     </h1>
                     <div class="is-size-5 publication-authors">
             <span class="author-block">
               Presenter: <a href="https://istvansarandi.com">István Sárándi</a></span><br>
-            </span>
+                        </span>
                     </div>
 
                     <div class="is-size-5 publication-authors">
@@ -92,7 +93,8 @@ preds['boxes'] # shape: [num_people, 5], the 5 are [x_left, y_top, width, height
 preds['poses3d'] # shape: [num_people, 30, 3], in millimeters
 preds['poses2d'] # shape: [num_people, 30, 2], in pixels</code></pre>
                 <div class="content has-text-left">
-                More options in the <a href="https://github.com/isarandi/metrabs/blob/master/docs/API.md">API docs</a>.
+                    More options in the <a href="https://github.com/isarandi/metrabs/blob/master/docs/API.md">API
+                    docs</a>.
                 </div>
             </div>
         </div>
@@ -106,21 +108,20 @@ preds['poses2d'] # shape: [num_people, 30, 2], in pixels</code></pre>
                 <h2 class="title is-3">Abstract</h2>
                 <div class="content has-text-justified">
                     <p>
-                        We show a real-time-capable method for high-quality monocular single-frame 3D human pose estimation,
+                        We show a real-time-capable method for high-quality monocular single-frame 3D human pose
+                        estimation,
                         running on a laptop. Our simple and efficient models are the culmination of a large-scale
                         dataset merging effort, where we collected and preprocessed over 13 million images labeled with
                         3D human poses, from 28 individual pre-existing datasets, which is the largest such undertaking
-                        we are aware of. Mainly due to this scale of data, the resulting models are highly accurate and top
-                        several benchmarks (with a large model achieving 57.0 mm MPJPE on 3DPW, 97.6% PCK on MPI-INF-3DHP,
+                        we are aware of. Mainly due to this scale of data, the resulting models are highly accurate and
+                        top
+                        several benchmarks (with a large model achieving 57.0 mm MPJPE on 3DPW, 97.6% PCK on
+                        MPI-INF-3DHP,
                         35.5 mm MPJPE on Human3.6M).
                     </p>
                     <p>
-                        We release model files packaged for ease of use, without requiring complex dependencies, thus
-                        bringing high quality off-the-shelf 3D human pose estimation to a broad range of researchers,
-                        enabling exciting downstream research applications.
-                    </p>
-                    <p>
                         The approach is based on our prior work <a href="https://arxiv.org/abs/2007.07227">MeTRAbs</a>
+                        (<a href="https://github.com/isarandi/metrabs">repo</a>),
                         which won the <a href="https://virtualhumans.mpi-inf.mpg.de/3DPW_Challenge/">3DPW Challenge</a>
                         at the previous ECCV (2020). Besides using much more training data,
                         we also developed a novel way to deal with different skeleton annotation formats across
@@ -128,11 +129,17 @@ preds['poses2d'] # shape: [num_people, 30, 2], in pixels</code></pre>
                         will be made available soon.
                     </p>
                     <p>
-                        In the demo, we use a single webcam to capture an input video feed of multiple people. The frames
+                        In the demo, we use a single webcam to capture an input video feed of multiple people. The
+                        frames
                         are processed independently by our pose estimator and the resulting absolute 3D human poses
                         are visualized on a TV screen. Our goal with the demo is to let people interact with the system,
                         see its high quality, and consider applying it in their own research when
                         they need a simple off-the-shelf 3D human pose estimator.
+                    </p>
+                    <p>
+                        We release model files packaged for ease of use, without requiring complex dependencies, thus
+                        bringing high quality off-the-shelf 3D human pose estimation to a broad range of researchers,
+                        enabling exciting downstream research applications.
                     </p>
                 </div>
             </div>
@@ -180,7 +187,7 @@ preds['poses2d'] # shape: [num_people, 30, 2], in pixels</code></pre>
                 <div class="content">
                     <p>
                         This website template is licensed under a <a rel="license"
-                                                            href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                                                                     href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
                         Commons Attribution-ShareAlike 4.0 International License</a>.
                     </p>
                     <p>
