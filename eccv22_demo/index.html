@@ -146,7 +146,43 @@ preds['poses2d'] # shape: [num_people, 30, 2], in pixels</code></pre>
             </div>
         </div>
         <!--/ Abstract. -->
-
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Panoptic Dataset Results</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        To inspect the prediction quality along the depth axis, we visualize results on a
+                        challenging CMU-Panoptic dance sequence.
+                        Note that our prediction (blue-yellow skeleton) is monocular. The currently active camera is
+                        highlighted in the visualization with thick blue frame. The red skeleton is the result
+                        of triangulation.
+                    </p>
+                    <p>
+                        We have two visualizations for Panoptic. In the first case we adjust the scale/distance of the prediction
+                        such that the pelvis depth aligns with the triangulated pelvis depth. (This does not evaluate the
+                        absolute 3D pose, i.e. the location prediction)
+                    </p>
+                </div>
+                <div class="publication-video">
+                    <iframe src="https://www.youtube.com/embed/8M6vm539ni0?rel=0&amp;showinfo=0"
+                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="content has-text-justified">
+                <p>
+                    The second visualization shows the raw prediction, without scale/distance alignment:
+                </p>
+                </div>
+                <div class="publication-video">
+                    <iframe src="https://www.youtube.com/embed/EAj3EXG4vcw?rel=0&amp;showinfo=0"
+                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <h2 class="title is-3">JackRabbot Dataset Results</h2>
+                <div class="publication-video">
+                    <iframe src="https://www.youtube.com/embed/_hDoFcrcR6c?rel=0&amp;showinfo=0"
+                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
 
     </div>
 </section>
