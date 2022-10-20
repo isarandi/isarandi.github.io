@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="Accurate and Efficient Absolute 3D Human Pose Estimation Trained on Dozens of Datasets.">
+    <meta name="keywords" content="3D human pose, ECCV, demo">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ECCV'22 Demo: Accurate and Efficient Absolute 3D Human Pose Estimation Trained on Dozens of Datasets</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="stylesheet" href="./static/css/prism.css" />
+    <link rel="icon" href="./static/images/favicon.ico">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+</head>
+<body>
+<script src="./static/js/prism.js"></script>
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">ECCV 2022 Demo:<br>Accurate and Efficient Absolute <br>3D Human Pose
+                        Estimation Trained on Dozens of Datasets
+                    </h1>
+                    <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Presenter: <a href="https://istvansarandi.com">István Sárándi</a></span><br>
+            </span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block">RWTH Aachen University</span>
+                    </div>
+                    <br>
+                    <div class="is-size-5 has-text-weight-bold">
+                        Wednesday, Oct 26, 9:00 AM - 15:30 PM, in Hall C
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">TL;DR</h2>
+                <div class="content has-text-justified">
+                    <ul>
+                        <li>We trained our 3D pose estimator on lots of data.</li>
+                        <li>It works well (see video).</li>
+                        <li>You can try it live at ECCV'22 in Tel Aviv, on Wednesday.</li>
+                        <li>You can run it yourself, for non-commercial research.</li>
+                </div>
+            </div>
+        </div>
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <div class="publication-video">
+                    <iframe src="https://www.youtube.com/embed/sAF0atPmEec?rel=0&amp;showinfo=0"
+                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <!--h2 class="title is-3">Show me the Code!</h2-->
+                <pre><code class="language-python"># 'pip install tensorflow tensorflow-hub' if not yet installed
+import tensorflow as tf
+import tensorflow_hub as hub
+
+model = hub.load('https://bit.ly/metrabs_l')
+image = tf.image.decode_image(tf.io.read_file('test.jpg')) # image can have any size
+preds = model.detect_poses(image, skeleton='smpl+head_30')
+preds['boxes'] # shape: [num_people, 5], the 5 are [x_left, y_top, width, height, confidence]
+preds['poses3d'] # shape: [num_people, 30, 3], in millimeters
+preds['poses2d'] # shape: [num_people, 30, 2], in pixels</code></pre>
+                <div class="content has-text-left">
+                More options in the <a href="https://github.com/isarandi/metrabs/blob/master/docs/API.md">API docs</a>.
+                </div>
+            </div>
+        </div>
+
+
+        <!--/ Paper video. -->
+
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        We show a real-time-capable method for high-quality monocular single-frame 3D human pose estimation,
+                        running on a laptop. Our simple and efficient models are the culmination of a large-scale
+                        dataset merging effort, where we collected and preprocessed over 13 million images labeled with
+                        3D human poses, from 28 individual pre-existing datasets, which is the largest such undertaking
+                        we are aware of. Mainly due to this scale of data, the resulting models are highly accurate and top
+                        several benchmarks (with a large model achieving 57.0 mm MPJPE on 3DPW, 97.6% PCK on MPI-INF-3DHP,
+                        35.5 mm MPJPE on Human3.6M).
+                    </p>
+                    <p>
+                        We release model files packaged for ease of use, without requiring complex dependencies, thus
+                        bringing high quality off-the-shelf 3D human pose estimation to a broad range of researchers,
+                        enabling exciting downstream research applications.
+                    </p>
+                    <p>
+                        The approach is based on our prior work <a href="https://arxiv.org/abs/2007.07227">MeTRAbs</a>
+                        which won the <a href="https://virtualhumans.mpi-inf.mpg.de/3DPW_Challenge/">3DPW Challenge</a>
+                        at the previous ECCV (2020). Besides using much more training data,
+                        we also developed a novel way to deal with different skeleton annotation formats across
+                        different datasets. The corresponding paper has been accepted at WACV 2023 and
+                        will be made available soon.
+                    </p>
+                    <p>
+                        In the demo, we use a single webcam to capture an input video feed of multiple people. The frames
+                        are processed independently by our pose estimator and the resulting absolute 3D human poses
+                        are visualized on a TV screen. Our goal with the demo is to let people interact with the system,
+                        see its high quality, and consider applying it in their own research when
+                        they need a simple off-the-shelf 3D human pose estimator.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--/ Abstract. -->
+
+
+    </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+
+    <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+
+        <pre><code>@inproceedings{Sarandi23WACV,
+  author    = {S\'ar\'andi, Istv\'an and Hermans, Alexander and Leibe, Bastian},
+  title     = {...to be added soon...},
+  booktitle = {IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+  year      = {2023},
+}</code></pre>
+        <pre><code>@article{Sarandi21TBIOM,
+  title     = {{MeTRAbs:} Metric-Scale Truncation-Robust Heatmaps for Absolute 3{D} Human Pose Estimation},
+  author    = {S\'ar\'andi, Istv\'an and Linder, Timm and Arras, Kai O. and Leibe, Bastian},
+  journal   = {IEEE Transactions on Biometrics, Behavior, and Identity Science (T-BIOM)},
+  volume    = {3},
+  number    = {1},
+  pages     = {16-30},
+  year      = {2021},
+}</code></pre>
+    </div>
+</section>
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="content has-text-centered">
+            <a class="icon-link" href="https://github.com/isarandi" class="external-link" disabled>
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content">
+                    <p>
+                        This website template is licensed under a <a rel="license"
+                                                            href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                        Commons Attribution-ShareAlike 4.0 International License</a>.
+                    </p>
+                    <p>
+                        The pose estimator models can only be used for non-commercial research.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
