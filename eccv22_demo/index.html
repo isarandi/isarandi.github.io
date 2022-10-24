@@ -35,17 +35,17 @@
             <div class="columns is-centered">
                 <div class="column has-text-centered">
                     <h1 class="title is-1 publication-title">ECCV 2022 Demo:<br>Accurate and Efficient Absolute <br>3D
-                        Human Pose
-                        Estimation Trained on Dozens of Datasets
+                        Human Pose Estimation Trained on Dozens of Datasets
                     </h1>
                     <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              Presenter: <a href="https://istvansarandi.com">István Sárándi</a></span><br>
+                        <span class="author-block">
+                            Presenter: <a href="https://istvansarandi.com">István Sárándi</a><br>
+                            Joint work with <a href="https://scholar.google.de/citations?user=V0iMeYsAAAAJ&hl=en">Alexander Hermans</a> and <a href="https://scholar.google.de/citations?user=ZcULDB0AAAAJ&hl=en">Bastian Leibe</a>
                         </span>
                     </div>
 
                     <div class="is-size-5 publication-authors">
-                        <span class="author-block">RWTH Aachen University</span>
+                        <span class="author-block"><a href="https://vision.rwth-aachen.de">Computer Vision Group</a>, RWTH Aachen</span>
                     </div>
                     <br>
                     <div class="is-size-5 has-text-weight-bold">
@@ -87,7 +87,7 @@
 import tensorflow as tf
 import tensorflow_hub as hub
 
-model = hub.load('https://bit.ly/metrabs_l')
+model = hub.load('https://bit.ly/metrabs_l') # or _s
 image = tf.image.decode_image(tf.io.read_file('test.jpg')) # image can have any size
 preds = model.detect_poses(image, skeleton='smpl+head_30')
 preds['boxes'] # shape: [num_people, 5], the 5 are [x_left, y_top, width, height, confidence]
@@ -151,6 +151,9 @@ preds['poses2d'] # shape: [num_people, 30, 2], in pixels</code></pre>
                 <h2 class="title is-3">Training Datasets</h2>
                 <div class="has-text-centered is-centered">
                     <img src="static/images/datasets.png">
+                </div>
+                <div class="content has-text-left">
+                    <a href="datasets.bib">Dataset citations in BibTeX format.</a>.
                 </div>
             </div>
         </div>
@@ -233,12 +236,15 @@ preds['poses2d'] # shape: [num_people, 30, 2], in pixels</code></pre>
             <div class="column is-8">
                 <div class="content">
                     <p>
-                        This website template is licensed under a <a rel="license"
+                        This <a href="https://github.com/nerfies/nerfies.github.io">website template</a> is licensed under a <a rel="license"
                                                                      href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
                         Commons Attribution-ShareAlike 4.0 International License</a>.
                     </p>
                     <p>
                         The pose estimator models can only be used for non-commercial research.
+                    </p>
+                    <p>
+                        <b>Acknowledgments.</b> This work was supported by the ERC Consolidator Grant project “DeeViSe” (ERC-CoG-2017-773161) and by Robert Bosch GmbH under the project “Context Understanding for Autonomous Systems”.
                     </p>
                 </div>
             </div>
