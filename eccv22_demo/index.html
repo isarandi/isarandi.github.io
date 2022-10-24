@@ -153,7 +153,7 @@ preds['poses2d'] # shape: [num_people, 30, 2], in pixels</code></pre>
                     <img src="static/images/datasets.png">
                 </div>
                 <div class="content has-text-left">
-                    <a href="datasets.bib">Dataset citations in BibTeX format.</a>.
+                    <a href="datasets.bib">Dataset references (BibTeX)</a>
                 </div>
             </div>
         </div>
@@ -164,9 +164,9 @@ preds['poses2d'] # shape: [num_people, 30, 2], in pixels</code></pre>
                 <div class="content has-text-justified">
                     <p>
                         To inspect the prediction quality along the depth axis, we visualize results on a
-                        challenging CMU-Panoptic dance sequence.
+                        challenging <a href="http://domedb.perception.cs.cmu.edu/">CMU-Panoptic</a> dance sequence.
                         Note that our prediction (blue-yellow skeleton) is monocular. The currently active camera is
-                        highlighted in the visualization with thick blue frame. The red skeleton is the result
+                        highlighted in the visualization with a thick blue frame. The red skeleton is the result
                         of triangulation.
                     </p>
                     <p>
@@ -190,6 +190,13 @@ preds['poses2d'] # shape: [num_people, 30, 2], in pixels</code></pre>
                 </div>
                 <br>
                 <h2 class="title is-3">JackRabbot Dataset Results</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        Predictions on a <a href="https://jrdb.erc.monash.edu/">JackRabbot (JRDB)</a> test sequence.
+                        (Double predictions occur when a person is seen from two cameras.
+                        These could be removed with cross-view non-maximum suppression.)
+                    </p>
+                </div>
                 <div class="publication-video">
                     <iframe src="https://www.youtube.com/embed/_hDoFcrcR6c?rel=0&amp;showinfo=0"
                             frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
