@@ -1,4 +1,4 @@
-body{
+body {
   max-width:1000px;
   margin:40px auto;
   padding:0 10px;
@@ -6,11 +6,18 @@ body{
   color:#333;
 }
 
-h1,h2,h3{
+p {
+  margin-top: 17px;
+  margin-bottom: 17px;
+}
+
+h1,h2,h3 {
+  font:17px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-weight: bold;
   line-height:1.1;
 }
 
-h1.name{
+h1.name {
   text-align: left;
 }
 
@@ -18,6 +25,14 @@ h1 {
   margin-bottom: 5px;
   font-size: 38px;
   text-align: center;
+}
+
+pre.bibtex {
+  border: solid 1px rgba(0, 0, 0, 0.125);
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 5px;
+  clear: both;
 }
 
 h3.author {
@@ -28,6 +43,8 @@ h3.author {
 
 h2 {
   padding-top: 15px;
+  margin-top: 26px;
+  margin-bottom: 26px;
   font-size: 32px;
   text-align: left;
 }
@@ -112,14 +129,14 @@ h3 {
   margin-top: 5px;
 }
 
-@media (prefers-color-scheme: dark){
+/*@media (prefers-color-scheme: dark){
   body{
     color:white;
     background:#444
   }
   a:link{color:#5bf}
   a:visited{color:#ccf}
-}
+}*/
 
 .education-items{
   padding-top: 20px;
@@ -163,6 +180,18 @@ a:hover {
 
 */
 
+a {
+  color: #0000EE;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #0000EE;
+}
+
+a:visited {
+  color: #551A8B;
+}
 
 .statement {
   margin-top: 7px;
