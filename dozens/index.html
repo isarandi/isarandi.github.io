@@ -35,8 +35,10 @@
             <div class="columns is-centered">
                 <div class="column has-text-centered">
                     <h1 class="title is-1 publication-title">
-                        Learning 3D Human Pose Estimation <br>From Dozens of Datasets<br> Using a Geometry-Aware Autoencoder<br> To
-                        Bridge Between Skeleton Formats
+                        Learning 3D Human Pose Estimation<br>
+                        From Dozens of Datasets<br>
+                        Using a Geometry-Aware Autoencoder<br>
+                        To Bridge Between Skeleton Formats
                     </h1>
                     <div class="is-size-5 publication-authors">
                         <span class="author-block">
@@ -78,12 +80,13 @@
                                 </a>
                             </span>
                             <span class="link-block">
-                                <a href="https://colab.research.google.com/github/isarandi/isarandi.github.io/blob/master/eccv22_demo/demo.ipynb"  class="external-link button is-normal is-rounded is-dark">
+                                <a href="https://colab.research.google.com/github/isarandi/isarandi.github.io/blob/master/eccv22_demo/demo.ipynb"
+                                   class="external-link button is-normal is-rounded is-dark">
                                     <span>Google Colab</span>
                                 </a>
                             </span>
                             <span class="link-block">
-                                <a href="#"  class="external-link button is-normal is-rounded is-dark">
+                                <a href="#" class="external-link button is-normal is-rounded is-dark">
                                     <span class="icon"><i class="fab fa-github"></i></span>
                                     <span>GitHub (soon)</span>
                                 </a>
@@ -102,11 +105,11 @@
             <div class="column is-four-fifths">
                 <h2 class="title is-3 firstsection">TL;DR</h2>
                 <div class="content has-text-justified">
-                    We aim to train 3D human pose estimation on every labeled dataset we can get our hands on,
-                    but the labels are given in incompatible skeleton formats.
-                    We discover how these skeletons are related using our novel
-                    affine-combining autoencoder, enabling the creation of very strong 3D pose estimators
-                    through extreme multi-dataset training.
+                    To enable accurate 3D human pose estimation in downstream research applications,
+                    we aim to train on every labeled dataset we can get our hands on.
+                    However, different datasets use incompatible skeleton formats.
+                    We discover how these skeletons are related using our novel affine-combining autoencoder,
+                    enabling extreme multi-dataset training on 28 datasets, and thus very strong models.
                 </div>
                 <div class="content has-text-justified">
                     Some examples for the different formats:
@@ -145,29 +148,46 @@
                 <div class="content has-text-justified">
                     <p>We use a 3-step workflow:</p>
                     <ul>
-                        <li>We first use a multi-task model (which predicts each skeleton on a different output head) to generate a pseudo-ground truth "parallel corpus".</li>
-                        <li>We use this "parallel corpus" to train an autoencoder that captures the redundancies among the skeleton formats by discovering a latent keypoint set.</li>
-                        <li>We attach the autoencoder to the end of the pose estimator to regularize its output. Alternatively, the latent keypoints can also be predicted directly by the pose estimator.</li>
+                        <li>
+                            We first use a multi-task model (which predicts each skeleton on a different output head) to
+                            generate a pseudo-ground truth "parallel corpus".
+                        </li>
+                        <li>
+                            We use this "parallel corpus" to train an autoencoder that captures the redundancies among
+                            the skeleton formats by discovering a latent keypoint set.
+                        </li>
+                        <li>
+                            We attach the autoencoder to the end of the pose estimator to regularize its output.
+                            Alternatively, the latent keypoints can also be predicted directly by the pose estimator.
+                        </li>
                     </ul>
                     <img src="steps.png">
                 </div>
 
                 <h2 class="title is-3">Affine-Combining Autoencoder</h2>
                 <div class="content has-text-justified">
-                    <p>One of our contributions is a very simple linear autoencoder formulation, one where both the encoder and the decoder perform affine combinations its input points.
-                    This ensures equivariance to rotation and translation (see paper for chirality equivariance).
-                    Crucially, it also allows knowledge transfer of skeleton relations from the 2D to the depth axis (2D is more accurate in the pseudo-GT).
-                    Furthermore, the information bottleneck of this autoencoder is a list of geometrically interpretable latent 3D keypoints that can also be directly predicted and can serve as an interface between different skeleton formats.</p>
+                    <p>
+                        One of our contributions is a simple linear autoencoder formulation, where both the encoder and
+                        the decoder compute affine combinations of its input points.
+                        This ensures equivariance to rotation and translation (see paper for chirality equivariance).
+                        Crucially, it also allows knowledge transfer of skeleton relations from the 2D to the depth axis
+                        (2D is more accurate in the pseudo-GT).
+                        Furthermore, the information bottleneck of this autoencoder is a list of geometrically
+                        interpretable latent 3D keypoints that can also be directly predicted and can serve as an
+                        interface between different skeleton formats.</p>
                 </div>
                 <div class="content has-text-centered"><img src="acae_formulas.png" style="width:70%"></div>
 
                 <h2 class="title is-3">Results</h2>
                 <div class="content has-text-justified">
-                    <p>In the paper we first show that scaling up the data indeed helps.
-                        Then we show that the skeleton consistency improves with our proposed consistency regularization.
+                    <p>
+                        In the paper we first show that scaling up the data indeed helps.
+                        Then we show that the skeleton consistency improves with our proposed consistency
+                        regularization.
                     </p>
                     <p>
-                        But what's even more important from the application point of view is that <strong>the final models are MUCH stronger than currently available models</strong> that are trained on less data:
+                        But what's even more important from the application point of view is that <strong>the final
+                        models are MUCH stronger than currently available models</strong> that are trained on less data:
                     </p>
                     <img src="sota_table.png">
                 </div>
@@ -177,7 +197,9 @@
         <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
                 <h2 class="title is-3">You Can Try It!</h2>
-                <a href="https://colab.research.google.com/github/isarandi/isarandi.github.io/blob/master/eccv22_demo/demo.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+                <a href="https://colab.research.google.com/github/isarandi/isarandi.github.io/blob/master/eccv22_demo/demo.ipynb"
+                   target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg"
+                                         alt="Open In Colab"/></a>
                 <pre><code class="language-python"># 'pip install tensorflow tensorflow-hub' if not yet installed
 import tensorflow as tf
 import tensorflow_hub as hub
@@ -191,7 +213,7 @@ preds['poses2d'] # shape: [num_people, 30, 2], in pixels</code></pre>
                 <div class="content has-text-left">
                     More options in the <a href="https://github.com/isarandi/metrabs/blob/master/docs/API.md">API
                     docs</a>.
-                <br>
+                    <br>
                     Code for dataset preprocessing and training the ACAE is coming soon!
                 </div>
             </div>
