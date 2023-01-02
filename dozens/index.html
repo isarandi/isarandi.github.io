@@ -56,14 +56,6 @@
 
                     <div class="column has-text-centered">
                         <div class="publication-links">
-                            <!-- PDF Link. -->
-                            <span class="link-block">
-                                <a href="https://vision.rwth-aachen.de/media/papers/223/sarandi-wacv2023-dozens.pdf"
-                                   class="external-link button is-normal is-rounded is-dark">
-                                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                                    <span>Paper</span>
-                                </a>
-                            </span>
                             <span class="link-block">
                                 <a href="https://arxiv.org/abs/2212.14474"
                                    class="external-link button is-normal is-rounded is-dark">
@@ -78,7 +70,6 @@
                                     <span>Poster</span>
                                 </a>
                             </span>
-                            <!-- Video Link. -->
                             <span class="link-block">
                                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
                                    class="external-link button is-normal is-rounded is-dark">
@@ -91,14 +82,12 @@
                                     <span>Google Colab</span>
                                 </a>
                             </span>
-                            <!-- Code Link. -->
                             <span class="link-block">
                                 <a href="#"  class="external-link button is-normal is-rounded is-dark">
                                     <span class="icon"><i class="fab fa-github"></i></span>
                                     <span>GitHub (soon)</span>
                                 </a>
                             </span>
-
                         </div>
                     </div>
                 </div>
@@ -241,23 +230,23 @@ preds['poses2d'] # shape: [num_people, 30, 2], in pixels</code></pre>
     <div class="container is-max-desktop content">
         <h2 class="title">BibTeX</h2>
 
-        <pre><code>@inproceedings{Sarandi23WACV,
-  author    = {S\'ar\'andi, Istv\'an and Hermans, Alexander and Leibe, Bastian},
-  title     = {Learning 3D Human Pose Estimation from Dozens of Datasets using a Geometry-Aware Autoencoder to Bridge Between Skeleton Formats},
+        <pre><code>@inproceedings{Sarandi23dozens,
+  author = {S\'ar\'andi, Istv\'an and Hermans, Alexander and Leibe, Bastian},
+  title = {Learning {3D} Human Pose Estimation from Dozens of Datasets using a Geometry-Aware Autoencoder to Bridge Between Skeleton Formats},
   booktitle = {IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
-  year      = {2023}
+  year = {2023}
 }</code></pre>
 
         As the base pose estimator model, we use our earlier MeTRAbs in this work:
 
-        <pre><code>@article{Sarandi21TBIOM,
-  title     = {{MeTRAbs:} Metric-Scale Truncation-Robust Heatmaps for Absolute {3D} Human Pose Estimation},
-  author    = {S\'ar\'andi, Istv\'an and Linder, Timm and Arras, Kai O. and Leibe, Bastian},
-  journal   = {IEEE Transactions on Biometrics, Behavior, and Identity Science (T-BIOM)},
-  volume    = {3},
-  number    = {1},
-  pages     = {16--30},
-  year      = {2021}
+        <pre><code>@article{Sarandi21metrabs,
+  title = {{MeTRAbs:} Metric-Scale Truncation-Robust Heatmaps for Absolute {3D} Human Pose Estimation},
+  author = {S\'ar\'andi, Istv\'an and Linder, Timm and Arras, Kai O. and Leibe, Bastian},
+  journal = {IEEE Transactions on Biometrics, Behavior, and Identity Science (T-BIOM)},
+  volume = {3},
+  number = {1},
+  pages = {16--30},
+  year = {2021}
 }</code></pre>
     </div>
 </section>
