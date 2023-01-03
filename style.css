@@ -73,6 +73,7 @@ h3 {
   margin: 0 3px 0 0;
   text-decoration: none;
   border-radius: 4px;
+  display: inline-block;
 }
 
 .profile-pic {
@@ -238,11 +239,15 @@ footer {
 
 a.button {
   border-radius: 1.2em;
-  background-color: black;
-  color: white;
+  /*background-color: black;
+  color: white;*/
+  display: inline-block;
   text-decoration: none;
   padding: 0.5em 1em;
   margin: 0.25em;
+
+  border: solid 1px;
+  background-color: #D9E1E8;
 }
 
 .publication-video {
@@ -268,9 +273,5 @@ header .authors, header .affiliation, header .venue {
 }
 
 header  .authors {
-  margin-top: 1em;
-}
-
-header .links {
   margin-top: 1em;
 }
