@@ -8,199 +8,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Learning 3D Human Pose From Dozens of Datasets by Bridging Skeleton Formats</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-          rel="stylesheet">
-
-    <link rel="stylesheet" href="./static/css/bulma.min.css">
-    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="./static/css/index.css">
-    <link rel="stylesheet" href="./static/css/prism.css"/>
-    <link rel="icon" href="./static/images/favicon.ico">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./static/css/prism.css">
+    <link rel="stylesheet" href="../style.css">
     <script defer src="./static/js/fontawesome.all.min.js"></script>
-    <script src="./static/js/bulma-carousel.min.js"></script>
-    <script src="./static/js/bulma-slider.min.js"></script>
-    <script src="./static/js/index.js"></script>
 </head>
 <body>
-<script src="./static/js/prism.js"></script>
-<section class="hero">
-    <div class="hero-body">
-        <div class="container is-max-desktop">
-            <div class="columns is-centered">
-                <div class="column has-text-centered">
-                    <h1 class="title is-1 publication-title">
-                        Learning 3D Human Pose Estimation<br>
-                        From Dozens of Datasets<br>
-                        Using a Geometry-Aware Autoencoder<br>
-                        To Bridge Between Skeleton Formats
-                    </h1>
-                    <div class="is-size-5 publication-authors">
-                        <span class="author-block">
-                            <a href="https://istvansarandi.com">István Sárándi</a>,
-                            <a href="https://scholar.google.de/citations?user=V0iMeYsAAAAJ&hl=en">Alexander Hermans</a>,
-                            <a href="https://scholar.google.de/citations?user=ZcULDB0AAAAJ&hl=en">Bastian Leibe</a>
-                        </span>
-                    </div>
 
-                    <div class="is-size-5 publication-authors">
-                        <span class="author-block">RWTH Aachen University</span>
-                    </div>
-
-                    <div class="is-size-5 publication-authors" style="margin-top:10px">
-                        <span class="author-block">WACV 2023</span>
-                    </div>
-
-                    <div class="column has-text-centered">
-                        <div class="publication-links">
-                            <span class="link-block">
-                                <a href="https://arxiv.org/abs/2212.14474"
-                                   class="external-link button is-normal is-rounded is-dark">
-                                    <span class="icon"><i class="ai ai-arxiv"></i></span>
-                                    <span>arXiv</span>
-                                </a>
-                            </span>
-                            <span class="link-block">
-                                <a href="sarandi-wacv2023-dozens-poster.pdf"
-                                   class="external-link button is-normal is-rounded is-dark">
-                                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                                    <span>Poster</span>
-                                </a>
-                            </span>
-                            <span class="link-block">
-                                <a href="https://www.youtube.com/watch?v=6IW6oImq3RM"
-                                   class="external-link button is-normal is-rounded is-dark">
-                                    <span class="icon"><i class="fab fa-youtube"></i></span>
-                                    <span>Video</span>
-                                </a>
-                            </span>
-                            <span class="link-block">
-                                <a href="https://colab.research.google.com/github/isarandi/isarandi.github.io/blob/master/eccv22_demo/demo.ipynb"
-                                   class="external-link button is-normal is-rounded is-dark">
-                                    <span>Google Colab</span>
-                                </a>
-                            </span>
-                            <span class="link-block">
-                                <a href="#" class="external-link button is-normal is-rounded is-dark">
-                                    <span class="icon"><i class="fab fa-github"></i></span>
-                                    <span>GitHub (soon)</span>
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<header>
+    <h1>
+        Learning 3D Human Pose Estimation From Dozens of Datasets Using a Geometry-Aware Autoencoder To Bridge Between Skeleton Formats
+    </h1>
+    <div class="authors">
+        <a href="https://istvansarandi.com">István Sárándi</a>,
+        <a href="https://scholar.google.de/citations?user=V0iMeYsAAAAJ&hl=en">Alexander Hermans</a>,
+        <a href="https://scholar.google.de/citations?user=ZcULDB0AAAAJ&hl=en">Bastian Leibe</a>
     </div>
-</section>
 
-<section class="section firstsection">
-    <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-                <h2 class="title is-3 firstsection">TL;DR</h2>
-                <div class="content has-text-justified">
-                    To enable accurate 3D human pose estimation in downstream research applications,
-                    we aim to train on every labeled dataset we can get our hands on.
-                    However, different datasets use incompatible skeleton formats.
-                    We discover how these skeletons are related using our novel affine-combining autoencoder,
-                    enabling extreme multi-dataset training on 28 datasets, and thus very strong models.
-                </div>
-                <div class="content has-text-justified">
-                    Some examples for the different formats:
-                </div>
-            </div>
-        </div>
+    <div class="affiliation">RWTH Aachen University</div>
+    <div class="venue">WACV 2023</div>
 
-        <div class="container is-max-desktop">
-            <div class="hero-body">
-                <video id="teaser" autoplay muted loop playsinline height="100%">
-                    <source src="rotating.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
+    <div class="links">
+        <a href="https://arxiv.org/abs/2212.14474" class="button">
+            <span class="icon"><i class="ai ai-arxiv"></i></span>
+            <span>arXiv</span>
+        </a>
+        <a href="sarandi-wacv2023-dozens-poster.pdf"
+           class="external-link button is-normal is-rounded is-dark">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Poster</span>
+        </a>
+        <a href="https://www.youtube.com/watch?v=6IW6oImq3RM"
+           class="external-link button is-normal is-rounded is-dark">
+            <span class="icon"><i class="fab fa-youtube"></i></span>
+            <span>Video</span>
+        </a>
+        <a href="https://colab.research.google.com/github/isarandi/isarandi.github.io/blob/master/eccv22_demo/demo.ipynb"
+           class="external-link button is-normal is-rounded is-dark">
+            <span>Google Colab</span>
+        </a>
+        <a href="#" class="external-link button is-normal is-rounded is-dark">
+            <span class="icon"><i class="fab fa-github"></i></span>
+            <span>GitHub (soon)</span>
+        </a>
+    </div>
+</header>
 
-        <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-                <h2 class="title is-3">Talk (4 min.)</h2>
-                <div class="publication-video">
-                    <iframe src="https://www.youtube.com/embed/6IW6oImq3RM?rel=0&amp;showinfo=0"
-                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div>
-            </div>
+<h2>TL;DR</h2>
+<p class="tldr">
+    To enable accurate 3D human pose estimation in downstream research applications,
+    we aim to train on every labeled dataset we can get our hands on.
+    However, different datasets use incompatible skeleton formats.
+    We discover how these skeletons are related using our novel affine-combining autoencoder,
+    enabling extreme multi-dataset training on 28 datasets, and thus very strong models.
+</p>
+<p>Some examples for the different formats:</p>
+<div style="text-align:center">
+    <video autoplay muted loop playsinline height="100%" width="80%">
+        <source src="rotating.mp4" type="video/mp4">
+    </video>
+</div>
 
-        </div>
-        <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths has-text-left">
-                <a href="https://youtu.be/BGkeuef7rIc">Further qualitative videos here.</a>
-            </div>
-        </div>
-        <!--/ Paper video. -->
+<h2>Talk (4 min.)</h2>
+<div class="publication-video">
+    <iframe src="https://www.youtube.com/embed/6IW6oImq3RM?rel=0&amp;showinfo=0"
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<p><a href="https://youtu.be/BGkeuef7rIc">Further qualitative videos here.</a></p>
 
-        <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-                <h2 class="title is-3">Method Summary</h2>
-                <div class="content has-text-justified">
-                    <p>We use a 3-step workflow:</p>
-                    <ul>
-                        <li>
-                            We first use a multi-task model (which predicts each skeleton on a different output head) to
-                            generate a pseudo-ground truth "parallel corpus".
-                        </li>
-                        <li>
-                            We use this "parallel corpus" to train an autoencoder that captures the redundancies among
-                            the skeleton formats by discovering a latent keypoint set.
-                        </li>
-                        <li>
-                            We attach the autoencoder to the end of the pose estimator to regularize its output.
-                            Alternatively, the latent keypoints can also be predicted directly by the pose estimator.
-                        </li>
-                    </ul>
-                    <img src="steps.png">
-                </div>
+<h2>Method Summary</h2>
+<p>We use a 3-step workflow:</p>
+<ul>
+    <li>
+        We first use a multi-task model (which predicts each skeleton on a different output head) to
+        generate a pseudo-ground truth "parallel corpus".
+    </li>
+    <li>
+        We use this "parallel corpus" to train an autoencoder that captures the redundancies among
+        the skeleton formats by discovering a latent keypoint set.
+    </li>
+    <li>
+        We attach the autoencoder to the end of the pose estimator to regularize its output.
+        Alternatively, the latent keypoints can also be predicted directly by the pose estimator.
+    </li>
+</ul>
+<img style="width:100%"  src="steps.png">
 
-                <h2 class="title is-3">Affine-Combining Autoencoder</h2>
-                <div class="content has-text-justified">
-                    <p>
-                        One of our contributions is a simple linear autoencoder formulation, where both the encoder and
-                        the decoder compute affine combinations of its input points.
-                        This ensures equivariance to rotation and translation (see paper for chirality equivariance).
-                        Crucially, it also allows knowledge transfer of skeleton relations from the 2D to the depth axis
-                        (2D is more accurate in the pseudo-GT).
-                        Furthermore, the information bottleneck of this autoencoder is a list of geometrically
-                        interpretable latent 3D keypoints that can also be directly predicted and can serve as an
-                        interface between different skeleton formats.</p>
-                </div>
-                <div class="content has-text-centered"><img src="acae_formulas.png" style="width:70%"></div>
+<h2>Affine-Combining Autoencoder</h2>
+<p>
+    One of our contributions is a simple linear autoencoder formulation, where both the encoder and
+    the decoder compute affine combinations of its input points.
+    This ensures equivariance to rotation and translation (see paper for chirality equivariance).
+    Crucially, it also allows knowledge transfer of skeleton relations from the 2D to the depth axis
+    (2D is more accurate in the pseudo-GT).
+    Furthermore, the information bottleneck of this autoencoder is a list of geometrically
+    interpretable latent 3D keypoints that can also be directly predicted and can serve as an
+    interface between different skeleton formats.
+</p>
 
-                <h2 class="title is-3">Results</h2>
-                <div class="content has-text-justified">
-                    <p>
-                        In the paper we first show that scaling up the data indeed helps.
-                        Then we show that the skeleton consistency improves with our proposed consistency
-                        regularization.
-                    </p>
-                    <p>
-                        But what's even more important from the application point of view is that <strong>the final
-                        models are MUCH stronger than currently available models</strong> that are trained on less data:
-                    </p>
-                    <img src="sota_table.png">
-                </div>
-            </div>
-        </div>
+<div style="text-align: center">
+    <img src="acae_formulas.png" style="width:70%">
+</div>
 
-        <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-                <h2 class="title is-3">You Can Try It!</h2>
-                <a href="https://colab.research.google.com/github/isarandi/isarandi.github.io/blob/master/eccv22_demo/demo.ipynb"
-                   target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg"
-                                         alt="Open In Colab"/></a>
-                <pre><code class="language-python"># 'pip install tensorflow tensorflow-hub' if not yet installed
+<h2>Results</h2>
+<p>
+    In the paper we first show that scaling up the data indeed helps.
+    Then we show that the skeleton consistency improves with our proposed consistency
+    regularization.
+</p>
+<p>
+    But what's even more important from the application point of view is that <strong>the final
+    models are MUCH stronger than currently available models</strong> that are trained on less data:
+</p>
+<img style="width:100%" src="sota_table.png"/>
+
+<h2>You Can Try It!</h2>
+<a href="https://colab.research.google.com/github/isarandi/isarandi.github.io/blob/master/eccv22_demo/demo.ipynb"
+   target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<pre><code class="language-python"># 'pip install tensorflow tensorflow-hub' if not yet installed
 import tensorflow as tf
 import tensorflow_hub as hub
 
@@ -210,99 +137,62 @@ preds = model.detect_poses(image, skeleton='smpl+head_30')
 preds['boxes'] # shape: [num_people, 5], the 5 are [x_left, y_top, width, height, confidence]
 preds['poses3d'] # shape: [num_people, 30, 3], in millimeters
 preds['poses2d'] # shape: [num_people, 30, 2], in pixels</code></pre>
-                <div class="content has-text-left">
-                    More options in the <a href="https://github.com/isarandi/metrabs/blob/master/docs/API.md">API
-                    docs</a>.
-                    <br>
-                    Code for dataset preprocessing and training the ACAE is coming soon!
-                </div>
-            </div>
-        </div>
+<p>
+    More options in the <a href="https://github.com/isarandi/metrabs/blob/master/docs/API.md">API
+    docs</a>.
+</p>
+<p>
+    Code for dataset preprocessing and training the ACAE is coming soon!
+</p>
 
-        <!-- Abstract. -->
-        <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-                <h2 class="title is-3">Paper Abstract</h2>
-                <div class="content has-text-justified">
-                    <p>
-                        Deep learning-based 3D human pose estimation performs best when trained on large amounts of
-                        labeled data, making combined learning from many datasets an important research direction. One
-                        obstacle to this endeavor are the different skeleton formats provided by different datasets,
-                        i.e., they do not label the same set of anatomical landmarks. There is little prior research on
-                        how to best supervise one model with such discrepant labels. We show that simply using separate
-                        output heads for different skeletons results in inconsistent depth estimates and insufficient
-                        information sharing across skeletons. As a remedy, we propose a novel affine-combining
-                        autoencoder (ACAE) method to perform dimensionality reduction on the number of landmarks. The
-                        discovered latent 3D points capture the redundancy among skeletons, enabling enhanced
-                        information sharing when used for consistency regularization. Our approach scales to an extreme
-                        multi-dataset regime, where we use 28 3D human pose datasets to supervise one model, which
-                        outperforms prior work on a range of benchmarks, including the challenging 3D Poses in the Wild
-                        (3DPW) dataset. Our code and models are available for research purposes.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!--/ Abstract. -->
-    </div>
-</section>
+<h2>Paper Abstract</h2>
+<p>
+    Deep learning-based 3D human pose estimation performs best when trained on large amounts of
+    labeled data, making combined learning from many datasets an important research direction. One
+    obstacle to this endeavor are the different skeleton formats provided by different datasets,
+    i.e., they do not label the same set of anatomical landmarks. There is little prior research on
+    how to best supervise one model with such discrepant labels. We show that simply using separate
+    output heads for different skeletons results in inconsistent depth estimates and insufficient
+    information sharing across skeletons. As a remedy, we propose a novel affine-combining
+    autoencoder (ACAE) method to perform dimensionality reduction on the number of landmarks. The
+    discovered latent 3D points capture the redundancy among skeletons, enabling enhanced
+    information sharing when used for consistency regularization. Our approach scales to an extreme
+    multi-dataset regime, where we use 28 3D human pose datasets to supervise one model, which
+    outperforms prior work on a range of benchmarks, including the challenging 3D Poses in the Wild
+    (3DPW) dataset. Our code and models are available for research purposes.
+</p>
+<p><a href="https://arxiv.org/abs/2212.14474">Full paper here.</a></p>
 
+<h2>Citation</h2>
+<pre class="bibtex">@inproceedings{Sarandi2023dozens,
+    author = {S\'ar\'andi, Istv\'an and Hermans, Alexander and Leibe, Bastian},
+    title = {Learning {3D} Human Pose Estimation from Dozens of Datasets using a Geometry-Aware Autoencoder to Bridge Between Skeleton Formats},
+    booktitle = {IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+    year = {2023}
+}</pre>
 
-<section class="section" id="BibTeX">
+<p>As the base pose estimator model, we use our earlier MeTRAbs in this work:</p>
+<pre class="bibtex">@article{Sarandi2021metrabs,
+    title = {{MeTRAbs:} Metric-Scale Truncation-Robust Heatmaps for Absolute {3D} Human Pose Estimation},
+    author = {S\'ar\'andi, Istv\'an and Linder, Timm and Arras, Kai O. and Leibe, Bastian},
+    journal = {IEEE Transactions on Biometrics, Behavior, and Identity Science (T-BIOM)},
+    volume = {3},
+    number = {1},
+    pages = {16--30},
+    year = {2021}
+}</pre>
 
-    <div class="container is-max-desktop content">
-        <h2 class="title">BibTeX</h2>
-
-        <pre><code>@inproceedings{Sarandi2023dozens,
-  author = {S\'ar\'andi, Istv\'an and Hermans, Alexander and Leibe, Bastian},
-  title = {Learning {3D} Human Pose Estimation from Dozens of Datasets using a Geometry-Aware Autoencoder to Bridge Between Skeleton Formats},
-  booktitle = {IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
-  year = {2023}
-}</code></pre>
-
-        As the base pose estimator model, we use our earlier MeTRAbs in this work:
-
-        <pre><code>@article{Sarandi2021metrabs,
-  title = {{MeTRAbs:} Metric-Scale Truncation-Robust Heatmaps for Absolute {3D} Human Pose Estimation},
-  author = {S\'ar\'andi, Istv\'an and Linder, Timm and Arras, Kai O. and Leibe, Bastian},
-  journal = {IEEE Transactions on Biometrics, Behavior, and Identity Science (T-BIOM)},
-  volume = {3},
-  number = {1},
-  pages = {16--30},
-  year = {2021}
-}</code></pre>
-    </div>
-</section>
-
-
-<footer class="footer">
-    <div class="container">
-        <div class="content has-text-centered">
-            <a class="icon-link" href="https://github.com/isarandi" class="external-link" disabled>
-                <i class="fab fa-github"></i>
-            </a>
-        </div>
-        <div class="columns is-centered">
-            <div class="column is-8">
-                <div class="content">
-                    <p>
-                        This <a href="https://github.com/nerfies/nerfies.github.io">website template</a> is licensed
-                        under a <a rel="license"
-                                   href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-                        Commons Attribution-ShareAlike 4.0 International License</a>.
-                    </p>
-                    <p>
-                        The pose estimator models can only be used for non-commercial research.
-                    </p>
-                    <p>
-                        <b>Acknowledgments.</b> This work was supported by the ERC Consolidator Grant project “DeeViSe”
-                        (ERC-CoG-2017-773161) and by Robert Bosch GmbH under the project “Context Understanding for
-                        Autonomous Systems.”
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+<footer>
+    <p>
+        The pose estimator models can only be used for non-commercial research.
+    </p>
+    <p>
+        <strong>Acknowledgments.</strong> This work was supported by the ERC Consolidator Grant project “DeeViSe”
+        (ERC-CoG-2017-773161) and by Robert Bosch GmbH under the project “Context Understanding for
+        Autonomous Systems.”
+    </p>
 </footer>
-
+<script src="./static/js/prism.js"></script>
+<script src="./static/js/prism-bibtex.min.js"></script>
 </body>
 </html>
