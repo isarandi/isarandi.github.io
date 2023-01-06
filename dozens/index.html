@@ -137,6 +137,21 @@ preds['poses2d'] # shape: [num_people, 30, 2], in pixels</code></pre>
     More options in the <a href="https://github.com/isarandi/metrabs/blob/master/docs/API.md">API
     docs</a>.
 </p>
+
+<p>
+    The following models are available according to backbone and crop resolution, all using YOLOv4 as a built-in detector:
+</p>
+<ul>
+    <li>EfficientNetV2-S, 256 px: <code>hub.load('https://bit.ly/metrabs_s_256')</code></li>
+    <li>EfficientNetV2-S, 384 px: <code>hub.load('https://bit.ly/metrabs_s')</code></li>
+    <li>EfficientNetV2-L, 384 px: <code>hub.load('https://bit.ly/metrabs_l')</code></li>
+    <li>EfficientNetV2-XL, 384 px: <code>hub.load('https://bit.ly/metrabs_xl')</code></li>
+</ul>
+
+<p>
+    <strong>Real-time capability:</strong> The EffNetV2-S model runs at 28 FPS without batching on the RTX 3090 consumer GPU, when processing the multiperson MuPoTS-3D dataset.
+</p>
+
 <p>
     Code for dataset preprocessing and training the ACAE is coming soon!
 </p>
