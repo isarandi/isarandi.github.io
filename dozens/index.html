@@ -139,7 +139,7 @@ preds['poses2d'] # shape: [num_people, 30, 2], in pixels</code></pre>
 </p>
 
 <p>
-    The following models are available according to backbone and crop resolution, all using YOLOv4 as a built-in detector:
+    <strong>Models:</strong> The following models are available according to backbone and crop resolution, all using YOLOv4 as a built-in detector:
 </p>
 <ul>
     <li>EfficientNetV2-S, 256 px: <code>hub.load('https://bit.ly/metrabs_s_256')</code></li>
@@ -147,6 +147,12 @@ preds['poses2d'] # shape: [num_people, 30, 2], in pixels</code></pre>
     <li>EfficientNetV2-L, 384 px: <code>hub.load('https://bit.ly/metrabs_l')</code></li>
     <li>EfficientNetV2-XL, 384 px: <code>hub.load('https://bit.ly/metrabs_xl')</code></li>
 </ul>
+
+<p>
+    <strong>Skeletons:</strong> The following skeleton formats are supported in all of the above models (the suffix stands for the number of keypoints):
+    <code>smpl_24, kinectv2_25, h36m_17, h36m_25, mpi_inf_3dhp_17, mpi_inf_3dhp_28, coco_19, smplx_42, ghum_35, lsp_14, sailvos_26, gpa_34, aspset_17, bml_movi_87,
+    mads_19, berkeley_mhad_43, total_capture_21, jta_22, ikea_asm_17, human4d_32,  3dpeople_29, umpm_15, smpl+head_30</code>.
+</p>
 
 <p>
     <strong>Real-time capability:</strong> The EffNetV2-S model runs at 28 FPS without batching on the RTX 3090 consumer GPU, when processing the multiperson MuPoTS-3D dataset.
