@@ -67,26 +67,12 @@ body {
     font-weight: bolder;
 }
 
-.publication-authors {
-}
-
-.publication-authors a {
-   color: hsl(204, 86%, 53%) !important;
-}
-
 .publication-authors a:hover {
     text-decoration: underline;
 }
 
 .author-block {
   display: inline-block;
-}
-
-.publication-banner img {
-}
-
-.publication-authors {
-  /*color: #4286f4;*/
 }
 
 .publication-video {
@@ -167,7 +153,7 @@ section.hero {
     padding-top: 0;
 }
 
-
 h2 {
     padding-top: 2rem;
 }
+
