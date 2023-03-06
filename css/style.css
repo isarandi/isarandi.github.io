@@ -280,7 +280,7 @@ header  .authors {
   margin-top: 1em;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .paper-details {
     clear:both;
   }
