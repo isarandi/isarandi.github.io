@@ -1,11 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; URL='https://virtualhumans.mpi-inf.mpg.de/nlf'" />
-    <title>Redirecting...</title>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="Neural Localizer Fields for Continuous 3D Human Pose and Shape Estimation">
+    <meta name="keywords" content="NLF">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[NeurIPS'24] NLF - Neural Localizer Fields for Continuous 3D Human Pose and Shape
+        Estimation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
 </head>
 <body>
-    <p>Redirecting to https://virtualhumans.mpi-inf.mpg.de/nlf.</p>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+            <a class="navbar-item" href="https://istvansarandi.com/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+            </a>
+
+
+        </div>
+
+    </div>
+</nav>
+
+
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">Neural Localizer Fields for Continuous
+                        3D Human Pose and Shape Estimation</h1>
+
+                    <div class="is-size-5 publication-authors">
+                        <b>NeurIPS 2024</b>
+                    </div>
+                    <br/>
+
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block">
+                          <a href="https://istvansarandi.com/"> István Sárándi</a><sup>1,2</sup>,</span>
+                        <span class="author-block">
+                          <a href="https://virtualhumans.mpi-inf.mpg.de/people/pons-moll.html">Gerard Pons-Moll</a><sup>1,2,3</sup>
+                        </span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block"><sup>1</sup>University of Tübingen,</span>
+                        <span class="author-block"><sup>2</sup>Tübingen AI Center,</span>
+                        <span class="author-block"><sup>3</sup>Max Planck Institute for Informatics, Saarland Informatics Campus,</span>
+                        <br>
+                    </div>
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                        <span class="link-block">
+                        <a href="https://arxiv.org/abs/2407.07532"
+                           class="external-link button is-normal is-rounded is-dark"
+                           target="_blank">
+                          <span class="icon">
+                              <i class="ai ai-arxiv"></i>
+                          </span>
+                          <span>arXiv</span>
+                        </a>
+                        </span>
+                        <!-- Video Link. -->
+                        <span class="link-block">
+                        <a href="https://youtu.be/v93MnaZKcWw"
+                           class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                              <i class="fab fa-youtube"></i>
+                          </span>
+                          <span>Video</span>
+                        </a>
+                      </span>
+                            <!-- Code Link. -->
+                            <span class="link-block">
+                <a href="https://github.com/isarandi/nlf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero teaser">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+            <div class="columns is-centered">
+                <video width="640" autoplay muted loop>
+                    <source src="./static/videos/breakdance.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <br> <br>
+            <p>
+            </p> <br> <br>
+
+            <div class="columns is-centered">
+                <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/v93MnaZKcWw?si=L-YncJd5s-ETq7yd"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <!-- </h2> -->
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p>With the explosive growth of available training data, single-image 3D human
+                        modeling is ahead of a transition to a data-centric paradigm. A key to
+                        successfully exploiting data scale is to design flexible models that can be
+                        supervised from various heterogeneous data sources produced by different
+                        researchers or vendors. To this end, we propose a simple yet powerful
+                        paradigm for seamlessly unifying different human pose and shape-related
+                        tasks and datasets. Our formulation is centered on the ability -- both at
+                        training and test time -- to query any arbitrary point of the human volume,
+                        and obtain its estimated location in 3D. We achieve this by learning a
+                        continuous neural field of body point localizer functions, each of which is
+                        a differently parameterized 3D heatmap-based convolutional point localizer
+                        (detector). For generating parametric output, we propose an efficient
+                        post-processing step for fitting SMPL-family body models to nonparametric
+                        joint and vertex predictions. With this approach, we can naturally exploit
+                        differently annotated data sources including mesh, 2D/3D skeleton and dense
+                        pose, without having to convert between them, and thereby train large-scale
+                        3D human mesh and skeleton estimation models that considerably outperform
+                        the state-of-the-art on several public benchmarks including 3DPW, EMDB, EHF,
+                        SSP-3D and AGORA.</p>
+                </div>
+            </div>
+        </div>
+        <!--/ Abstract. -->
+    </div>
+</section>
+<div class="container is-max-desktop">
+
+    <section class="section">
+        <div class="container is-max-desktop">
+
+            <div class="columns is-centered">
+
+                <!-- Applications. -->
+                <div class="columns is-centered">
+                    <div class="column is-full-width has-text-centered">
+                        <h2 class="title is-3">Results</h2>
+                        <h3 class="title is-4">Qualitative Results</h3>
+                        <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/ybFuG0CGIIA?si=1LicHmRzQ-SKzabH"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen></iframe>
+                        <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/NiYKSD29bbo?si=QNI9HM2sCnGwa6gd"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop content">
+            <h2 class="title">Acknowledgments</h2>
+            <center>
+                <div class="imagesrow">
+                    <img class="row_img" src="./static/images/Carl-Zeiss-Stiftung_Logo.png"
+                         alt="Carl-Zeiss-Stiftung" style="max-width:10%;margin-right: 30px;">
+                    <img class="row_img" src="./static/images/ai_center_3.png" alt="T&uuml;bingen AI Center"
+                         style="max-width:15%;margin-right: 30px;">
+                    <img class="row_img" src="./static/images/University_Tuebingen.png"
+                         alt="University of T&uuml;bingen"
+                         style="max-width:15%;margin-right: 30px;">
+                    <img class="row_img" src="./static/images/mpi-logo-new.svg" alt="MPII Saarbr&uuml;cken"
+                         style="max-width:15%;margin-right: 30px;">
+
+                </div>
+            </center>
+            <br> <br>
+            This work was supported by the German Federal Ministry of Education and Research (BMBF):
+            Tübingen AI Center, FKZ: 01IS18039A. This work is funded by the Deutsche
+            Forschungsgemeinschaft (DFG, German Research Foundation) – 409792180 (Emmy Noether
+            Programme, project: Real Virtual
+            Humans). GPM is a member of the Machine Learning Cluster of Excellence, EXC number
+            2064/1 –Project number 390727645. The project was made possible by funding from the Carl
+            Zeiss Foundation
+        </div>
+        <!--/ Acknowledgments. -->
+    </section>
+
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>@article{sarandi2024nlf,
+    title     = {Neural Localizer Fields for Continuous 3D Human Pose and Shape Estimation},
+    author    = {S\'ar\'andi, Istv\'an and Pons-Moll, Gerard},
+    booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+    year      = {2024}
+}</code></pre>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p>
+                            This awesome webpage templeate was borrowed from <a rel="license"
+                                                                                href="https://nerfies.github.io">Nerfies</a>,
+                            thanks!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
