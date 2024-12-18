@@ -1,0 +1,7 @@
+@import url("theme.css");
+
+@media (min-width: 960px) {
+    .bd-page-width {
+        max-width: 120rem;
+    }
+}

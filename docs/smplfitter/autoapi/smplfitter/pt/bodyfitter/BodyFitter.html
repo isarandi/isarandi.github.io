@@ -1,0 +1,614 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>smplfitter.pt.bodyfitter.BodyFitter &#8212; SMPLFitter v0.2.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/my_theme.css?v=13d9bb80" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../../_static/documentation_options.js?v=0a6a6ad3"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'autoapi/smplfitter/pt/bodyfitter/BodyFitter';</script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">SMPLFitter v0.2.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../index.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../index.html">smplfitter</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../np/index.html">smplfitter.np</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../np/BodyModel.html">smplfitter.np.BodyModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../np/BodyFitter.html">smplfitter.np.BodyFitter</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../index.html">smplfitter.pt</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../BodyModel.html">smplfitter.pt.BodyModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../BodyConverter.html">smplfitter.pt.BodyConverter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../BodyFitter.html">smplfitter.pt.BodyFitter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../BodyFlipper.html">smplfitter.pt.BodyFlipper</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../tf/index.html">smplfitter.tf</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../tf/BodyModel.html">smplfitter.tf.BodyModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tf/BodyFitter.html">smplfitter.tf.BodyFitter</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../_sources/autoapi/smplfitter/pt/bodyfitter/BodyFitter.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>smplfitter.pt.bodyfitter.BodyFitter</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smplfitter.pt.bodyfitter.BodyFitter"><code class="docutils literal notranslate"><span class="pre">BodyFitter</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smplfitter.pt.bodyfitter.BodyFitter.fit"><code class="docutils literal notranslate"><span class="pre">fit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smplfitter.pt.bodyfitter.BodyFitter.fit_with_known_pose"><code class="docutils literal notranslate"><span class="pre">fit_with_known_pose()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smplfitter.pt.bodyfitter.BodyFitter.fit_with_known_shape"><code class="docutils literal notranslate"><span class="pre">fit_with_known_shape()</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="smplfitter-pt-bodyfitter-bodyfitter">
+<h1>smplfitter.pt.bodyfitter.BodyFitter<a class="headerlink" href="#smplfitter-pt-bodyfitter-bodyfitter" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="smplfitter.pt.bodyfitter.BodyFitter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">smplfitter.pt.bodyfitter.</span></span><span class="sig-name descname"><span class="pre">BodyFitter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_betas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_kid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_subset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joint_regressor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smplfitter.pt.bodyfitter.BodyFitter" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.nn.Module</span></code></p>
+<p>Fits body model (SMPL/SMPL-X/SMPL+H) parameters to lists of target vertices and joints.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>body_model</strong> (<a class="reference internal" href="../BodyModel.html#smplfitter.pt.BodyModel" title="smplfitter.pt.BodyModel"><em>BodyModel</em></a>) – The body model instance we wish to fit, of a certain SMPL model variant and             gender.</p></li>
+<li><p><strong>num_betas</strong> (<em>int</em>) – Number of shape parameters (betas) to use when fitting.</p></li>
+<li><p><strong>enable_kid</strong> (<em>bool</em>) – Enables the use of a kid blendshape, allowing for fitting kid shapes as in
+AGORA <a class="footnote-reference brackets" href="#footcite-patel2021agora" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p></li>
+<li><p><strong>vertex_subset</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – A tensor or list specifying a subset of vertices to use in the fitting
+process, allowing faster partial fitting. The subset of vertices should cover all body
+parts to provide enough constraints.</p></li>
+<li><p><strong>joint_regressor</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – A regression matrix of shape (num_joints, num_vertices) for obtaining
+joint locations, in case the target joints are not specified when fitting. A custom one
+must be supplied if <cite>vertex_subset</cite> is partial and target joint locations will not be
+provided.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="smplfitter.pt.bodyfitter.BodyFitter.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_joints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joint_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta_regularizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta_regularizer2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_regularizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kid_regularizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">share_beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_adjust_rots</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_fit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_pose_rotvecs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_shape_betas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_kid_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requested_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smplfitter.pt.bodyfitter.BodyFitter.fit" title="Link to this definition">#</a></dt>
+<dd><p>Fits the body model to target vertices and optionally joints by optimizing for shape and
+pose, and optionally others.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target_vertices</strong> (<em>torch.Tensor</em>) – Target mesh vertices, shaped as (batch_size, num_vertices, 3).</p></li>
+<li><p><strong>target_joints</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – Target joint locations, shaped as (batch_size, num_joints, 3).</p></li>
+<li><p><strong>vertex_weights</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – Importance weights for each vertex during the fitting process.</p></li>
+<li><p><strong>joint_weights</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – Importance weights for each joint during the fitting process.</p></li>
+<li><p><strong>num_iter</strong> (<em>int</em>) – Number of iterations for the optimization process. Reasonable values are in
+the range of 1-4.</p></li>
+<li><p><strong>beta_regularizer</strong> (<em>float</em>) – L2 regularization weight for shape parameters (betas).
+Set small for easy poses and extreme body shapes, set high for harder poses and
+non-extreme body shape. (Good choices can be 0, 0.1, 1, 10.)</p></li>
+<li><p><strong>beta_regularizer2</strong> (<em>float</em>) – Secondary regularization for betas, affecting the first two
+parameters. Often zero works well.</p></li>
+<li><p><strong>scale_regularizer</strong> (<em>float</em>) – Regularization term to penalize the scale factor deviating from 1.
+Has no effect unless <cite>scale_target</cite> or <cite>scale_fit</cite> is True.</p></li>
+<li><p><strong>kid_regularizer</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – Regularization weight for the kid blendshape factor. Has no effect
+unless <cite>enable_kid</cite> on the object is True.</p></li>
+<li><p><strong>share_beta</strong> (<em>bool</em>) – If True, shares the shape parameters (betas) across instances in the
+batch.</p></li>
+<li><p><strong>final_adjust_rots</strong> (<em>bool</em>) – Whether to perform a final refinement of the body part
+orientations to improve alignment.</p></li>
+<li><p><strong>scale_target</strong> (<em>bool</em>) – If True, estimates a scale factor to apply to the target vertices for
+alignment.</p></li>
+<li><p><strong>scale_fit</strong> (<em>bool</em>) – If True, estimates a scale factor to apply to the fitted mesh for
+alignment.</p></li>
+<li><p><strong>initial_pose_rotvecs</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – Optional initial pose rotations, if a good guess is available.
+Usually not necessary (experimental).</p></li>
+<li><p><strong>initial_shape_betas</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – Optional initial shape parameters (betas), if a good guess is
+available. Usually not necessary (experimental).</p></li>
+<li><p><strong>initial_kid_factor</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – Same as above, but for the kid blendshape factor.</p></li>
+<li><p><strong>requested_keys</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – List of keys specifying which results to return.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Dictionary</dt><dd><ul class="simple">
+<li><p><strong>pose_rotvecs</strong> – Estimated pose in concatenated rotation vector format.</p></li>
+<li><p><strong>shape_betas</strong> – Estimated shape parameters (betas).</p></li>
+<li><p><strong>trans</strong> – Estimated translation parameters.</p></li>
+<li><p><strong>joints</strong> – Estimated joint positions, if requested.</p></li>
+<li><p><strong>vertices</strong> – Fitted mesh vertices, if requested.</p></li>
+<li><p><strong>orientations</strong> – Global body part orientations as rotation matrices.</p></li>
+<li><p><strong>relative_orientations</strong> – Parent-relative body part orientations as rotation                     matrices.</p></li>
+<li><p><strong>kid_factor</strong> – Estimated kid blendshape factor, if <cite>enable_kid</cite> is True.</p></li>
+<li><p><strong>scale_corr</strong> – Estimated scale correction factor, if <cite>scale_target</cite> or                     <cite>scale_fit</cite> is True.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Dict</em>[<em>str</em>, torch.Tensor]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smplfitter.pt.bodyfitter.BodyFitter.fit_with_known_pose">
+<span class="sig-name descname"><span class="pre">fit_with_known_pose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose_rotvecs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_joints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joint_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta_regularizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta_regularizer2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_regularizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kid_regularizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">share_beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_fit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta_regularizer_reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kid_regularizer_reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requested_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smplfitter.pt.bodyfitter.BodyFitter.fit_with_known_pose" title="Link to this definition">#</a></dt>
+<dd><p>Fits the body shape and translation (and possibly scale), with known output pose.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pose_rotvecs</strong> (<em>torch.Tensor</em>) – The known output joint rotations represented as rotation vectors,
+shaped as (batch_size, num_joints * 3).</p></li>
+<li><p><strong>target_vertices</strong> (<em>torch.Tensor</em>) – Target mesh vertices to fit, shaped as (batch_size, num_vertices, 3).</p></li>
+<li><p><strong>target_joints</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – Optional target joint positions, shaped as (batch_size, num_joints, 3).</p></li>
+<li><p><strong>vertex_weights</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – Optional importance weights for individual vertices during the
+fitting process.</p></li>
+<li><p><strong>joint_weights</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – Optional importance weights for individual joints during the fitting
+process.</p></li>
+<li><p><strong>beta_regularizer</strong> (<em>float</em>) – L2 regularization weight for shape parameters (betas).</p></li>
+<li><p><strong>beta_regularizer2</strong> (<em>float</em>) – Secondary regularization applied to the first two shape parameters.</p></li>
+<li><p><strong>scale_regularizer</strong> (<em>float</em>) – Regularization term penalizing deviation of the scale factor from 1.</p></li>
+<li><p><strong>kid_regularizer</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – Regularization weight for the kid blendshape factor.</p></li>
+<li><p><strong>share_beta</strong> (<em>bool</em>) – Whether to share the shape parameters (betas) across instances in the batch.</p></li>
+<li><p><strong>scale_target</strong> (<em>bool</em>) – Whether to estimate a scale factor for the target vertices to aid
+alignment.</p></li>
+<li><p><strong>scale_fit</strong> (<em>bool</em>) – Whether to estimate a scale factor for the fitted mesh to aid alignment.</p></li>
+<li><p><strong>beta_regularizer_reference</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – Optional reference values for beta regularization.</p></li>
+<li><p><strong>kid_regularizer_reference</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – Optional reference values for kid factor regularization.</p></li>
+<li><p><strong>requested_keys</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – List of result keys to return.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Dictionary</dt><dd><ul class="simple">
+<li><p><strong>shape_betas</strong> – Estimated shape parameters (betas).</p></li>
+<li><p><strong>trans</strong> – Estimated translation parameters.</p></li>
+<li><p><strong>joints</strong> – Estimated joint positions.</p></li>
+<li><p><strong>vertices</strong> – Fitted mesh vertices.</p></li>
+<li><p><strong>orientations</strong> – Global body part orientations as rotation matrices.</p></li>
+<li><p><strong>relative_orientations</strong> – Parent-relative body part orientations as rotation                     matrices.</p></li>
+<li><p><strong>kid_factor</strong> – Estimated kid blendshape factor, if enabled.</p></li>
+<li><p><strong>scale_corr</strong> – Estimated scale correction factor, if scaling is enabled.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Dict</em>[<em>str</em>, torch.Tensor]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smplfitter.pt.bodyfitter.BodyFitter.fit_with_known_shape">
+<span class="sig-name descname"><span class="pre">fit_with_known_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape_betas</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_joints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joint_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kid_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_adjust_rots</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_pose_rotvecs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_fit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requested_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smplfitter.pt.bodyfitter.BodyFitter.fit_with_known_shape" title="Link to this definition">#</a></dt>
+<dd><p>Fits the body model pose and translation to target vertices and optionally target joints,
+given known shape parameters (betas).</p>
+<p>The method assumes the shape parameters (betas) are known and optimizes the pose and
+translation to fit the target vertices and joints. Initial pose rotations can
+optionally be provided to warm-start the optimization process.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shape_betas</strong> (<em>torch.Tensor</em>) – Shape parameters (betas) for the body model, shaped as (batch_size,
+num_betas).</p></li>
+<li><p><strong>target_vertices</strong> (<em>torch.Tensor</em>) – Target mesh vertices to fit, shaped as (batch_size, num_vertices, 3).</p></li>
+<li><p><strong>target_joints</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – Optional target joint positions, shaped as (batch_size, num_joints, 3).</p></li>
+<li><p><strong>vertex_weights</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – Optional importance weights for individual vertices during the
+fitting process.</p></li>
+<li><p><strong>joint_weights</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – Optional importance weights for individual joints during the fitting
+process.</p></li>
+<li><p><strong>kid_factor</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – Optional adjustment factor for kid shapes, shaped as (batch_size, 1).</p></li>
+<li><p><strong>num_iter</strong> (<em>int</em>) – Number of iterations for the optimization process.</p></li>
+<li><p><strong>final_adjust_rots</strong> (<em>bool</em>) – Whether to refine body part orientations after fitting for better
+alignment.</p></li>
+<li><p><strong>initial_pose_rotvecs</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – Optional initial pose rotations in rotation vector format,
+shaped as (batch_size, num_joints * 3).</p></li>
+<li><p><strong>scale_fit</strong> (<em>bool</em>) – Whether to estimate a scale factor to align the fitted mesh with the
+target vertices.</p></li>
+<li><p><strong>requested_keys</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – List of result keys to return.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Dictionary</dt><dd><ul class="simple">
+<li><p><strong>pose_rotvecs</strong> – Estimated pose rotation vectors in concatenated format.</p></li>
+<li><p><strong>trans</strong> – Estimated translation parameters.</p></li>
+<li><p><strong>joints</strong> – Fitted joint positions, if requested.</p></li>
+<li><p><strong>vertices</strong> – Fitted mesh vertices, if requested.</p></li>
+<li><p><strong>orientations</strong> – Global body part orientations as rotation matrices.</p></li>
+<li><p><strong>relative_orientations</strong> – Parent-relative body part orientations as rotation                     matrices.</p></li>
+<li><p><strong>kid_factor</strong> – Estimated kid blendshape factor, if provided.</p></li>
+<li><p><strong>scale_corr</strong> – Estimated scale correction factor, if scaling is enabled.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Dict</em>[<em>str</em>, torch.Tensor]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<div class="docutils container" id="id2">
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="footcite-patel2021agora" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Priyanka Patel, Chun-Hao P. Huang, Joachim Tesch, David T. Hoffmann, Shashank Tripathi, and Michael J. Black. AGORA: avatars in geography optimized for regression analysis. In <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</em>. 2021. URL: <a class="reference external" href="https://agora.is.tue.mpg.de">https://agora.is.tue.mpg.de</a>, <a class="reference external" href="https://arxiv.org/abs/2104.14643">arXiv:2104.14643</a>, <a class="reference external" href="https://doi.org/10.1109/CVPR46437.2021.01326">doi:10.1109/CVPR46437.2021.01326</a>.</p>
+</aside>
+</aside>
+</div>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smplfitter.pt.bodyfitter.BodyFitter"><code class="docutils literal notranslate"><span class="pre">BodyFitter</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smplfitter.pt.bodyfitter.BodyFitter.fit"><code class="docutils literal notranslate"><span class="pre">fit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smplfitter.pt.bodyfitter.BodyFitter.fit_with_known_pose"><code class="docutils literal notranslate"><span class="pre">fit_with_known_pose()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smplfitter.pt.bodyfitter.BodyFitter.fit_with_known_shape"><code class="docutils literal notranslate"><span class="pre">fit_with_known_shape()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By István Sárándi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, István Sárándi.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
