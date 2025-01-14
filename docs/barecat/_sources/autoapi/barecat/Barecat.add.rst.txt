@@ -1,0 +1,26 @@
+add
+===
+
+.. py:method:: barecat.Barecat.add(info, *, data = None, fileobj=None, bufsize = shutil.COPY_BUFSIZE, dir_exist_ok = False)
+
+   Add a file or directory to the archive.
+
+   :param info: BarecatFileInfo or BarecatDirInfo object to add.
+   :param data: File content. If None, the data is read from the file object.
+   :param fileobj: File-like object to read the data from.
+   :param bufsize: Buffer size to use when reading from the file object.
+   :param dir_exist_ok: If True, do not raise an error when adding a directory and that
+                        directory already exists in the archive (as a directory).
+
+   :raises ValueError: If the file is larger than the shard size limit.
+   :raises FileExistsBarecatError: If a file or directory with the same path already exists in the
+       archive, unless ``dir_exist_ok`` is True and the item is a directory.
+
+   .. rubric:: Examples
+
+   >>> bc = Barecat('test.barecat', readonly=False)
+   >>> bc.add(BarecatFileInfo(path='file.txt', mode=0o666), data=b'Hello, world!')
+   >>> bc.add(BarecatDirInfo(path='dir', mode=0o777))
+
+
+.. footbibliography::

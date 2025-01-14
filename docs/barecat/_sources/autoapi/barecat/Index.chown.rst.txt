@@ -1,0 +1,15 @@
+chown
+=====
+
+.. py:method:: barecat.Index.chown(path, uid, gid)
+
+   Change the owner and group of a file or directory.
+
+   :param path: Path of the file or directory.
+   :param uid: New user ID.
+   :param gid: New group ID.
+
+   :raises FileNotFoundBarecatError: If the file or directory is not found.
+
+
+.. footbibliography::

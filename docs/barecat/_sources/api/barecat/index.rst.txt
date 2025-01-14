@@ -1,0 +1,48 @@
+barecat
+=======
+
+.. py:module:: barecat
+
+.. autoapi-nested-parse::
+
+   Barecat is a fast random-access, mountable archive format for storing and accessing many small
+   files.
+
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /api/barecat/exceptions/index
+
+
+Classes
+-------
+
+.. toctree::
+   :hidden:
+
+   /api/barecat/Barecat
+   /api/barecat/Index
+   /api/barecat/BarecatFileInfo
+   /api/barecat/BarecatDirInfo
+   /api/barecat/BarecatEntryInfo
+   /api/barecat/FileSection
+   /api/barecat/Order
+
+.. autoapisummary::
+
+   barecat.Barecat
+   barecat.Index
+   barecat.BarecatFileInfo
+   barecat.BarecatDirInfo
+   barecat.BarecatEntryInfo
+   barecat.FileSection
+   barecat.Order
+
+
+
+.. footbibliography::

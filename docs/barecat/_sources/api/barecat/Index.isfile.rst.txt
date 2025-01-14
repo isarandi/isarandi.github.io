@@ -1,0 +1,13 @@
+isfile
+======
+
+.. py:method:: barecat.Index.isfile(path)
+
+   Check if a file exists in the index.
+
+   :param path: Path of the file. It is normalized before the check.
+
+   :returns: True if a file with the given path exists, False otherwise.
+
+
+.. footbibliography::

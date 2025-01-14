@@ -1,0 +1,16 @@
+merge_from_other_barecat
+========================
+
+.. py:method:: barecat.Barecat.merge_from_other_barecat(source_path, ignore_duplicates = False)
+
+   Merge the contents of another Barecat archive into this one.
+
+   :param source_path: Path to the other Barecat archive.
+   :param ignore_duplicates: If True, do not raise an error when a file with the same path already
+                             exists in the archive.
+
+   :raises ValueError: If the shard size limit is set and a file in the source archive is larger
+       than the shard size limit.
+
+
+.. footbibliography::

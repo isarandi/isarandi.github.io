@@ -1,0 +1,19 @@
+remove
+======
+
+.. py:method:: barecat.Barecat.remove(item)
+
+   Remove (delete) a file from the archive.
+
+   Technically, the data is not erased from the shard file at this point, only the
+   corresponding row in the index database is removed.
+   An exception is when the file is the last file in the shard, in which case the shard file
+   is truncated to the end of the file.
+
+   :param item: Either a BarecatFileInfo object, or a path to a file within the archive.
+
+   :raises FileNotFoundBarecatError: If a file with this path does not exist in the archive.
+   :raises IsADirectoryBarecatError: If the path refers to a directory, not a file.
+
+
+.. footbibliography::

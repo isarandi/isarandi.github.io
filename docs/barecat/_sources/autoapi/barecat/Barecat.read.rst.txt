@@ -1,0 +1,19 @@
+read
+====
+
+.. py:method:: barecat.Barecat.read(item, offset = 0, size = -1)
+
+   Read a file from the archive, starting from an offset and reading a specific number of
+   bytes.
+
+   :param item: Either a BarecatFileInfo object, or a path to a file within the archive.
+   :param offset: Offset within the file to start reading from.
+   :param size: Number of bytes to read. If -1, read until the end of the file.
+
+   :returns: The contents of the file, as bytes.
+
+   :raises ValueError: If the CRC32C checksum of the read data does not match the expected value.
+   :raises FileNotFoundBarecatError: If a file with this path does not exist in the archive.
+
+
+.. footbibliography::

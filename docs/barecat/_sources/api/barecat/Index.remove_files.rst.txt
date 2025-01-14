@@ -1,0 +1,13 @@
+remove_files
+============
+
+.. py:method:: barecat.Index.remove_files(items)
+
+   Remove multiple files from the index.
+
+   :param items: Paths of the files or the file info objects.
+
+   :raises FileNotFoundBarecatError: If any of the files is not found.
+
+
+.. footbibliography::

@@ -1,0 +1,13 @@
+listdir
+=======
+
+.. py:method:: barecat.Barecat.listdir(path)
+
+   List all files and directories in a directory.
+
+   :param path: Path to the directory within the archive.
+
+   :returns: List of all files and directories contained in the directory ``path``.
+
+
+.. footbibliography::

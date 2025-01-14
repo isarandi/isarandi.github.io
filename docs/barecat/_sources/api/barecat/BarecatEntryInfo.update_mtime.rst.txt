@@ -1,0 +1,9 @@
+update_mtime
+============
+
+.. py:method:: barecat.BarecatEntryInfo.update_mtime()
+
+   Update the last modification time to the current time.
+
+
+.. footbibliography::

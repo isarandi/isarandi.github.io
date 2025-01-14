@@ -1,0 +1,9 @@
+__exit__
+========
+
+.. py:method:: barecat.Index.__exit__(exc_type, exc_val, exc_tb)
+
+   Exit the context manager.
+
+
+.. footbibliography::

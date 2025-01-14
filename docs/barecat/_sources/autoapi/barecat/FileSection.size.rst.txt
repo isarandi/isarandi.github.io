@@ -1,0 +1,10 @@
+size
+====
+
+.. py:property:: barecat.FileSection.size
+   :type: int
+
+
+   Size of the section in bytes.
+
+.. footbibliography::

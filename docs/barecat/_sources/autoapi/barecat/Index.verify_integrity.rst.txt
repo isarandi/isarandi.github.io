@@ -1,0 +1,15 @@
+verify_integrity
+================
+
+.. py:method:: barecat.Index.verify_integrity()
+
+   Verify the integrity of the index.
+
+   This method checks if the number of files, number of subdirectories, size of the directory
+   tree, and number of files in the directory tree are correct. It also checks the integrity of
+   the SQLite database.
+
+   :returns: True if no problems are found, False otherwise.
+
+
+.. footbibliography::

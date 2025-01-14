@@ -1,0 +1,14 @@
+asdict
+======
+
+.. py:method:: barecat.BarecatFileInfo.asdict()
+
+   Returns a dictionary representation of the file information.
+
+   :returns:
+
+             Dictionary with keys 'path', 'shard', 'offset', 'size', 'crc32c', 'mode', 'uid',
+                 'gid', 'mtime_ns'
+
+
+.. footbibliography::

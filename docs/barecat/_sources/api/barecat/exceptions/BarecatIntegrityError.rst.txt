@@ -1,0 +1,13 @@
+BarecatIntegrityError
+=====================
+
+.. py:exception:: barecat.exceptions.BarecatIntegrityError(message)
+
+   Bases: :py:obj:`BarecatError`
+
+
+   Exception raised when the CRC32C checksum of a file does not match the expected checksum
+
+
+
+.. footbibliography::

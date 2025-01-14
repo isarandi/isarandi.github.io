@@ -1,0 +1,11 @@
+items
+=====
+
+.. py:method:: barecat.Barecat.items()
+
+   Iterate over all files in the archive, yielding (path, content) pairs.
+
+   :returns: Iterator over (path, content) pairs.
+
+
+.. footbibliography::

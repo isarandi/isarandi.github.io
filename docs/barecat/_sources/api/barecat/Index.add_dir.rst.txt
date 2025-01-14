@@ -1,0 +1,14 @@
+add_dir
+=======
+
+.. py:method:: barecat.Index.add_dir(dinfo, exist_ok=False)
+
+   Add a directory to the index.
+
+   :param dinfo: Directory info object.
+   :param exist_ok: Whether to ignore if the directory already exists.
+
+   :raises FileExistsBarecatError: If the directory already exists and `exist_ok` is False.
+
+
+.. footbibliography::

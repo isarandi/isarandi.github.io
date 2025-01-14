@@ -1,0 +1,20 @@
+merge_from_other_barecat
+========================
+
+.. py:method:: barecat.Index.merge_from_other_barecat(source_index_path, ignore_duplicates = False)
+
+   Adds the files and directories from another Barecat index to this one.
+
+   Typically used during symlink-based merging. That is, the shards in the source Barecat
+   are assumed to be simply be placed next to each other, instead of being merged with the
+   existing shards in this index.
+   For merging the shards themselves, more complex logic is needed, and that method is
+   in the Barecat class.
+
+   :param source_index_path: Path to the source Barecat index.
+   :param ignore_duplicates: Whether to ignore duplicate files and directories.
+
+   :raises sqlite3.DatabaseError: If an error occurs during the operation.
+
+
+.. footbibliography::

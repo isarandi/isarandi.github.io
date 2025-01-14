@@ -1,0 +1,138 @@
+Index
+=====
+
+.. toctree::
+   :hidden:
+
+   /api/barecat/Index.lookup_file
+   /api/barecat/Index.lookup_dir
+   /api/barecat/Index.lookup
+   /api/barecat/Index.__len__
+   /api/barecat/Index.num_files
+   /api/barecat/Index.num_dirs
+   /api/barecat/Index.total_size
+   /api/barecat/Index.__iter__
+   /api/barecat/Index.__contains__
+   /api/barecat/Index.isfile
+   /api/barecat/Index.isdir
+   /api/barecat/Index.exists
+   /api/barecat/Index.iter_all_fileinfos
+   /api/barecat/Index.list_direct_fileinfos
+   /api/barecat/Index.list_subdir_dirinfos
+   /api/barecat/Index.iter_direct_fileinfos
+   /api/barecat/Index.iter_subdir_dirinfos
+   /api/barecat/Index.listdir_names
+   /api/barecat/Index.listdir_infos
+   /api/barecat/Index.iterdir_names
+   /api/barecat/Index.iterdir_infos
+   /api/barecat/Index.glob_paths
+   /api/barecat/Index.iterglob_paths
+   /api/barecat/Index.iterglob_infos
+   /api/barecat/Index.walk_infos
+   /api/barecat/Index.walk_names
+   /api/barecat/Index.reverse_lookup
+   /api/barecat/Index.get_last_file
+   /api/barecat/Index.logical_shard_end
+   /api/barecat/Index.shard_size_limit
+   /api/barecat/Index.num_used_shards
+   /api/barecat/Index.add
+   /api/barecat/Index.add_file
+   /api/barecat/Index.add_dir
+   /api/barecat/Index.rename
+   /api/barecat/Index.rename_file
+   /api/barecat/Index.rename_dir
+   /api/barecat/Index.remove_file
+   /api/barecat/Index.remove_files
+   /api/barecat/Index.remove_empty_dir
+   /api/barecat/Index.remove_recursively
+   /api/barecat/Index.chmod
+   /api/barecat/Index.chown
+   /api/barecat/Index.update_mtime
+   /api/barecat/Index.verify_integrity
+   /api/barecat/Index.merge_from_other_barecat
+   /api/barecat/Index.no_triggers
+   /api/barecat/Index.close
+   /api/barecat/Index.optimize
+   /api/barecat/Index.__exit__
+
+.. py:class:: barecat.Index(path, shard_size_limit = None, bufsize = None, readonly = True)
+
+   Bases: :py:obj:`contextlib.AbstractContextManager`
+
+
+   Manages the SQLite database storing metadata about the files and directories in the Barecat
+   archive.
+
+   :param path: Path to the SQLite database file, including the ``"-sqlite-index"`` suffix.
+   :param shard_size_limit: Maximum size of a shard in bytes. If None, the shard size is unlimited.
+   :param bufsize: Buffer size for fetching rows.
+   :param readonly: Whether to open the index in read-only mode.
+
+Properties
+----------
+
+.. autoapisummary::
+
+   barecat.Index.num_files
+   barecat.Index.num_dirs
+   barecat.Index.total_size
+   barecat.Index.shard_size_limit
+   barecat.Index.num_used_shards
+
+
+Methods
+-------
+
+.. autoapisummary::
+
+   barecat.Index.lookup_file
+   barecat.Index.lookup_dir
+   barecat.Index.lookup
+   barecat.Index.__len__
+   barecat.Index.__iter__
+   barecat.Index.__contains__
+   barecat.Index.isfile
+   barecat.Index.isdir
+   barecat.Index.exists
+   barecat.Index.iter_all_fileinfos
+   barecat.Index.list_direct_fileinfos
+   barecat.Index.list_subdir_dirinfos
+   barecat.Index.iter_direct_fileinfos
+   barecat.Index.iter_subdir_dirinfos
+   barecat.Index.listdir_names
+   barecat.Index.listdir_infos
+   barecat.Index.iterdir_names
+   barecat.Index.iterdir_infos
+   barecat.Index.glob_paths
+   barecat.Index.iterglob_paths
+   barecat.Index.iterglob_infos
+   barecat.Index.walk_infos
+   barecat.Index.walk_names
+   barecat.Index.reverse_lookup
+   barecat.Index.get_last_file
+   barecat.Index.logical_shard_end
+   barecat.Index.add
+   barecat.Index.add_file
+   barecat.Index.add_dir
+   barecat.Index.rename
+   barecat.Index.rename_file
+   barecat.Index.rename_dir
+   barecat.Index.remove_file
+   barecat.Index.remove_files
+   barecat.Index.remove_empty_dir
+   barecat.Index.remove_recursively
+   barecat.Index.chmod
+   barecat.Index.chown
+   barecat.Index.update_mtime
+   barecat.Index.verify_integrity
+   barecat.Index.merge_from_other_barecat
+   barecat.Index.no_triggers
+   barecat.Index.close
+   barecat.Index.optimize
+   barecat.Index.__exit__
+
+
+
+
+
+.. footbibliography::

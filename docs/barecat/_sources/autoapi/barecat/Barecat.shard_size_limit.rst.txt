@@ -1,0 +1,10 @@
+shard_size_limit
+================
+
+.. py:property:: barecat.Barecat.shard_size_limit
+   :type: int
+
+
+   Maximum size of each shard file.
+
+.. footbibliography::

@@ -1,0 +1,14 @@
+scandir
+=======
+
+.. py:method:: barecat.Barecat.scandir(path)
+
+   Iterate over all files and sub directories, as BarecatFileInfo or BarecatDirInfo
+   objects.
+
+   :param path: Path to the directory within the archive.
+
+   :returns: An iterator over BarecatFileInfo or BarecatDirInfo objects.
+
+
+.. footbibliography::

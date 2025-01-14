@@ -1,0 +1,15 @@
+__contains__
+============
+
+.. py:method:: barecat.Barecat.__contains__(path)
+
+   Check if a file with the given path exists in the archive.
+
+   Directories are ignored in this check.
+
+   :param path: Path to the file within the archive.
+
+   :returns: True if the file exists, False otherwise.
+
+
+.. footbibliography::

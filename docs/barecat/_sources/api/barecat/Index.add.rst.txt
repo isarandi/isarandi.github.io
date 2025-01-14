@@ -1,0 +1,13 @@
+add
+===
+
+.. py:method:: barecat.Index.add(info)
+
+   Add a file or directory to the index.
+
+   :param info: File or directory info object.
+
+   :raises FileExistsBarecatError: If the file or directory already exists.
+
+
+.. footbibliography::

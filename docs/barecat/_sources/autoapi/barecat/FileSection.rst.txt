@@ -1,0 +1,50 @@
+FileSection
+===========
+
+.. toctree::
+   :hidden:
+
+   /autoapi/barecat/FileSection.read
+   /autoapi/barecat/FileSection.readinto
+   /autoapi/barecat/FileSection.readall
+   /autoapi/barecat/FileSection.readable
+   /autoapi/barecat/FileSection.writable
+   /autoapi/barecat/FileSection.write
+   /autoapi/barecat/FileSection.readline
+   /autoapi/barecat/FileSection.tell
+   /autoapi/barecat/FileSection.seek
+   /autoapi/barecat/FileSection.close
+   /autoapi/barecat/FileSection.size
+
+.. py:class:: barecat.FileSection(file, start, size, readonly = True)
+
+   Bases: :py:obj:`io.IOBase`
+
+
+   File-like object representing a section of a file.
+
+   :param file: file-like object to read from or write to
+   :param start: start position of the section in the file
+   :param size: size of the section
+   :param readonly: whether the section should be read-only
+
+Methods
+-------
+
+.. autoapisummary::
+
+   barecat.FileSection.read
+   barecat.FileSection.readinto
+   barecat.FileSection.readall
+   barecat.FileSection.readable
+   barecat.FileSection.writable
+   barecat.FileSection.write
+   barecat.FileSection.readline
+   barecat.FileSection.tell
+   barecat.FileSection.seek
+   barecat.FileSection.close
+
+
+
+
+.. footbibliography::

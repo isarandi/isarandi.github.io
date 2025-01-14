@@ -1,0 +1,11 @@
+fill_from_statresult
+====================
+
+.. py:method:: barecat.BarecatEntryInfo.fill_from_statresult(s)
+
+   Fills the metadata information from a stat result, obtained from the file system.
+
+   :param s: stat result object to fill the metadata from
+
+
+.. footbibliography::

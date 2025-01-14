@@ -1,0 +1,10 @@
+num_entries
+===========
+
+.. py:property:: barecat.BarecatDirInfo.num_entries
+   :type: int
+
+
+   Total number of entries in the directory, including subdirectories and files.
+
+.. footbibliography::

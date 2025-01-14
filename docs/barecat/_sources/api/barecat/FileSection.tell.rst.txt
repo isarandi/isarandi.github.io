@@ -1,0 +1,9 @@
+tell
+====
+
+.. py:method:: barecat.FileSection.tell()
+
+   Return current stream position.
+
+
+.. footbibliography::

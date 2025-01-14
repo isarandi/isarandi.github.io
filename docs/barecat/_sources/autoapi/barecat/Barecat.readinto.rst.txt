@@ -1,0 +1,17 @@
+readinto
+========
+
+.. py:method:: barecat.Barecat.readinto(item, buffer, offset=0)
+
+   Read a file into a buffer, starting from an offset within the file.
+
+   Read until either the buffer is full, or the end of the file is reached.
+
+   :param item: Either a BarecatFileInfo object, or a path to a file within the archive.
+   :param buffer: Destination buffer to read the file into.
+   :param offset: Offset within the file to start reading from.
+
+   :returns: Number of bytes read.
+
+
+.. footbibliography::

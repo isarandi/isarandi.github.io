@@ -1,0 +1,13 @@
+NotEnoughSpaceBarecatError
+==========================
+
+.. py:exception:: barecat.exceptions.NotEnoughSpaceBarecatError(message)
+
+   Bases: :py:obj:`BarecatError`
+
+
+   Exception raised when there is not enough space to write a file to the archive
+
+
+
+.. footbibliography::

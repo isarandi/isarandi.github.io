@@ -1,0 +1,14 @@
+chmod
+=====
+
+.. py:method:: barecat.Index.chmod(path, mode)
+
+   Change the mode of a file or directory.
+
+   :param path: Path of the file or directory.
+   :param mode: New mode.
+
+   :raises FileNotFoundBarecatError: If the file or directory is not found.
+
+
+.. footbibliography::

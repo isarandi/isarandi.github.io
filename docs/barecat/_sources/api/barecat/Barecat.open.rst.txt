@@ -1,0 +1,26 @@
+open
+====
+
+.. py:method:: barecat.Barecat.open(item, mode='r')
+
+   Open a file in the archive, as a file-like object.
+
+   :param item: Either a BarecatFileInfo object, or a path to a file within the archive.
+   :param mode: Mode to open the file in, for now only 'r' is supported.
+
+   :returns: File-like object representing the file.
+
+   :raises ValueError: If the mode is not 'r'.
+   :raises FileNotFoundBarecatError: If a file with this path does not exist in the archive.
+
+   .. rubric:: Examples
+
+   >>> bc = Barecat('test.barecat', readonly=False)
+   >>> bc['file.txt'] = b'Hello, world!'
+   >>> with bc.open('file.txt') as f:
+   ...     f.seek(8)
+   ...     print(f.read())
+   b'world!'
+
+
+.. footbibliography::

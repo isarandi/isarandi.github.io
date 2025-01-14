@@ -1,0 +1,13 @@
+isfile
+======
+
+.. py:method:: barecat.Barecat.isfile(path)
+
+   Check if a file exists in the archive.
+
+   :param path: Path to the file within the archive.
+
+   :returns: True if and only if a file exists with the given path.
+
+
+.. footbibliography::

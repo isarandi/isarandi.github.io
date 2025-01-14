@@ -1,0 +1,9 @@
+__iter__
+========
+
+.. py:method:: barecat.Index.__iter__()
+
+   Iterate over all file info objects in the index.
+
+
+.. footbibliography::

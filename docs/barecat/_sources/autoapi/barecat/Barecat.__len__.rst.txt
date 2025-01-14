@@ -1,0 +1,11 @@
+__len__
+=======
+
+.. py:method:: barecat.Barecat.__len__()
+
+   Get the number of files in the archive.
+
+   :returns: Number of files in the archive.
+
+
+.. footbibliography::

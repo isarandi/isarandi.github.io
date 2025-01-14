@@ -1,0 +1,14 @@
+row_factory
+===========
+
+.. py:method:: barecat.BarecatEntryInfo.row_factory(cursor, row)
+   :classmethod:
+
+
+   Factory method for creating instances from SQLite query results.
+
+   :param cursor: SQLite cursor object
+   :param row: row from the query result
+
+
+.. footbibliography::

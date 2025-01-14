@@ -1,0 +1,25 @@
+__setitem__
+===========
+
+.. py:method:: barecat.Barecat.__setitem__(path, content)
+
+   Add a file to the Barecat archive.
+
+   :param path: Path to the file within the archive.
+   :param content: Contents of the file. Either raw bytes, or an object to be encoded based on the
+                   file extension, if ``auto_codec`` was True in the constructor, or if codecs have
+                   been registered for the file extension via ``register_codec``.
+
+   :raises ValueError: If the archive is read-only.
+   :raises FileExistsBarecatError: If a file or directory with the given path already exists in the
+       archive.
+
+   .. rubric:: Examples
+
+   >>> bc = Barecat('test.barecat', readonly=False)
+   >>> bc['file.txt'] = b'Hello, world!'
+   >>> bc['file.txt']
+   b'Hello, world!'
+
+
+.. footbibliography::

@@ -1,0 +1,15 @@
+IsADirectoryBarecatError
+========================
+
+.. py:exception:: barecat.exceptions.IsADirectoryBarecatError(path)
+
+   Bases: :py:obj:`BarecatError`
+
+
+   Exception raised when trying to access a directory as a file.
+
+   :param path: path to the directory
+
+
+
+.. footbibliography::

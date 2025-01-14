@@ -1,0 +1,11 @@
+writable
+========
+
+.. py:method:: barecat.FileSection.writable()
+
+   Return whether object was opened for writing.
+
+   If False, write() will raise OSError.
+
+
+.. footbibliography::

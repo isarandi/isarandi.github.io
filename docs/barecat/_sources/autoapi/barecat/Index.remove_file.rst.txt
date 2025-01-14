@@ -1,0 +1,13 @@
+remove_file
+===========
+
+.. py:method:: barecat.Index.remove_file(item)
+
+   Remove a file from the index.
+
+   :param item: Path of the file or the file info object.
+
+   :raises FileNotFoundBarecatError: If the file is not found.
+
+
+.. footbibliography::

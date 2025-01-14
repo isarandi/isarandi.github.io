@@ -1,0 +1,16 @@
+verify_integrity
+================
+
+.. py:method:: barecat.Barecat.verify_integrity(quick=False)
+
+   Verify the integrity of the Barecat archive.
+
+   This includes checking the CRC32C checksums of all files, and checking the integrity of the
+   index database.
+
+   :param quick: If True, only check the CRC32C checksums of the last file of the archive.
+
+   :returns: True if no problems were found, False otherwise.
+
+
+.. footbibliography::

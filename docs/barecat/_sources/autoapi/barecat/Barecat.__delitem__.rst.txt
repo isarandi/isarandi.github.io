@@ -1,0 +1,25 @@
+__delitem__
+===========
+
+.. py:method:: barecat.Barecat.__delitem__(path)
+
+   Remove a file from the Barecat archive.
+
+   :param path: Path to the file within the archive.
+
+   :raises KeyError: If a file with this path does not exist in the archive.
+
+   .. rubric:: Examples
+
+   >>> bc = Barecat('test.barecat', readonly=False)
+   >>> bc['file.txt'] = b'Hello, world!'
+   >>> bc['file.txt']
+   b'Hello, world!'
+   >>> del bc['file.txt']
+   >>> bc['file.txt']
+   Traceback (most recent call last):
+   ...
+   KeyError: 'file.txt'
+
+
+.. footbibliography::

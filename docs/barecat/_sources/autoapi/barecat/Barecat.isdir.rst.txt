@@ -1,0 +1,13 @@
+isdir
+=====
+
+.. py:method:: barecat.Barecat.isdir(path)
+
+   Check if a directory exists in the archive.
+
+   :param path: Path to the directory within the archive.
+
+   :returns: True if and only if a directory exists with the given path.
+
+
+.. footbibliography::

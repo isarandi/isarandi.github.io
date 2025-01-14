@@ -1,0 +1,18 @@
+iglobfiles
+==========
+
+.. py:method:: barecat.Barecat.iglobfiles(pattern, recursive = False, include_hidden = False)
+
+   Iterate over all files matching a Unix-like glob pattern.
+
+   Like ``iglob``, but only returns files, not directories.
+
+   :param pattern: Unix-like glob pattern to match.
+   :param recursive: If True, search recursively, with ``'/**/'`` matching any number of
+                     directories.
+   :param include_hidden: If True, include hidden files (starting with ``"."``).
+
+   :returns: Iterator over all file paths matching the pattern.
+
+
+.. footbibliography::

@@ -1,0 +1,14 @@
+list_subdir_dirinfos
+====================
+
+.. py:method:: barecat.Index.list_subdir_dirinfos(dirpath, order = Order.ANY)
+
+   List the subdirectory info objects contained in a directory (non-recursively).
+
+   :param dirpath: Path of the directory.
+   :param order: Order in which to list the directories.
+
+   :returns: A list of directory info objects.
+
+
+.. footbibliography::

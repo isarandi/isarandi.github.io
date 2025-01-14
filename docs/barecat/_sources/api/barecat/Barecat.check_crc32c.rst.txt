@@ -1,0 +1,16 @@
+check_crc32c
+============
+
+.. py:method:: barecat.Barecat.check_crc32c(item)
+
+   Check the CRC32C checksum of a file in the archive.
+
+   :param item: Either a BarecatFileInfo object, or a path to a file within the archive.
+
+   :returns: True if the CRC32C checksum of the file matches the expected value or no checksum is
+             stored in the database.
+
+   :raises LookupError: If a file with this path does not exist in the archive.
+
+
+.. footbibliography::

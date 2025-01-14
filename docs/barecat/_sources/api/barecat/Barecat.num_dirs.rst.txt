@@ -1,0 +1,10 @@
+num_dirs
+========
+
+.. py:property:: barecat.Barecat.num_dirs
+   :type: int
+
+
+   The number of directories in the archive.
+
+.. footbibliography::

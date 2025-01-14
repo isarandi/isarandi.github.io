@@ -1,0 +1,13 @@
+physical_shard_end
+==================
+
+.. py:method:: barecat.Barecat.physical_shard_end(shard_number)
+
+   Physical end of a shard, in bytes, that is the end seek position of the shard file.
+
+   :param shard_number: Shard number, index starting from 0.
+
+   :returns: Physical end of the shard, in bytes.
+
+
+.. footbibliography::

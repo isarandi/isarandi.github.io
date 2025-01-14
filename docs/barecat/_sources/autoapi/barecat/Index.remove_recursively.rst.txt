@@ -1,0 +1,13 @@
+remove_recursively
+==================
+
+.. py:method:: barecat.Index.remove_recursively(item)
+
+   Remove a directory and all its contents recursively.
+
+   :param item: Path of the directory or the directory info object.
+
+   :raises FileNotFoundBarecatError: If the directory is not found.
+
+
+.. footbibliography::

@@ -1,0 +1,11 @@
+__iter__
+========
+
+.. py:method:: barecat.Barecat.__iter__()
+
+   Iterate over all file paths in the archive.
+
+   :returns: Iterator over file paths.
+
+
+.. footbibliography::

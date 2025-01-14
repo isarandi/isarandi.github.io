@@ -1,0 +1,13 @@
+isdir
+=====
+
+.. py:method:: barecat.Index.isdir(path)
+
+   Check if a directory exists in the index.
+
+   :param path: Path of the directory. It is normalized before the check.
+
+   :returns: True if a directory with the given path exists, False otherwise.
+
+
+.. footbibliography::

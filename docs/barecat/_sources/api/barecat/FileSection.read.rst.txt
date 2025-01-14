@@ -1,0 +1,13 @@
+read
+====
+
+.. py:method:: barecat.FileSection.read(size = -1)
+
+   Read a from the section, starting from the current position.
+
+   :param size: number of bytes to read, or -1 to read until the end of the section
+
+   :returns: Bytes read from the section.
+
+
+.. footbibliography::

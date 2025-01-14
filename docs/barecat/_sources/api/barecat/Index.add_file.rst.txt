@@ -1,0 +1,13 @@
+add_file
+========
+
+.. py:method:: barecat.Index.add_file(finfo)
+
+   Add a file to the index.
+
+   :param finfo: File info object.
+
+   :raises FileExistsBarecatError: If the file already exists.
+
+
+.. footbibliography::

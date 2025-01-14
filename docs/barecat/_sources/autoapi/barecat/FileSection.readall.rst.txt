@@ -1,0 +1,11 @@
+readall
+=======
+
+.. py:method:: barecat.FileSection.readall()
+
+   Read all remaining bytes from the section.
+
+   :returns: Bytes read from the section.
+
+
+.. footbibliography::

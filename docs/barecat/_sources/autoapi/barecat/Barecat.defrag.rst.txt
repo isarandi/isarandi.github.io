@@ -1,0 +1,11 @@
+defrag
+======
+
+.. py:method:: barecat.Barecat.defrag(quick=False)
+
+   Defragment the Barecat archive.
+
+   :param quick: Perform a faster, but less thorough defragmentation.
+
+
+.. footbibliography::

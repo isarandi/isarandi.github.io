@@ -1,0 +1,9 @@
+optimize
+========
+
+.. py:method:: barecat.Index.optimize()
+
+   Optimize the index.
+
+
+.. footbibliography::

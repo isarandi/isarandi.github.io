@@ -1,0 +1,14 @@
+iter_all_fileinfos
+==================
+
+.. py:method:: barecat.Index.iter_all_fileinfos(order = Order.ANY, bufsize = None)
+
+   Iterate over all file info objects in the index.
+
+   :param order: Order in which to iterate over the files.
+   :param bufsize: Buffer size for fetching rows.
+
+   :returns: An iterator over the file info objects.
+
+
+.. footbibliography::

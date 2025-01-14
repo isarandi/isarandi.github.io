@@ -1,0 +1,21 @@
+iterglob_paths
+==============
+
+.. py:method:: barecat.Index.iterglob_paths(pattern, recursive = False, include_hidden = False, bufsize = None, only_files = False)
+
+   Iterate over paths matching a pattern.
+
+   The glob syntax is equivalent to Python's ``glob.glob``.
+
+   :param pattern: Glob pattern.
+   :param recursive: Whether to glob recursively. If True, the pattern can contain the '/**/'
+                     sequence to match any number of directories.
+   :param include_hidden: Whether to include hidden files and directories (those starting with a
+                          dot).
+   :param bufsize: Buffer size for fetching rows.
+   :param only_files: Whether to glob only files and not directories.
+
+   :returns: An iterator over the paths.
+
+
+.. footbibliography::

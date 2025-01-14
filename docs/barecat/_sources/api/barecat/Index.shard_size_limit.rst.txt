@@ -1,0 +1,11 @@
+shard_size_limit
+================
+
+.. py:property:: barecat.Index.shard_size_limit
+   :type: int
+
+
+   The maximum allowed shard size, in bytes. Upon reaching this limit, a new shard is
+   created.
+
+.. footbibliography::

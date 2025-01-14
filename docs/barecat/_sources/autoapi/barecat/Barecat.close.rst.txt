@@ -1,0 +1,9 @@
+close
+=====
+
+.. py:method:: barecat.Barecat.close()
+
+   Close the Barecat archive.
+
+
+.. footbibliography::

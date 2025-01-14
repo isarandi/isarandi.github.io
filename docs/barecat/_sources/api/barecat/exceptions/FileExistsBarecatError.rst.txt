@@ -1,0 +1,17 @@
+FileExistsBarecatError
+======================
+
+.. py:exception:: barecat.exceptions.FileExistsBarecatError(path)
+
+   Bases: :py:obj:`BarecatError`
+
+
+   Exception raised when trying to create a file that already exists
+
+   Analogous to FileExistsError
+
+   :param path: path to the file that already exists
+
+
+
+.. footbibliography::

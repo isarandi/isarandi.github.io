@@ -1,0 +1,20 @@
+walk_infos
+==========
+
+.. py:method:: barecat.Index.walk_infos(rootitem, bufsize = 32)
+
+   Walk over the directory tree starting from a directory.
+
+   :param rootitem: Directory info object or path of the root directory.
+   :param bufsize: Buffer size for fetching rows.
+
+   :returns: An iterator over tuples of directory info objects, subdirectory info objects, and file
+             info objects.
+
+             The tuples are in the format ``(dirinfo, subdirs, files)``, where
+                 - ``dirinfo`` is the directory info object.
+                 - ``subdirs`` is a list of subdirectory info objects.
+                 - ``files`` is a list of file info objects.
+
+
+.. footbibliography::

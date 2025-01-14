@@ -1,0 +1,11 @@
+dirs
+====
+
+.. py:method:: barecat.Barecat.dirs()
+
+   Iterate over all directory paths in the archive.
+
+   :returns: Iterator over directory paths.
+
+
+.. footbibliography::

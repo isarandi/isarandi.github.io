@@ -1,0 +1,11 @@
+readable
+========
+
+.. py:method:: barecat.FileSection.readable()
+
+   Return whether object was opened for reading.
+
+   If False, read() will raise OSError.
+
+
+.. footbibliography::

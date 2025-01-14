@@ -1,0 +1,16 @@
+write
+=====
+
+.. py:method:: barecat.FileSection.write(data)
+
+   Write data to the section, starting from the current position.
+
+   :param data: data to write to the section
+
+   :returns: Number of bytes written to the section.
+
+   :raises PermissionError: if the section is read-only
+   :raises EOFError: if the write would go past the end of the section
+
+
+.. footbibliography::

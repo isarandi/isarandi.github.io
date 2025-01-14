@@ -1,0 +1,38 @@
+barecat.exceptions
+==================
+
+.. py:module:: barecat.exceptions
+
+.. autoapi-nested-parse::
+
+   Exceptions indicating various errors related to the use of Barecat archives
+
+
+
+Exceptions
+----------
+
+.. toctree::
+   :hidden:
+
+   /api/barecat/exceptions/BarecatError
+   /api/barecat/exceptions/FileExistsBarecatError
+   /api/barecat/exceptions/FileNotFoundBarecatError
+   /api/barecat/exceptions/DirectoryNotEmptyBarecatError
+   /api/barecat/exceptions/IsADirectoryBarecatError
+   /api/barecat/exceptions/BarecatIntegrityError
+   /api/barecat/exceptions/NotEnoughSpaceBarecatError
+
+.. autoapisummary::
+
+   barecat.exceptions.BarecatError
+   barecat.exceptions.FileExistsBarecatError
+   barecat.exceptions.FileNotFoundBarecatError
+   barecat.exceptions.DirectoryNotEmptyBarecatError
+   barecat.exceptions.IsADirectoryBarecatError
+   barecat.exceptions.BarecatIntegrityError
+   barecat.exceptions.NotEnoughSpaceBarecatError
+
+
+
+.. footbibliography::

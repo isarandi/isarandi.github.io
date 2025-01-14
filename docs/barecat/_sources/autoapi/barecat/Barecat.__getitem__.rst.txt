@@ -1,0 +1,24 @@
+__getitem__
+===========
+
+.. py:method:: barecat.Barecat.__getitem__(path)
+
+   Get the contents of a file in the Barecat archive.
+
+   :param path: Path to the file within the archive.
+
+   :returns: The contents of the file. Either raw bytes, or decoded based on the file extension, if
+             ``auto_codec`` was True in the constructor, or
+             if codecs have been registered for the file extension via ``register_codec``.
+
+   :raises KeyError: If a file with this path does not exist in the archive.
+
+   .. rubric:: Examples
+
+   >>> bc = Barecat('test.barecat', readonly=False)
+   >>> bc['file.txt'] = b'Hello, world!'
+   >>> bc['file.txt']
+   b'Hello, world!'
+
+
+.. footbibliography::

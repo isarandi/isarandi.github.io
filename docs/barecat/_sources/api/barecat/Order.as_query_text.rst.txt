@@ -1,0 +1,9 @@
+as_query_text
+=============
+
+.. py:method:: barecat.Order.as_query_text()
+
+   Returns the SQL ORDER BY clause corresponding to the ordering specification.
+
+
+.. footbibliography::

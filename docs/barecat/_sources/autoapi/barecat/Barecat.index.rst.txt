@@ -1,0 +1,10 @@
+index
+=====
+
+.. py:property:: barecat.Barecat.index
+   :type: barecat.core.index.Index
+
+
+   Index object to manipulate the metadata database of the Barecat archive.
+
+.. footbibliography::

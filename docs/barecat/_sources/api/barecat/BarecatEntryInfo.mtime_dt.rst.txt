@@ -1,0 +1,10 @@
+mtime_dt
+========
+
+.. py:property:: barecat.BarecatEntryInfo.mtime_dt
+   :type: Optional[datetime.datetime]
+
+
+   Last modification time as a datetime object.
+
+.. footbibliography::

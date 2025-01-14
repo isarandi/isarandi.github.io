@@ -1,0 +1,9 @@
+close
+=====
+
+.. py:method:: barecat.Index.close()
+
+   Close the index.
+
+
+.. footbibliography::

@@ -1,0 +1,13 @@
+exists
+======
+
+.. py:method:: barecat.Index.exists(path)
+
+   Check if a file or directory exists in the index.
+
+   :param path: Path of the file or directory. It is normalized before the check.
+
+   :returns: True if a file or directory with the given path exists, False otherwise.
+
+
+.. footbibliography::

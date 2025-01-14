@@ -1,0 +1,17 @@
+FileNotFoundBarecatError
+========================
+
+.. py:exception:: barecat.exceptions.FileNotFoundBarecatError(path)
+
+   Bases: :py:obj:`BarecatError`
+
+
+   Exception raised when trying to access a file that does not exist
+
+   Analogous to FileNotFoundError
+
+   :param path: path to the file that does not exist
+
+
+
+.. footbibliography::

@@ -1,0 +1,13 @@
+BarecatError
+============
+
+.. py:exception:: barecat.exceptions.BarecatError(message)
+
+   Bases: :py:obj:`Exception`
+
+
+   Base class for all exceptions in Barecat
+
+
+
+.. footbibliography::

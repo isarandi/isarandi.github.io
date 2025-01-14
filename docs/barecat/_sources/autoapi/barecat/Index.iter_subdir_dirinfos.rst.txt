@@ -1,0 +1,15 @@
+iter_subdir_dirinfos
+====================
+
+.. py:method:: barecat.Index.iter_subdir_dirinfos(diritem, order = Order.ANY, bufsize = None)
+
+   Iterate over the subdirectory info objects contained in a directory (non-recursively).
+
+   :param diritem: Directory info object or path of the directory.
+   :param order: Order in which to iterate over the directories.
+   :param bufsize: Buffer size for fetching rows.
+
+   :returns: An iterator over the directory info objects.
+
+
+.. footbibliography::

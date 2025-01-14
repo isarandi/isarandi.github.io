@@ -1,0 +1,13 @@
+__contains__
+============
+
+.. py:method:: barecat.Index.__contains__(path)
+
+   Check if a file or directory exists in the index.
+
+   :param path: Path of the file or directory.
+
+   :returns: True if the file or directory exists, False otherwise.
+
+
+.. footbibliography::

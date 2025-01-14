@@ -1,0 +1,8 @@
+num_files
+=========
+
+.. py:property:: barecat.Index.num_files
+
+   Number of files in the index.
+
+.. footbibliography::

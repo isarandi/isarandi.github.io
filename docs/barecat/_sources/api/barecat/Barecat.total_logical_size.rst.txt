@@ -1,0 +1,12 @@
+total_logical_size
+==================
+
+.. py:property:: barecat.Barecat.total_logical_size
+   :type: int
+
+
+   Total size of all files in the archive, as determined by the index database.
+
+   :returns: Total size of all files in the archive, in bytes.
+
+.. footbibliography::

@@ -1,0 +1,16 @@
+remove_recursively
+==================
+
+.. py:method:: barecat.Barecat.remove_recursively(item)
+
+   Remove (delete) a directory and all its contents recursively from the archive.
+
+   Technically, file contents are not erased from the shard file at this point, only the
+   corresponding rows in the index database are removed.
+
+   :param item: Either a BarecatDirInfo object, or a path to a directory within the archive.
+
+   :raises FileNotFoundBarecatError: If a directory with this path does not exist in the archive.
+
+
+.. footbibliography::

@@ -1,0 +1,29 @@
+Order
+=====
+
+.. toctree::
+   :hidden:
+
+   /autoapi/barecat/Order.as_query_text
+
+.. py:class:: barecat.Order
+
+   Bases: :py:obj:`enum.Flag`
+
+
+   Ordering specification for file and directory listings.
+
+   The ordering can be by address (shard and offset), path, or random. The order can be ascending
+   or descending. The default order is ANY, which is the order in which SQLite yields rows.
+
+Methods
+-------
+
+.. autoapisummary::
+
+   barecat.Order.as_query_text
+
+
+
+
+.. footbibliography::

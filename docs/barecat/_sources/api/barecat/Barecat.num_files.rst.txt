@@ -1,0 +1,10 @@
+num_files
+=========
+
+.. py:property:: barecat.Barecat.num_files
+   :type: int
+
+
+   The number of files in the archive.
+
+.. footbibliography::

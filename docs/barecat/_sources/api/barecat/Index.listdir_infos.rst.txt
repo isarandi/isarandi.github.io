@@ -1,0 +1,14 @@
+listdir_infos
+=============
+
+.. py:method:: barecat.Index.listdir_infos(diritem, order = Order.ANY)
+
+   List the file and directory info objects in a directory (non-recursively).
+
+   :param diritem: Directory info object or path of the directory.
+   :param order: Order in which to list the files and directories.
+
+   :returns: A list of file and directory info objects.
+
+
+.. footbibliography::

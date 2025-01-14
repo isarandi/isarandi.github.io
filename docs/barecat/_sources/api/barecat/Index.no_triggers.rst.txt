@@ -1,0 +1,9 @@
+no_triggers
+===========
+
+.. py:method:: barecat.Index.no_triggers()
+
+   Context manager to temporarily disable triggers.
+
+
+.. footbibliography::

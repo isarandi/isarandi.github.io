@@ -1,0 +1,16 @@
+get
+===
+
+.. py:method:: barecat.Barecat.get(path, default = None)
+
+   Get the contents of a file in the Barecat archive, with a default value if the file does
+   not exist.
+
+   :param path: Path to the file within the archive.
+   :param default: Default value to return if the file does not exist.
+
+   :returns: The contents of the file (possibly decoded), or the default value if the file does not
+             exist.
+
+
+.. footbibliography::

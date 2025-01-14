@@ -1,0 +1,11 @@
+values
+======
+
+.. py:method:: barecat.Barecat.values()
+
+   Iterate over all file contents in the archive.
+
+   :returns: Iterator over file contents, possibly decoded based on the file extension.
+
+
+.. footbibliography::

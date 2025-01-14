@@ -1,0 +1,9 @@
+__len__
+=======
+
+.. py:method:: barecat.Index.__len__()
+
+   Number of files in the index.
+
+
+.. footbibliography::

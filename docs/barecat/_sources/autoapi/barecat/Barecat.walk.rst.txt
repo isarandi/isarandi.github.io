@@ -1,0 +1,27 @@
+walk
+====
+
+.. py:method:: barecat.Barecat.walk(path)
+
+   Recursively list all files and directories in the tree starting from a directory.
+
+   This is analogous to Python's ``os.walk``.
+
+   :param path: Path to the directory within the archive.
+
+   :returns: Iterator over (dirpath, dirnames, filenames) tuples, where ``dirpath`` is the path to
+             the directory, ``dirnames`` is a list of all subdirectory names, and ``filenames`` is
+             a list of all filenames in the directory.
+
+   .. rubric:: Examples
+
+   >>> bc = Barecat('test.barecat', readonly=False)
+   >>> bc['dir/file.txt'] = b'Hello, world!'
+   >>> bc['dir/subdir/file2.txt'] = b'Hello, world2!'
+   >>> for dirpath, dirnames, filenames in bc.walk('dir'):
+   ...     print(dirpath, dirnames, filenames)
+   dir ['subdir'] ['file.txt']
+   dir/subdir [] ['file2.txt']
+
+
+.. footbibliography::

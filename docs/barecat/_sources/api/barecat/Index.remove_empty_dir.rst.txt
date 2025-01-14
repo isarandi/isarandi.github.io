@@ -1,0 +1,14 @@
+remove_empty_dir
+================
+
+.. py:method:: barecat.Index.remove_empty_dir(item)
+
+   Remove an empty directory from the index.
+
+   :param item: Path of the directory or the directory info object.
+
+   :raises DirectoryNotEmptyBarecatError: If the directory is not empty.
+   :raises FileNotFoundBarecatError: If the directory is not found.
+
+
+.. footbibliography::

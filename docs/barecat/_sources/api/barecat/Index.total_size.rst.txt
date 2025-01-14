@@ -1,0 +1,8 @@
+total_size
+==========
+
+.. py:property:: barecat.Index.total_size
+
+   Total size of all files in the index, in bytes.
+
+.. footbibliography::

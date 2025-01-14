@@ -1,0 +1,14 @@
+listdir_names
+=============
+
+.. py:method:: barecat.Index.listdir_names(diritem, order = Order.ANY)
+
+   List the names of the files and subdirectories in a directory (non-recursively).
+
+   :param diritem: Directory info object or path of the directory.
+   :param order: Order in which to list the files and directories.
+
+   :returns: A list of file and directory names.
+
+
+.. footbibliography::

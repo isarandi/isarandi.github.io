@@ -1,0 +1,14 @@
+logical_shard_end
+=================
+
+.. py:method:: barecat.Index.logical_shard_end(shard)
+
+   Return the logical end offset of a shard, which is the index of a byte immediately after
+   the last byte of the last file in the shard.
+
+   :param shard: Shard number.
+
+   :returns: The logical end offset of the shard.
+
+
+.. footbibliography::

@@ -1,0 +1,15 @@
+rename_file
+===========
+
+.. py:method:: barecat.Index.rename_file(old, new)
+
+   Rename a file in the index.
+
+   :param old: Path of the file or the file info object.
+   :param new: New path.
+
+   :raises FileNotFoundBarecatError: If the file is not found.
+   :raises FileExistsBarecatError: If the new path already exists.
+
+
+.. footbibliography::

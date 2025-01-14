@@ -1,0 +1,14 @@
+rmdir
+=====
+
+.. py:method:: barecat.Barecat.rmdir(item)
+
+   Remove (delete) an empty directory from the archive.
+
+   :param item: Either a BarecatDirInfo object, or a path to a directory within the archive.
+
+   :raises FileNotFoundBarecatError: If a directory with this path does not exist in the archive.
+   :raises DirectoryNotEmptyBarecatError: If the directory is not empty.
+
+
+.. footbibliography::

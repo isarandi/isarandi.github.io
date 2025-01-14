@@ -1,0 +1,66 @@
+register_codec
+==============
+
+.. py:method:: barecat.Barecat.register_codec(exts, encoder, decoder, nonfinal = False)
+
+   Register an encoder and decoder for one or more file extensions.
+
+   This allows automatic encoding and decoding (serialization/deserialization) of files based
+   on their extension, used in the dictionary interface, e.g., :meth:`__getitem__`,
+   :meth:`__setitem__` and :meth:`items` methods.
+
+   If ``auto_codec`` was True in the constructor, then the codecs are already
+   registered by default for the following extensions:
+
+   - ``'.msgpack'``
+   - ``'.jpg'``, ``'.jpeg'``
+   - ``'.pkl'``
+   - ``'.npy'``
+   - ``'.npz'``
+
+
+   :param exts: List of file extensions to register the codec for.
+   :param encoder: Function to encode data into bytes.
+   :param decoder: Function to decode bytes into data.
+   :param nonfinal: If True, other codecs are allowed to be applied afterwards in a nested
+                    manner. This is useful for, e.g., compression codecs.
+
+   .. rubric:: Examples
+
+   Simple text encoding:
+
+   >>> bc = Barecat('test.barecat', readonly=False)
+   >>> def encode(data):
+   ...     return data.encode('utf-8')
+   >>> def decode(data):
+   ...     return data.decode('utf-8')
+   >>> bc.register_codec(['.txt'], encode, decode)
+
+   Or using a codec from a library:
+
+   >>> import cv2
+   >>> bc = Barecat('test.barecat', readonly=False)
+   >>> def encode_png(data):
+   ...     return cv2.imencode('.png', data)[1].tobytes()
+   >>> def decode_png(data):
+   ...     return cv2.imdecode(np.frombuffer(data, np.uint8), cv2.IMREAD_UNCHANGED)
+   >>> bc.register_codec(['.png'], encode_png, decode_png)
+
+   Or using a compression library:
+
+   >>> import zlib
+   >>> bc = Barecat('test.barecat', readonly=False)
+   >>> def encode_zlib(data):
+   ...     return zlib.compress(data)
+   >>> def decode_zlib(data):
+   ...     return zlib.decompress(data)
+   >>> bc.register_codec(['.gz'], encode_zlib, decode_zlib, nonfinal=True)
+
+   Or pickling:
+
+   >>> import pickle
+   >>> bc = Barecat('test.barecat', readonly=False)
+   >>> bc.register_codec(['.pkl'], pickle.dumps, pickle.loads)
+
+
+.. footbibliography::

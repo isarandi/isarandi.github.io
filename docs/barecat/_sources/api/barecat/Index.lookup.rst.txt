@@ -1,0 +1,15 @@
+lookup
+======
+
+.. py:method:: barecat.Index.lookup(path)
+
+   Look up a file or directory by its path.
+
+   :param path: Path of the file or directory.
+
+   :returns: The file or directory info object.
+
+   :raises FileNotFoundBarecatError: If the file or directory is not found.
+
+
+.. footbibliography::

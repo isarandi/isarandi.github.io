@@ -1,0 +1,42 @@
+BarecatDirInfo
+==============
+
+.. toctree::
+   :hidden:
+
+   /autoapi/barecat/BarecatDirInfo.asdict
+   /autoapi/barecat/BarecatDirInfo.num_entries
+   /autoapi/barecat/BarecatDirInfo.fill_from_statresult
+
+.. py:class:: barecat.BarecatDirInfo(path = None, mode = None, uid = None, gid = None, mtime_ns = None, num_subdirs = None, num_files = None, size_tree = None, num_files_tree = None)
+
+   Bases: :py:obj:`barecat.BarecatEntryInfo`
+
+
+   Describes directory information such as path, metadata and statistics.
+
+   This class is used both when retrieving existing directory information and when adding new
+   directories.
+
+   :param path: path to the directory inside the archive
+   :param mode: directory mode, i.e., permissions
+   :param uid: user ID
+   :param gid: group ID
+   :param mtime_ns: last modification time in nanoseconds since the Unix epoch
+   :param num_subdirs: number of subdirectories in the directory
+   :param num_files: number of files in the directory
+   :param size_tree: total size of the directory contents in bytes
+   :param num_files_tree: total number of files in the directory and its subdirectories
+
+Methods
+-------
+
+.. autoapisummary::
+
+   barecat.BarecatDirInfo.asdict
+   barecat.BarecatDirInfo.fill_from_statresult
+
+
+
+
+.. footbibliography::

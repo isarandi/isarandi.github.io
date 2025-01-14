@@ -1,0 +1,14 @@
+logical_shard_end
+=================
+
+.. py:method:: barecat.Barecat.logical_shard_end(shard_number)
+
+   Logical end of a shard, in bytes, that is the position after the last byte of the last
+   file contained in the shard.
+
+   :param shard_number: Shard number, index starting from 0.
+
+   :returns: Logical end of the shard, in bytes.
+
+
+.. footbibliography::

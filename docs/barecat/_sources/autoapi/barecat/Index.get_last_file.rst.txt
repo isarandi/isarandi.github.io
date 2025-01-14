@@ -1,0 +1,14 @@
+get_last_file
+=============
+
+.. py:method:: barecat.Index.get_last_file()
+
+   Return the last file in the index, i.e., the one with the highest offset in the last
+   shard (shard with largest numerical ID).
+
+   :returns: The file info object.
+
+   :raises LookupError: If the index is empty.
+
+
+.. footbibliography::

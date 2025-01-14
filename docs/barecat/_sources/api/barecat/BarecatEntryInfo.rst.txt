@@ -1,0 +1,45 @@
+BarecatEntryInfo
+================
+
+.. toctree::
+   :hidden:
+
+   /api/barecat/BarecatEntryInfo.path
+   /api/barecat/BarecatEntryInfo.mtime_dt
+   /api/barecat/BarecatEntryInfo.update_mtime
+   /api/barecat/BarecatEntryInfo.fill_from_statresult
+   /api/barecat/BarecatEntryInfo.row_factory
+
+.. py:class:: barecat.BarecatEntryInfo(path = None, mode = None, uid = None, gid = None, mtime_ns = None)
+
+   Base class for file and directory information classes.
+
+   :param path: path to the file or directory
+   :param mode: file mode, i.e. permissions
+   :param uid: user ID
+   :param gid: group ID
+   :param mtime_ns: last modification time in nanoseconds since the Unix epoch
+
+Properties
+----------
+
+.. autoapisummary::
+
+   barecat.BarecatEntryInfo.path
+   barecat.BarecatEntryInfo.mtime_dt
+
+
+Methods
+-------
+
+.. autoapisummary::
+
+   barecat.BarecatEntryInfo.update_mtime
+   barecat.BarecatEntryInfo.fill_from_statresult
+   barecat.BarecatEntryInfo.row_factory
+
+
+
+
+
+.. footbibliography::

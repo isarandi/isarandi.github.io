@@ -1,0 +1,14 @@
+total_physical_size_seek
+========================
+
+.. py:property:: barecat.Barecat.total_physical_size_seek
+   :type: int
+
+
+   Total size of all shard files, as determined by seeking to the end of the shard files.
+
+   This is more up-to-date than :meth:`total_physical_size_stat`, but may be slower.
+
+   :returns: Total size of all shard files, in bytes.
+
+.. footbibliography::

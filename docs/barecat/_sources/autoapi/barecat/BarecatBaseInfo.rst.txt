@@ -1,0 +1,16 @@
+BarecatEntryInfo
+===============
+
+.. py:class:: barecat.BarecatEntryInfo(path = None, mode = None, uid = None, gid = None, mtime_ns = None)
+
+   Base class for file and directory information classes.
+
+   :param path: path to the file or directory
+   :param mode: file mode, i.e. permissions
+   :param uid: user ID
+   :param gid: group ID
+   :param mtime_ns: last modification time in nanoseconds since the Unix epoch
+
+
+
+.. footbibliography::

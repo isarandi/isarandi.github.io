@@ -1,0 +1,10 @@
+num_used_shards
+===============
+
+.. py:property:: barecat.Index.num_used_shards
+
+   Number of shards where final, logically empty shards are not counted.
+
+   :returns: The maximum shard number of any file, plus one.
+
+.. footbibliography::

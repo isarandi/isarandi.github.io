@@ -1,0 +1,17 @@
+lookup_file
+===========
+
+.. py:method:: barecat.Index.lookup_file(path, normalized = False)
+
+   Look up a file by its path.
+
+   :param path: Path of the file.
+   :param normalized: Whether the path is already normalized. If False, the path will be
+                      normalized before the lookup.
+
+   :returns: The file info object.
+
+   :raises FileNotFoundBarecatError: If the file is not found.
+
+
+.. footbibliography::

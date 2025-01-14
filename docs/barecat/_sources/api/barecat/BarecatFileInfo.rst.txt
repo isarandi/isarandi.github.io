@@ -1,0 +1,50 @@
+BarecatFileInfo
+===============
+
+.. toctree::
+   :hidden:
+
+   /api/barecat/BarecatFileInfo.asdict
+   /api/barecat/BarecatFileInfo.fill_from_statresult
+   /api/barecat/BarecatFileInfo.end
+
+.. py:class:: barecat.BarecatFileInfo(path = None, mode = None, uid = None, gid = None, mtime_ns = None, shard = None, offset = None, size = None, crc32c = None)
+
+   Bases: :py:obj:`barecat.BarecatEntryInfo`
+
+
+   Describes file information such as path, location in the shards and metadata.
+
+   This class is used both when retrieving existing file information and when adding new files.
+
+   :param path: path to the file inside the archive
+   :param mode: file mode, i.e., permissions
+   :param uid: user ID
+   :param gid: group ID
+   :param mtime_ns: last modification time in nanoseconds since the Unix epoch
+   :param shard: shard number
+   :param offset: offset within the shard in bytes
+   :param size: size of the file in bytes
+   :param crc32c: CRC32C checksum of the file contents
+
+Properties
+----------
+
+.. autoapisummary::
+
+   barecat.BarecatFileInfo.end
+
+
+Methods
+-------
+
+.. autoapisummary::
+
+   barecat.BarecatFileInfo.asdict
+   barecat.BarecatFileInfo.fill_from_statresult
+
+
+
+
+
+.. footbibliography::

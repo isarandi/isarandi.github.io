@@ -1,0 +1,14 @@
+update_mtime
+============
+
+.. py:method:: barecat.Index.update_mtime(path, mtime_ns)
+
+   Update the modification time of a file or directory.
+
+   :param path: Path of the file or directory.
+   :param mtime_ns: New modification time in nanoseconds since the Unix epoch.
+
+   :raises FileNotFoundBarecatError: If the file or directory is not found.
+
+
+.. footbibliography::

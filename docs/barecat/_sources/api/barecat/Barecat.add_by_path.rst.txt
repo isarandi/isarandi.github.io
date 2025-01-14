@@ -1,0 +1,25 @@
+add_by_path
+===========
+
+.. py:method:: barecat.Barecat.add_by_path(filesys_path, store_path = None, dir_exist_ok = False)
+
+   Add a file or directory from the filesystem to the archive.
+
+   :param filesys_path: Path to the file or directory on the filesystem.
+   :param store_path: Path to store the file or directory in the archive. If None, the same path
+                      is used as ``filesys_path``.
+   :param dir_exist_ok: If True, do not raise an error when adding a directory and that
+                        directory already exists in the archive (as a directory).
+
+   :raises ValueError: If the file is larger than the shard size limit.
+   :raises FileExistsBarecatError: If a file or directory with the same path already exists in the
+       archive, unless ``dir_exist_ok`` is True and the item is a directory.
+
+   .. rubric:: Examples
+
+   >>> bc = Barecat('test.barecat', readonly=False)
+   >>> bc.add_by_path('file.txt')
+   >>> bc.add_by_path('dir', store_path='dir2')
+
+
+.. footbibliography::

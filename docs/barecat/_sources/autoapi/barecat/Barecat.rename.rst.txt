@@ -1,0 +1,15 @@
+rename
+======
+
+.. py:method:: barecat.Barecat.rename(old_path, new_path)
+
+   Rename a file or directory in the archive.
+
+   :param old_path: Path to the file or directory to rename.
+   :param new_path: New path for the file or directory.
+
+   :raises FileNotFoundBarecatError: If a file or directory with the old path does not exist.
+   :raises FileExistsBarecatError: If a file or directory with the new path already exists.
+
+
+.. footbibliography::

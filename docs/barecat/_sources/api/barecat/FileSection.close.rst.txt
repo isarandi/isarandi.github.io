@@ -1,0 +1,11 @@
+close
+=====
+
+.. py:method:: barecat.FileSection.close()
+
+   Flush and close the IO object.
+
+   This method has no effect if the file is already closed.
+
+
+.. footbibliography::

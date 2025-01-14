@@ -1,0 +1,8 @@
+num_dirs
+========
+
+.. py:property:: barecat.Index.num_dirs
+
+   Number of directories in the index.
+
+.. footbibliography::

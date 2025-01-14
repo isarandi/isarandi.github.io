@@ -1,0 +1,141 @@
+Barecat
+=======
+
+.. toctree::
+   :hidden:
+
+   /autoapi/barecat/Barecat.__getitem__
+   /autoapi/barecat/Barecat.get
+   /autoapi/barecat/Barecat.items
+   /autoapi/barecat/Barecat.keys
+   /autoapi/barecat/Barecat.values
+   /autoapi/barecat/Barecat.__contains__
+   /autoapi/barecat/Barecat.__len__
+   /autoapi/barecat/Barecat.__iter__
+   /autoapi/barecat/Barecat.__setitem__
+   /autoapi/barecat/Barecat.setdefault
+   /autoapi/barecat/Barecat.__delitem__
+   /autoapi/barecat/Barecat.open
+   /autoapi/barecat/Barecat.exists
+   /autoapi/barecat/Barecat.isfile
+   /autoapi/barecat/Barecat.isdir
+   /autoapi/barecat/Barecat.listdir
+   /autoapi/barecat/Barecat.walk
+   /autoapi/barecat/Barecat.scandir
+   /autoapi/barecat/Barecat.glob
+   /autoapi/barecat/Barecat.globfiles
+   /autoapi/barecat/Barecat.iglob
+   /autoapi/barecat/Barecat.iglobfiles
+   /autoapi/barecat/Barecat.files
+   /autoapi/barecat/Barecat.dirs
+   /autoapi/barecat/Barecat.num_files
+   /autoapi/barecat/Barecat.num_dirs
+   /autoapi/barecat/Barecat.total_size
+   /autoapi/barecat/Barecat.readinto
+   /autoapi/barecat/Barecat.read
+   /autoapi/barecat/Barecat.add_by_path
+   /autoapi/barecat/Barecat.add
+   /autoapi/barecat/Barecat.remove
+   /autoapi/barecat/Barecat.rmdir
+   /autoapi/barecat/Barecat.remove_recursively
+   /autoapi/barecat/Barecat.rename
+   /autoapi/barecat/Barecat.total_physical_size_seek
+   /autoapi/barecat/Barecat.total_physical_size_stat
+   /autoapi/barecat/Barecat.total_logical_size
+   /autoapi/barecat/Barecat.merge_from_other_barecat
+   /autoapi/barecat/Barecat.shard_size_limit
+   /autoapi/barecat/Barecat.logical_shard_end
+   /autoapi/barecat/Barecat.physical_shard_end
+   /autoapi/barecat/Barecat.index
+   /autoapi/barecat/Barecat.check_crc32c
+   /autoapi/barecat/Barecat.verify_integrity
+   /autoapi/barecat/Barecat.register_codec
+   /autoapi/barecat/Barecat.defrag
+   /autoapi/barecat/Barecat.close
+   /autoapi/barecat/Barecat.__enter__
+   /autoapi/barecat/Barecat.__exit__
+
+.. py:class:: barecat.Barecat(path, shard_size_limit = None, readonly = True, overwrite = False, auto_codec = False, exist_ok = True, append_only = False, threadsafe = False, allow_writing_symlinked_shard = False)
+
+   Bases: :py:obj:`collections.abc.MutableMapping`\ [\ :py:obj:`str`\ , :py:obj:`Any`\ ]
+
+
+   Object for reading or writing a Barecat archive.
+
+   A Barecat archive consists of several (large) shard files, each containing the data of multiple
+   small files, and an SQLite index database that maps file paths to the corresponding shard,
+   offset and size within the shard, as well as metadata such as modification time and checksum.
+
+   The ``Barecat`` object provides two main interfaces:
+
+   1. A dict-like interface, where keys are file paths and values are the file contents. The
+        contents can be raw bytes, or automatically decoded based on the file extension, if
+        ``auto_codec`` is set to ``True`` or codecs have been registered via ``register_codec``.
+   2. A filesystem-like interface consisting of methods such as ``open``, ``exists``, ``listdir``,
+        ``walk``, ``glob``, etc., modeled after Python's ``os`` module.
+
+   :param path: Path to the Barecat archive, without the -sqlite-index or -shard-XXXXX suffixes.
+   :param shard_size_limit: Maximum size of each shard file. If None, the shard size is unlimited.
+   :param readonly: If True, the Barecat archive is opened in read-only mode.
+   :param overwrite: If True, the Barecat archive is first deleted if it already exists.
+   :param auto_codec: If True, automatically encode/decode files based on their extension.
+   :param exist_ok: If True, do not raise an error if the Barecat archive already exists.
+   :param append_only: If True, only allow appending to the Barecat archive.
+   :param threadsafe: If True, the Barecat archive is opened in thread-safe mode, where each thread
+                      or process will hold its own database connection and file handles for the shards.
+   :param allow_writing_symlinked_shard: If True, allow writing to a shard file that is a symlink.
+                                         Setting it to False is recommended, since changing the contents of a symlinked shard
+                                         will bring the original index database out of sync with the actual shard contents.
+
+Methods
+-------
+
+.. autoapisummary::
+
+   barecat.Barecat.__getitem__
+   barecat.Barecat.get
+   barecat.Barecat.items
+   barecat.Barecat.keys
+   barecat.Barecat.values
+   barecat.Barecat.__contains__
+   barecat.Barecat.__len__
+   barecat.Barecat.__iter__
+   barecat.Barecat.__setitem__
+   barecat.Barecat.setdefault
+   barecat.Barecat.__delitem__
+   barecat.Barecat.open
+   barecat.Barecat.exists
+   barecat.Barecat.isfile
+   barecat.Barecat.isdir
+   barecat.Barecat.listdir
+   barecat.Barecat.walk
+   barecat.Barecat.scandir
+   barecat.Barecat.glob
+   barecat.Barecat.globfiles
+   barecat.Barecat.iglob
+   barecat.Barecat.iglobfiles
+   barecat.Barecat.files
+   barecat.Barecat.dirs
+   barecat.Barecat.readinto
+   barecat.Barecat.read
+   barecat.Barecat.add_by_path
+   barecat.Barecat.add
+   barecat.Barecat.remove
+   barecat.Barecat.rmdir
+   barecat.Barecat.remove_recursively
+   barecat.Barecat.rename
+   barecat.Barecat.merge_from_other_barecat
+   barecat.Barecat.logical_shard_end
+   barecat.Barecat.physical_shard_end
+   barecat.Barecat.check_crc32c
+   barecat.Barecat.verify_integrity
+   barecat.Barecat.register_codec
+   barecat.Barecat.defrag
+   barecat.Barecat.close
+   barecat.Barecat.__enter__
+   barecat.Barecat.__exit__
+
+
+
+
+.. footbibliography::

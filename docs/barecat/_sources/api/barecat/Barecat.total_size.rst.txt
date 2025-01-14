@@ -1,0 +1,10 @@
+total_size
+==========
+
+.. py:property:: barecat.Barecat.total_size
+   :type: int
+
+
+   The total size of all files in the archive, in bytes.
+
+.. footbibliography::

@@ -1,0 +1,26 @@
+glob
+====
+
+.. py:method:: barecat.Barecat.glob(pattern, recursive = False, include_hidden = False)
+
+   Find all files and directories matching a Unix-like glob pattern.
+
+   This function is equivalent to Python's :py:func:`glob.glob`.
+
+   :param pattern: Unix-like glob pattern to match.
+   :param recursive: If True, search recursively, with ``'/**/'`` matching any number of
+                     directories.
+   :param include_hidden: If True, include hidden files and directories (starting with ``"."``).
+
+   :returns: List of all file and directory paths matching the pattern.
+
+   .. rubric:: Examples
+
+   >>> bc = Barecat('test.barecat', readonly=False)
+   >>> bc['dir/file.txt'] = b'Hello, world!'
+   >>> bc['dir/subdir/file2.txt'] = b'Hello, world2!'
+   >>> bc.glob('dir/**/*.txt', recursive=True)
+   ['dir/file.txt', 'dir/subdir/file2.txt']
+
+
+.. footbibliography::

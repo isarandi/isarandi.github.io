@@ -1,0 +1,15 @@
+readinto
+========
+
+.. py:method:: barecat.FileSection.readinto(buffer)
+
+   Read bytes into a buffer from the section, starting from the current position.
+
+   Will read up to the length of the buffer or until the end of the section.
+
+   :param buffer: destination buffer to read into
+
+   :returns: Number of bytes read into the buffer.
+
+
+.. footbibliography::

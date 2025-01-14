@@ -1,0 +1,8 @@
+path
+====
+
+.. py:property:: barecat.BarecatEntryInfo.path
+
+   Path to the file or directory. The path is normalized on assignment.
+
+.. footbibliography::

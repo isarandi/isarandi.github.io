@@ -1,0 +1,15 @@
+DirectoryNotEmptyBarecatError
+=============================
+
+.. py:exception:: barecat.exceptions.DirectoryNotEmptyBarecatError(path)
+
+   Bases: :py:obj:`BarecatError`
+
+
+   Exception raised when trying to delete a non-empty directory
+
+   :param path: path to the non-empty directory
+
+
+
+.. footbibliography::

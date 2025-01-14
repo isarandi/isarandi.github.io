@@ -1,0 +1,9 @@
+__enter__
+=========
+
+.. py:method:: barecat.Barecat.__enter__()
+
+   Enter a context manager.
+
+
+.. footbibliography::

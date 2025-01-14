@@ -1,0 +1,11 @@
+fill_from_statresult
+====================
+
+.. py:method:: barecat.BarecatDirInfo.fill_from_statresult(s)
+
+   Fills the directory metadata information from a stat result, from the file system.
+
+   :param s: stat result object to fill the metadata from
+
+
+.. footbibliography::

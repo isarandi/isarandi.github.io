@@ -1,0 +1,16 @@
+reverse_lookup
+==============
+
+.. py:method:: barecat.Index.reverse_lookup(shard, offset)
+
+   Look up a file by its shard and offset.
+
+   :param shard: Shard number.
+   :param offset: Offset within the shard.
+
+   :returns: The file info object.
+
+   :raises FileNotFoundBarecatError: If the file is not found.
+
+
+.. footbibliography::

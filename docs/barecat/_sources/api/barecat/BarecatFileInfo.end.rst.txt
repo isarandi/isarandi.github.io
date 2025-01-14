@@ -1,0 +1,10 @@
+end
+===
+
+.. py:property:: barecat.BarecatFileInfo.end
+   :type: int
+
+
+   End position of the file in the shard.
+
+.. footbibliography::
