@@ -12,7 +12,7 @@ from_array
    foreground and less than 128 are considered background.
 
    If `mask_array` is C contiguous, a transpose has to take place since the internal RLE
-   format encodecs the mask in Fortran order. If `is_sparse` is set to True, the transpose,
+   format encodes the mask in Fortran order. If `is_sparse` is set to True, the transpose,
    if necessary, will be performed in RLE format, otherwise it will be performed in dense
    array format.
 

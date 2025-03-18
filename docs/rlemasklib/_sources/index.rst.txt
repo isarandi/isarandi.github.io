@@ -70,6 +70,8 @@ Boolean Operations on Masks
 
 .. code-block:: python
 
+    from rlemasklib import RLEMask
+
     mask1 = RLEMask.from_array(np.array([
         [1, 0, 1],
         [0, 1, 0],

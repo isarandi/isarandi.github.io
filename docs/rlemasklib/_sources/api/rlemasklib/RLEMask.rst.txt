@@ -96,14 +96,26 @@ RLEMask
    /api/rlemasklib/RLEMask.iou
    /api/rlemasklib/RLEMask.iou_matrix
 
-.. py:class:: rlemasklib.RLEMask(/, obj, *, shape = None)
+.. py:class:: rlemasklib.RLEMask(obj, *, shape = None)
 
    Run-length encoded mask.
 
-   :param shape: [height, width] of the mask
-   :param counts: the run-length counts of the mask, as a list of integers or a numpy array,
-                  where odd-indexed elements are runs of 0s and even-indexed elements are runs of 1s.
-                  The sum of the counts must be equal to height * width.
+   The RLEMask class represents a binary mask using run-length encoding. The mask can be
+   created from a dense array, a bounding box, a polygon, or a circle, or from run-length
+   counts. The mask can be manipulated using set operations like union, intersection, and
+   difference, and can be converted to a dense array. Morphological operations, warping,
+   transpose, flipping, cropping, padding, connected components, and other operations are
+   also supported.
+
+   The main constructor can take a dense array, a dictionary, or a list of run-length counts.
+
+   It is recommended to use the static factory methods :meth:`from_array`, :meth:`from_dict`,
+   :meth:`from_counts`, :meth:`from_bbox`, :meth:`from_polygon`, :meth:`zeros`, and :meth:`ones`
+   to create new RLEMask objects, as they are more explicit.
+
+   :param obj: the input object to create the mask from. It can be a dense 2D array, a dictionary, or
+               a list/1D-array of run-length counts.
+   :param shape: [height, width] of the mask, in case the input is a list of run-length counts.
 
 Properties
 ----------
