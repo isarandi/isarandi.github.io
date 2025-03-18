@@ -1,0 +1,13 @@
+zeros_like
+==========
+
+.. py:function:: rlemasklib.rlemasklib.zeros_like(mask)
+
+   Create an empty (fully background) RLE mask of the same size as the input mask.
+
+   :param mask: an RLE mask dictionary
+
+   :returns: A fully-background RLE mask dictionary.
+
+
+.. footbibliography::

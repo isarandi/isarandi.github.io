@@ -1,0 +1,26 @@
+encode
+======
+
+.. py:function:: rlemasklib.encode(mask, compressed = True, zlevel = None, batch_first=False)
+
+   Encode binary mask into a compressed RLE.
+
+   :param mask: a binary mask (numpy 2D array of any type, where zero is background and nonzero
+                is foreground)
+   :param compressed: whether to compress the RLE using the LEB128-like algorithm from COCO (and
+                      potentially zlib afterwards).
+   :param zlevel: zlib compression level. None means no zlib compression, numbers up to 9 are
+                  increasing zlib compression
+                  levels and -1 is the default level in zlib. It has no effect if compressed=False.
+
+   :returns:
+
+             An encoded RLE dictionary with a size key
+                 - ``"size"`` -- (height, width) of the mask,
+             and one of the following
+                 - ``"ucounts"`` -- uncompressed run-length counts
+                 - ``"counts"`` -- LEB128-like compressed run-length counts
+                 - ``"zcounts"`` -- zlib-compressed LEB128-like compressed run-length counts
+
+
+.. footbibliography::

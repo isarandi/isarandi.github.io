@@ -1,0 +1,24 @@
+dilate2
+=======
+
+.. py:function:: rlemasklib.dilate2(rle)
+
+   Dilate a mask with a round 5x5 kernel.
+
+   The kernel is 0 in the four corners, otherwise 1.
+
+   ::
+
+       0 1 1 1 0
+       1 1 1 1 1
+       1 1 1 1 1
+       1 1 1 1 1
+       0 1 1 1 0
+
+
+   :param rle: an RLE mask dictionary
+
+   :returns: An RLE mask dictionary of the dilated mask.
+
+
+.. footbibliography::

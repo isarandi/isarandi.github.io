@@ -1,0 +1,35 @@
+make_merge_function
+===================
+
+.. py:method:: rlemasklib.RLEMask.make_merge_function(func, arity = None)
+   :staticmethod:
+
+
+   Create a merge function from a custom n-ary boolean function.
+
+   This first calls func with all combinations of n boolean arguments and stores the resulting
+   truth table.
+   It then returns a function that takes n masks and merges them using the truth table.
+
+   :param func: a callable that takes n bools and returns a bool
+   :param arity: the number of arguments to the function (default: None, which is determined
+                 automatically)
+
+   :returns: A callable that takes masks and returns the merged mask.
+
+   .. rubric:: Examples
+
+   >>> mergefun = RLEMask.make_merge_function(lambda a, b, c: (a | b) & ~c)
+   >>> rle1 = RLEMask(np.eye(3))
+   >>> rle2 = RLEMask(np.eye(3)[::-1])
+   >>> rle3 = RLEMask(np.eye(3, k=-1))
+   >>> rle = mergefun(rle1, rle2, rle3)
+   >>> np.array(rle)
+   array([[1, 0, 0],
+          [0, 0, 0],
+          [0, 0, 1]], dtype=uint8)
+
+   .. seealso:: :meth:`merge_many_custom`
+
+
+.. footbibliography::

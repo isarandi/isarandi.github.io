@@ -1,0 +1,10 @@
+centroid
+========
+
+.. py:property:: rlemasklib.oop.RLEMask.centroid
+   :type: numpy.ndarray
+
+
+   The centroid of the mask, as a numpy float32 array [x, y].
+
+.. footbibliography::

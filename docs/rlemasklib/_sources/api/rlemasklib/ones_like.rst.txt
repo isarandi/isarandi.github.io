@@ -1,0 +1,13 @@
+ones_like
+=========
+
+.. py:function:: rlemasklib.ones_like(mask)
+
+   Create a full (fully foreground) RLE mask of the same size as the input mask.
+
+   :param mask: an RLE mask dictionary
+
+   :returns: A fully-foreground RLE mask dictionary.
+
+
+.. footbibliography::

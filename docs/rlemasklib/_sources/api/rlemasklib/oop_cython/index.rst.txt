@@ -1,0 +1,13 @@
+rlemasklib.oop_cython
+=====================
+
+.. py:module:: rlemasklib.oop_cython
+
+.. autoapi-nested-parse::
+
+   Stub file for oop_cython module
+
+
+
+
+.. footbibliography::

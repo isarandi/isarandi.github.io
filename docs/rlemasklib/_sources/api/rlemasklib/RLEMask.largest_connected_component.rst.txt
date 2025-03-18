@@ -1,0 +1,18 @@
+largest_connected_component
+===========================
+
+.. py:method:: rlemasklib.RLEMask.largest_connected_component(connectivity = 4, inplace = False)
+
+   Extract the largest connected component of the mask.
+
+   :param connectivity: 4 or 8, the connectivity of the components. If 4, then only horizontal
+                        and vertical connections are considered, if 8, then also diagonal connections are
+                        considered.
+   :param inplace: whether to perform the operation in place or to return a new object
+
+   :returns: An RLEMask object representing the largest connected component of this mask.
+
+   .. seealso:: :meth:`connected_components`, :meth:`remove_small_components`
+
+
+.. footbibliography::

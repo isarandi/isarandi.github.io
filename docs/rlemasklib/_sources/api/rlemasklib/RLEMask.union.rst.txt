@@ -1,0 +1,17 @@
+union
+=====
+
+.. py:method:: rlemasklib.RLEMask.union(masks)
+   :staticmethod:
+
+
+   Return a mask where each pixel is set if at least one of the input masks has the pixel set.
+
+   :param masks: a list of RLEMask objects
+
+   :returns: A new RLEMask object representing the union of the masks.
+
+   .. seealso:: :meth:`__or__`, which provides the union as the `|` operator.
+
+
+.. footbibliography::

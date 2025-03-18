@@ -1,0 +1,13 @@
+avg_pool2x2
+===========
+
+.. py:method:: rlemasklib.RLEMask.avg_pool2x2()
+
+   Average-pool the mask by a factor of 2.
+
+   :returns: A new RLEMask object representing the average-pooled mask.
+
+   .. seealso:: :meth:`avg_pool2d_valid`
+
+
+.. footbibliography::

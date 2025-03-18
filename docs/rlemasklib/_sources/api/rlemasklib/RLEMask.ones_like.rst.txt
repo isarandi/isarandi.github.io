@@ -1,0 +1,19 @@
+ones_like
+=========
+
+.. py:method:: rlemasklib.RLEMask.ones_like(mask)
+   :staticmethod:
+
+
+   Create a new RLE mask of ones with the same shape as another mask.
+
+   :param mask: any other object with a mask.shape[0] and mask.shape[1]
+                (e.g., RLEMask, NumPy array)
+
+   :returns:
+
+             A new RLEMask object representing a mask of ones with the same shape as the input
+                 mask.
+
+
+.. footbibliography::

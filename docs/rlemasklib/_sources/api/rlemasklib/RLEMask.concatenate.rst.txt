@@ -1,0 +1,18 @@
+concatenate
+===========
+
+.. py:method:: rlemasklib.RLEMask.concatenate(masks, axis = 0)
+   :staticmethod:
+
+
+   Concatenate masks along an axis.
+
+   :param masks: a sequence of RLE masks
+   :param axis: the axis along which to concatenate (0 or 1)
+
+   :returns: A new RLEMask object representing the concatenated masks.
+
+   .. seealso:: :meth:`hconcat`, :meth:`vconcat`
+
+
+.. footbibliography::

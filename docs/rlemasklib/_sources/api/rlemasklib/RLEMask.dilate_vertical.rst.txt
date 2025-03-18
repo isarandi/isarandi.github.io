@@ -1,0 +1,18 @@
+dilate_vertical
+===============
+
+.. py:method:: rlemasklib.RLEMask.dilate_vertical(up = 0, down = 0, inplace = False)
+
+   Dilate the mask vertically.
+
+   Every foreground pixel causes a given number of its upper and lower neighbors to be set as
+   foreground.
+
+   :param up: the number of pixels to dilate upwards
+   :param down: the number of pixels to dilate downwards
+   :param inplace: whether to perform the operation in place or to return a new object
+
+   :returns: The RLEMask object representing the dilated mask (self if inplace=True)
+
+
+.. footbibliography::

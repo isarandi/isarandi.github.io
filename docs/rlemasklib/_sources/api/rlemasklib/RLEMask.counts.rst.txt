@@ -1,0 +1,12 @@
+counts
+======
+
+.. py:property:: rlemasklib.RLEMask.counts
+   :type: numpy.ndarray
+
+
+   The run-length counts of the mask, as a copy of the underlying data.
+
+   :returns: A numpy array of the run-length counts as integers.
+
+.. footbibliography::

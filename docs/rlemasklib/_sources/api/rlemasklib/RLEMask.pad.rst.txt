@@ -1,0 +1,21 @@
+pad
+===
+
+.. py:method:: rlemasklib.RLEMask.pad(top, bottom, left, right, border_type='constant', value = 0, inplace=False)
+
+   Pad the mask with constant values.
+
+   :param top: the number of pixels to pad on the top
+   :param bottom: the number of pixels to pad on the bottom
+   :param left: the number of pixels to pad on the left
+   :param right: the number of pixels to pad on the right
+   :param border_type: either 'constant', 'replicate', or 'edge'
+   :param value: the value to pad with (0 or 1), only used when border_type='constant'
+   :param inplace: whether to perform the operation in place or to return a new object
+
+   :returns: An RLEMask object representing the padded mask.
+
+   .. seealso:: :meth:`crop`, :meth:`shift`
+
+
+.. footbibliography::

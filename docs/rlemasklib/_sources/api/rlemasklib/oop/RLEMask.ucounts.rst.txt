@@ -1,0 +1,10 @@
+ucounts
+=======
+
+.. py:property:: rlemasklib.oop.RLEMask.ucounts
+   :type: numpy.ndarray
+
+
+   The uncompressed run-length counts (column-major), as a numpy integer array.
+
+.. footbibliography::

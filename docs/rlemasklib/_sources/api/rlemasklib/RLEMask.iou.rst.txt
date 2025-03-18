@@ -1,0 +1,15 @@
+iou
+===
+
+.. py:method:: rlemasklib.RLEMask.iou(other)
+
+   Compute the intersection-over-union (IoU) between two masks.
+
+   :param other: another RLE mask
+
+   :returns: The IoU value between the two masks.
+
+   .. seealso:: :meth:`iou_matrix` for computing the IoU between pairs of multiple masks.
+
+
+.. footbibliography::

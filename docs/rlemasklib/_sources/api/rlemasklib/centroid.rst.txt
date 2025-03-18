@@ -1,0 +1,13 @@
+centroid
+========
+
+.. py:function:: rlemasklib.centroid(rleObjs)
+
+   Compute the foreground centroid for a mask or multiple masks.
+
+   :param rleObjs: either a single RLE or a list of RLEs
+
+   :returns: A scalar if input was a single RLE, otherwise a list of scalars.
+
+
+.. footbibliography::

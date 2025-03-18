@@ -1,0 +1,17 @@
+from_polygon
+============
+
+.. py:method:: rlemasklib.RLEMask.from_polygon(poly, imshape=None, imsize=None)
+   :staticmethod:
+
+
+   Create an RLEMask object from a polygon.
+
+   :param poly: a polygon (list of xy coordinates)
+   :param imshape: [height, width] of the desired mask (either this or imsize must be provided)
+   :param imsize: [width, height] of the desired mask (either this or imshape must be provided)
+
+   :returns: An RLEMask object representing the input polygon (1 inside the polygon, 0 outside).
+
+
+.. footbibliography::

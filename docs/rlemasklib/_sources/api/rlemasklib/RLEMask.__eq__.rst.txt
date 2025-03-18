@@ -1,0 +1,11 @@
+__eq__
+======
+
+.. py:method:: rlemasklib.RLEMask.__eq__(other)
+
+   Check if two RLE masks are equal (same runlengths and shape).
+
+   :returns: True if the masks are equal, False otherwise.
+
+
+.. footbibliography::

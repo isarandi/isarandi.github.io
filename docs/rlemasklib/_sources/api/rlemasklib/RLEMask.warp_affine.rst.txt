@@ -1,0 +1,19 @@
+warp_affine
+===========
+
+.. py:method:: rlemasklib.RLEMask.warp_affine(M, output_imshape)
+
+   Apply an affine warping transformation to the mask.
+
+   The transformation matrix M should be the forward transformation, i.e. the output
+   location of an input pixel is calculated as `x_out = M @ x_in_homogeneous`.
+
+   :param M: the affine transformation matrix as a 2x3 or 3x3 numpy array
+   :param output_imshape: the shape of the output image as (height, width)
+
+   :returns: A new RLEMask object representing the warped mask.
+
+   .. seealso:: :meth:`warp_perspective`, :meth:`warp_distorted`
+
+
+.. footbibliography::

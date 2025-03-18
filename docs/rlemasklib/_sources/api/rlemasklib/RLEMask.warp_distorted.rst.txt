@@ -1,0 +1,12 @@
+warp_distorted
+==============
+
+.. py:method:: rlemasklib.RLEMask.warp_distorted(R1, R2, K1, K2, d1, d2, polar_ud1, polar_ud2, output_imshape)
+
+   [Experimental] Warp the mask according to changing lens-distorted camera parameters
+
+   This function supports OpenCV-like lens distortion parameters. API design and documentation
+   is subject to change.
+
+
+.. footbibliography::

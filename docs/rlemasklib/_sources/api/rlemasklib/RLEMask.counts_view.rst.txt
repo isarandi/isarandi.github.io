@@ -1,0 +1,14 @@
+counts_view
+===========
+
+.. py:property:: rlemasklib.RLEMask.counts_view
+   :type: numpy.ndarray
+
+
+   The run-length counts of the mask, as a direct view of the underlying memory.
+
+   Modifications to the returned array will affect the mask.
+
+   :returns: An array view of the run-length counts.
+
+.. footbibliography::

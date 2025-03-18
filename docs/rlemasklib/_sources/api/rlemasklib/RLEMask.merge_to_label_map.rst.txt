@@ -1,0 +1,17 @@
+merge_to_label_map
+==================
+
+.. py:method:: rlemasklib.RLEMask.merge_to_label_map(rles)
+   :staticmethod:
+
+
+   Merge a list of RLE masks to a label map indicating which masks contains each pixel.
+
+   That is, the output is an integer-valued numpy array containg for each pixel the (index+1)
+   of the mask that has the pixel set, or 0 if no mask has the pixel set.
+
+   If multiple masks have the pixel set, the index of the last among the input masks will
+   be used in the output.
+
+
+.. footbibliography::

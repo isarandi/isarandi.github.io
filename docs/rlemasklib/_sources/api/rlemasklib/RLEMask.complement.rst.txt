@@ -1,0 +1,15 @@
+complement
+==========
+
+.. py:method:: rlemasklib.RLEMask.complement(inplace = False)
+
+   Compute the complement of an RLE mask.
+
+   :param inplace: whether to perform the operation in place or to return a new object
+
+   :returns: The RLEMask object representing the complement of the mask (self if inplace=True)
+
+   .. seealso:: :meth:`__invert__`, which provides the complement as the `~` operator.
+
+
+.. footbibliography::

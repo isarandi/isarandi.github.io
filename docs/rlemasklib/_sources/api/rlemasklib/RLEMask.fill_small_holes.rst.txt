@@ -1,0 +1,17 @@
+fill_small_holes
+================
+
+.. py:method:: rlemasklib.RLEMask.fill_small_holes(min_size = 1, connectivity = 4, inplace = False)
+
+   Fill small holes (i.e., connected components of the background) in the mask.
+
+   :param min_size: the minimum size of a hole to keep. Smaller holes are filled.
+   :param connectivity: 4 or 8, the neighborhood connectivity of the components
+   :param inplace: whether to perform the operation in place or to return a new object
+
+   :returns: A new RLEMask object with small holes filled.
+
+   .. seealso:: :meth:`remove_small_components`
+
+
+.. footbibliography::

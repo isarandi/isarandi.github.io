@@ -1,0 +1,15 @@
+shift
+=====
+
+.. py:method:: rlemasklib.RLEMask.shift(offset, border_value = 0, inplace = False)
+
+   Shift (translate) the mask by an offset vector.
+
+   :param offset: the offset vector [dy, dx]
+   :param border_value: the value to pad with (0 or 1)
+   :param inplace: whether to perform the operation in place or to return a new object
+
+   :returns: The RLEMask object representing the shifted mask (self if inplace=True)
+
+
+.. footbibliography::

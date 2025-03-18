@@ -1,0 +1,20 @@
+merge_count
+===========
+
+.. py:method:: rlemasklib.RLEMask.merge_count(masks, threshold)
+   :staticmethod:
+
+
+   Return a mask where each pixel is set if and only if at least `threshold` of the
+   input masks have that pixel set.
+
+   For example, if ``threshold`` is set as half the number of masks, then the result will
+   be the majority vote of the masks.
+
+   :param masks: a list of RLEMask objects
+   :param threshold: the threshold for merging
+
+   :returns: A new RLEMask object representing the merged mask.
+
+
+.. footbibliography::

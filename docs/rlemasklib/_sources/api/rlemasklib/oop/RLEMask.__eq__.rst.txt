@@ -1,0 +1,11 @@
+__eq__
+======
+
+.. py:method:: rlemasklib.oop.RLEMask.__eq__(other)
+
+   Check if two RLE masks are semantically equal.
+
+   :returns: True if the two masks would produce the same binary mask when decoded, False otherwise.
+
+
+.. footbibliography::

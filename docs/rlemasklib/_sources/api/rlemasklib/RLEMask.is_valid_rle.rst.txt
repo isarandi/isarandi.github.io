@@ -1,0 +1,13 @@
+is_valid_rle
+============
+
+.. py:method:: rlemasklib.RLEMask.is_valid_rle()
+
+   Check if the RLE mask is valid (no nonfirst zero runs and runs summing to H*W).
+
+   The RLE mask is valid if it has no zero sized runs except perhaps in the first place,
+   and the sum of the runs is equal to the number of pixels in the mask, as determined
+   by the shape (height, width) of the mask.
+
+
+.. footbibliography::

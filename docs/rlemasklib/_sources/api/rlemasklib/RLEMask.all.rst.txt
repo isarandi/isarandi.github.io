@@ -1,0 +1,9 @@
+all
+===
+
+.. py:method:: rlemasklib.RLEMask.all()
+
+   Check if all pixels in the mask are foreground.
+
+
+.. footbibliography::

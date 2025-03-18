@@ -1,0 +1,14 @@
+pad
+===
+
+.. py:function:: rlemasklib.pad(rleObjs, paddings, value = 0)
+
+   Pad a mask or multiple masks (RLEs) by the given padding amounts.
+
+   :param rleObjs: either a single RLE or a list of RLEs
+   :param paddings: left,right,top,bottom pixel amounts to pad
+
+   :returns: Either a single RLE or a list of RLEs, depending on input type.
+
+
+.. footbibliography::

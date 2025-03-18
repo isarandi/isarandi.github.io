@@ -1,0 +1,17 @@
+hconcat
+=======
+
+.. py:method:: rlemasklib.RLEMask.hconcat(masks)
+   :staticmethod:
+
+
+   Horizontally concatenate masks.
+
+   :param masks: a sequence of RLE masks
+
+   :returns: A new RLEMask object representing the horizontally concatenated masks.
+
+   .. seealso:: :meth:`vconcat`, :meth:`concatenate`
+
+
+.. footbibliography::

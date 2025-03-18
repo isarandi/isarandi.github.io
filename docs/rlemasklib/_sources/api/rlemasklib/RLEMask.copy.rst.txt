@@ -1,0 +1,11 @@
+copy
+====
+
+.. py:method:: rlemasklib.RLEMask.copy()
+
+   Clone the mask.
+
+   :returns: A new RLEMask object representing the same mask.
+
+
+.. footbibliography::

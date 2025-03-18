@@ -1,0 +1,19 @@
+difference
+==========
+
+.. py:function:: rlemasklib.difference(mask1, mask2)
+
+   Compute the difference between two RLE masks.
+
+   This keeps the pixels where mask1 is foreground and mask2 is background.
+
+   :param mask1: an RLE mask dictionary
+   :param mask2: an RLE mask dictionary
+
+   :returns:
+
+             An RLE mask dictionary of the difference, i.e., the mask of pixels where mask1 is
+                 foreground and mask2 is
+
+
+.. footbibliography::

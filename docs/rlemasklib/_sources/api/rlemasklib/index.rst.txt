@@ -1,0 +1,119 @@
+rlemasklib
+==========
+
+.. py:module:: rlemasklib
+
+.. autoapi-nested-parse::
+
+   Library for manipulating masks stored in run-length-encoded format.
+
+   This library is an extended version of the pycocotools library's RLE functions, originally developed by Piotr Dollár and
+   Tsung-Yi Linfor the COCO dataset :footcite:`lin2014coco`.
+
+   There are two ways to use this library:
+
+   1. with global functions, which take RLE masks in a dictionary representation, with the keys 'counts' and 'size'
+   2. with the :class:`RLEMask` class, which is an object-oriented way to manipulate RLE masks
+
+
+
+Classes
+-------
+
+.. toctree::
+   :hidden:
+
+   /api/rlemasklib/RLEMask
+   /api/rlemasklib/BoolFunc
+
+.. autoapisummary::
+
+   rlemasklib.RLEMask
+   rlemasklib.BoolFunc
+
+
+Functions
+---------
+
+.. toctree::
+   :hidden:
+
+   /api/rlemasklib/encode
+   /api/rlemasklib/decode
+   /api/rlemasklib/compress
+   /api/rlemasklib/decompress
+   /api/rlemasklib/ones
+   /api/rlemasklib/zeros
+   /api/rlemasklib/ones_like
+   /api/rlemasklib/zeros_like
+   /api/rlemasklib/full
+   /api/rlemasklib/empty
+   /api/rlemasklib/area
+   /api/rlemasklib/centroid
+   /api/rlemasklib/intersection
+   /api/rlemasklib/union
+   /api/rlemasklib/iou
+   /api/rlemasklib/difference
+   /api/rlemasklib/symmetric_difference
+   /api/rlemasklib/from_bbox
+   /api/rlemasklib/to_bbox
+   /api/rlemasklib/from_polygon
+   /api/rlemasklib/crop
+   /api/rlemasklib/pad
+   /api/rlemasklib/connected_components
+   /api/rlemasklib/largest_connected_component
+   /api/rlemasklib/remove_small_components
+   /api/rlemasklib/fill_small_holes
+   /api/rlemasklib/erode
+   /api/rlemasklib/dilate
+   /api/rlemasklib/opening
+   /api/rlemasklib/closing
+   /api/rlemasklib/erode2
+   /api/rlemasklib/dilate2
+   /api/rlemasklib/opening2
+   /api/rlemasklib/closing2
+   /api/rlemasklib/shift
+   /api/rlemasklib/merge
+
+.. autoapisummary::
+
+   rlemasklib.encode
+   rlemasklib.decode
+   rlemasklib.compress
+   rlemasklib.decompress
+   rlemasklib.ones
+   rlemasklib.zeros
+   rlemasklib.ones_like
+   rlemasklib.zeros_like
+   rlemasklib.full
+   rlemasklib.empty
+   rlemasklib.area
+   rlemasklib.centroid
+   rlemasklib.intersection
+   rlemasklib.union
+   rlemasklib.iou
+   rlemasklib.difference
+   rlemasklib.symmetric_difference
+   rlemasklib.from_bbox
+   rlemasklib.to_bbox
+   rlemasklib.from_polygon
+   rlemasklib.crop
+   rlemasklib.pad
+   rlemasklib.connected_components
+   rlemasklib.largest_connected_component
+   rlemasklib.remove_small_components
+   rlemasklib.fill_small_holes
+   rlemasklib.erode
+   rlemasklib.dilate
+   rlemasklib.opening
+   rlemasklib.closing
+   rlemasklib.erode2
+   rlemasklib.dilate2
+   rlemasklib.opening2
+   rlemasklib.closing2
+   rlemasklib.shift
+   rlemasklib.merge
+
+
+
+.. footbibliography::

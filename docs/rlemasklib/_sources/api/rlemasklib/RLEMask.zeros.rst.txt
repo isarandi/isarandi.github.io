@@ -1,0 +1,15 @@
+zeros
+=====
+
+.. py:method:: rlemasklib.RLEMask.zeros(shape)
+   :staticmethod:
+
+
+   Create a new RLE mask of zeros.
+
+   :param shape: the shape of the mask
+
+   :returns: A new RLEMask object representing a mask of zeros.
+
+
+.. footbibliography::

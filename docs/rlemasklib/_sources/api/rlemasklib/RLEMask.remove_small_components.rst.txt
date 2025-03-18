@@ -1,0 +1,17 @@
+remove_small_components
+=======================
+
+.. py:method:: rlemasklib.RLEMask.remove_small_components(min_size = 1, connectivity = 4, inplace = False)
+
+   Remove small connected components from the mask.
+
+   :param min_size: the minimum size of a component to keep. Small components are removed.
+   :param connectivity: 4 or 8, the neighborhood connectivity of the components
+   :param inplace: whether to perform the operation in place or to return a new object
+
+   :returns: An RLEMask object with small components removed.
+
+   .. seealso:: :meth:`fill_small_holes`
+
+
+.. footbibliography::

@@ -1,0 +1,21 @@
+decompress
+==========
+
+.. py:function:: rlemasklib.rlemasklib.decompress(encoded_mask, only_gzip = False)
+
+   Decompress a compressed RLE mask to a decompressed RLE.
+
+   Note that this does not decode the RLE into a binary mask.
+
+   :param encoded_mask: an RLE mask dictionary
+   :param only_gzip: whether to only decompress the zlib-compression, but not the LEB128-like
+                     compression
+
+   :returns:
+
+             An RLE mask dictionary
+                - ``"size"`` -- [height, width]
+                - ``"ucounts"`` -- uint32 array of uncompressed run-lengths.
+
+
+.. footbibliography::

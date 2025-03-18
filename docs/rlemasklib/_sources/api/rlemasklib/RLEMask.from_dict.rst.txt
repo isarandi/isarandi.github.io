@@ -1,0 +1,20 @@
+from_dict
+=========
+
+.. py:method:: rlemasklib.RLEMask.from_dict(d)
+   :staticmethod:
+
+
+   Create an RLEMask object from an RLE dictionary.
+
+   :param d: RLE dictionary with
+
+             - ``"size"`` -- [height, width] of the mask
+             - ``"counts"`` -- LEB128-like compressed run-length counts as in pycocotools, or
+             - ``"zcounts"`` -- zlib compressed ``"counts"``, or
+             - ``"ucounts"`` -- uncompressed ``"counts"``
+
+   :returns: An RLEMask object representing the input mask.
+
+
+.. footbibliography::

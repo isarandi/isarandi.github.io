@@ -1,0 +1,13 @@
+fliplr
+======
+
+.. py:method:: rlemasklib.RLEMask.fliplr()
+
+   Flip the mask horizontally.
+
+   :returns: An RLEMask object of the horizontally flipped mask.
+
+   .. seealso:: :meth:`flipud`, :meth:`flip`
+
+
+.. footbibliography::

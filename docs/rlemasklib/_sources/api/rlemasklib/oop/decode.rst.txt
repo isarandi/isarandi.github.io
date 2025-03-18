@@ -1,0 +1,13 @@
+decode
+======
+
+.. py:function:: rlemasklib.oop.decode(encoded_mask)
+
+   Decode a (potentially compressed) RLE encoded mask.
+
+   :param encoded_mask: encoded RLE object
+
+   :returns: A binary mask (numpy 2D array of type uint8, where 0 is background and 1 is foreground)
+
+
+.. footbibliography::

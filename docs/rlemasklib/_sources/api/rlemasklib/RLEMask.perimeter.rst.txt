@@ -1,0 +1,11 @@
+perimeter
+=========
+
+.. py:method:: rlemasklib.RLEMask.perimeter()
+
+   The number of pixels along the contour of the mask.
+
+   .. seealso:: :meth:`contour`
+
+
+.. footbibliography::

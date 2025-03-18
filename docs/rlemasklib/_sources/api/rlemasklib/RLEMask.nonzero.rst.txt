@@ -1,0 +1,13 @@
+nonzero
+=======
+
+.. py:method:: rlemasklib.RLEMask.nonzero()
+
+   The indices of the nonzero elements in the mask as a 2D numpy array.
+
+   The array contains the (x, y) coordinates of the foreground pixels as an Ax2 array, where
+   A is the number of foreground pixels (foreground area).
+   The coordinate order is (x, y) or in other words, (column, row).
+
+
+.. footbibliography::

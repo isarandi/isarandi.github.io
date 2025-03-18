@@ -1,0 +1,22 @@
+__iand__
+========
+
+.. py:method:: rlemasklib.RLEMask.__iand__(other)
+
+   Compute the intersection with another RLE mask in place.
+
+   :param other: the other RLE mask
+
+   :returns: Self
+
+   .. rubric:: Examples
+
+   >>> rle1 = RLEMask(np.eye(3))
+   >>> rle2 = RLEMask(np.eye(3)[::-1])
+   >>> np.array(rle1 & rle2)
+   array([[0, 0, 0],
+          [0, 1, 0],
+          [0, 0, 0]], dtype=uint8)
+
+
+.. footbibliography::

@@ -1,0 +1,10 @@
+area
+====
+
+.. py:property:: rlemasklib.oop.RLEMask.area
+   :type: int
+
+
+   The foreground area of the mask, i.e., the number of foreground pixels.
+
+.. footbibliography::

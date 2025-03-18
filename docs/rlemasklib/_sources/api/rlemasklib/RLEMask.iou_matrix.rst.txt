@@ -1,0 +1,18 @@
+iou_matrix
+==========
+
+.. py:method:: rlemasklib.RLEMask.iou_matrix(masks1, masks2)
+   :staticmethod:
+
+
+   Compute the intersection-over-union (IoU) between two sets of masks.
+
+   :param masks1: a sequence of RLE masks
+   :param masks2: a sequence of RLE masks
+
+   :returns: A 2D numpy array of shape (len(masks1), len(masks2)) with the IoU values.
+
+   .. seealso:: :meth:`iou` for computing the IoU between two masks.
+
+
+.. footbibliography::

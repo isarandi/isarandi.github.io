@@ -1,0 +1,13 @@
+max_pool2x2
+===========
+
+.. py:method:: rlemasklib.RLEMask.max_pool2x2(inplace=False)
+
+   Max-pool the mask by a factor of 2.
+
+   :param inplace: whether to perform the operation in place or to return a new object
+
+   :returns: An RLEMask object representing the max-pooled mask.
+
+
+.. footbibliography::

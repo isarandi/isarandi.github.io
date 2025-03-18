@@ -1,0 +1,24 @@
+merge_many
+==========
+
+.. py:method:: rlemasklib.RLEMask.merge_many(masks, func)
+   :staticmethod:
+
+
+   Merge many masks using either the same or different Boolean functions.
+
+   This is a reduce operation from the left, as:
+
+   merge(merge(masks[0], masks[1], func[0]), masks[2], func[1]), ...
+
+   If only one function is provided, it is applied in all steps.
+
+   :param masks: a sequence of RLE masks
+   :param func: a single Boolean function or a sequence of Boolean functions
+
+   :returns: A new RLEMask with the merged result.
+
+   .. seealso:: :meth:`merge_many_custom`, which allows merging with custom n-ary Boolean functions.
+
+
+.. footbibliography::

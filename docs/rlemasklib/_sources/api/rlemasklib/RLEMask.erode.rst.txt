@@ -1,0 +1,21 @@
+erode
+=====
+
+.. py:method:: rlemasklib.RLEMask.erode(kernel_shape='circle', kernel_size=7, inplace=False)
+
+   Erode a mask with a kernel of a given shape and size.
+
+   :param kernel_shape: the shape of the kernel, either 'circle' or 'square'
+   :param kernel_size: the size of the kernel
+   :param inplace: whether to perform the operation in place or to return a new object
+
+   :returns: The RLEMask object representing the eroded mask (self if inplace=True)
+
+   .. seealso::
+
+      :meth:`erode3x3` for a 3x3 kernel.
+      :meth:`erode5x5` for a 5x5 kernel.
+      :meth:`dilate`
+
+
+.. footbibliography::

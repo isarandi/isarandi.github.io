@@ -1,0 +1,17 @@
+symmetric_difference
+====================
+
+.. py:function:: rlemasklib.symmetric_difference(mask1, mask2)
+
+   Compute the symmetric difference between two RLE masks.
+
+   :param mask1: an RLE mask dictionary
+   :param mask2: an RLE mask dictionary
+
+   :returns:
+
+             An RLE mask dictionary of the symmetric difference, i.e., the mask of pixels where either
+                 mask1 or mask2 is foreground but not both.
+
+
+.. footbibliography::

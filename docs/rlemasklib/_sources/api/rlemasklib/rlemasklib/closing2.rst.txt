@@ -1,0 +1,26 @@
+closing2
+========
+
+.. py:function:: rlemasklib.rlemasklib.closing2(rle)
+
+   Compute the closing of a mask with a round 5x5 kernel.
+
+   The kernel is 0 in the four corners, otherwise 1.
+
+   ::
+
+       0 1 1 1 0
+       1 1 1 1 1
+       1 1 1 1 1
+       1 1 1 1 1
+       0 1 1 1 0
+
+
+   The closing is defined as the erosion of the dilation.
+
+   :param rle: an RLE mask dictionary
+
+   :returns: An RLE mask dictionary of the closed mask.
+
+
+.. footbibliography::

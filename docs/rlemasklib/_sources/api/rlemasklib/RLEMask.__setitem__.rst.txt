@@ -1,0 +1,23 @@
+__setitem__
+===========
+
+.. py:method:: rlemasklib.RLEMask.__setitem__(key, value)
+
+   Set the value of a submask to either a constant or another RLE or dense mask.
+
+   :param key: a tuple of two slices, one for height and one for width
+   :param value: either a constant (0 or 1) or another RLE or a numpy mask with the same size
+                 as the submask
+
+   .. rubric:: Examples
+
+   >>> rle = RLEMask.ones((4, 4))
+   >>> rle[1:3, 2:4] = 0
+   >>> np.array(rle)
+   array([[1, 1, 1, 1],
+          [1, 1, 0, 0],
+          [1, 1, 0, 0],
+          [1, 1, 1, 1]], dtype=uint8)
+
+
+.. footbibliography::

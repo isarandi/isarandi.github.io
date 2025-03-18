@@ -1,0 +1,16 @@
+connected_components
+====================
+
+.. py:method:: rlemasklib.oop.RLEMask.connected_components(connectivity = 4, min_size = 1)
+
+   Compute the connected components of the mask.
+
+   :param connectivity: 4 or 8, the connectivity of the components. If 4, then only horizontal
+                        and vertical connections are considered, if 8, then also diagonal connections are
+                        considered.
+   :param min_size: the minimum size of a component to return. Small components are ignored.
+
+   :returns: A list of RLEMask objects, each representing a connected component of this mask.
+
+
+.. footbibliography::

@@ -1,0 +1,21 @@
+avg_pool2d_valid
+================
+
+.. py:method:: rlemasklib.RLEMask.avg_pool2d_valid(kernel_size, stride = (1, 1), threshold = -1)
+
+   Perform a 2D average pooling with the given kernel size and threshold the result.
+
+   This function does not perform any padding and only returns the "valid" part of the
+   pooling, similar to "valid" padding mode in deep learning frameworks as opposed to
+   "same" or "full" padding.
+
+   :param kernel_size: the size of the pooling kernel as two integers
+   :param stride: the stride of the pooling as two integers
+   :param threshold: the result is set to 1 if the pooled result is greater than this value
+
+   :returns: A new RLEMask object representing the pooled and thresholded mask.
+
+   .. seealso:: :meth:`avg_pool2x2`
+
+
+.. footbibliography::

@@ -1,0 +1,13 @@
+any
+===
+
+.. py:function:: rlemasklib.rlemasklib.any(mask)
+
+   Check if any of the pixels in the mask are foreground.
+
+   :param mask: an RLE mask dictionary
+
+   :returns: True if any of the pixels are foreground, False otherwise.
+
+
+.. footbibliography::

@@ -1,0 +1,21 @@
+to_array
+========
+
+.. py:method:: rlemasklib.RLEMask.to_array(value = 1, order='F')
+
+   Convert the RLE mask to a dense 2D uint8 numpy array.
+
+   False (background) values become 0 and True (foreground) values become the specified value.
+   The RLE is internally stored for the Fortran order, so order='F' is faster, because
+   'C' requires a transpose. To improve efficiency, the transpose is done either in RLE or
+   in dense form, depending on the sparseness of the mask.
+
+   :param value: the "True" value to use in the resulting array
+   :param order: the order of the array ('C' for row-major, 'F' for column-major)
+
+   :returns: An F or C-contiguous 2D numpy array of type uint8 representing the mask.
+
+   .. seealso:: :meth:`__array__`, :meth:`from_array`
+
+
+.. footbibliography::

@@ -1,0 +1,27 @@
+largest_interior_rectangle_around
+=================================
+
+.. py:method:: rlemasklib.RLEMask.largest_interior_rectangle_around(center_point, aspect_ratio = None)
+
+   The largest axis-aligned foreground rectangle with a given center point.
+
+   Without `aspect_ratio`, the rectangle will have odd height and odd width and have
+   the pixel at position `center_point` as its central pixel.
+   When aspect_ratio is given, the rectangle may have non-integer dimensions.
+
+   If the output is `r`, the following will hold:
+
+   - ``center_point[0] == r[0] + (r[2]-1) / 2``
+   - ``center_point[1] == r[1] + (r[3]-1) / 2``
+   - ``r[2] / r[3] == aspect_ratio``
+   - the region defined by ``r`` is entirely inside the foreground
+
+   :param center_point: the (x,y) center pixel coordinates of the rectangle
+   :param aspect_ratio: the desired aspect ratio of the rectangle (width/height)
+
+   :returns: An array (x, y, width, height) of the top-left corner and dimensions of the rectangle.
+
+   .. seealso:: :meth:`largest_interior_rectangle` for the largest rectangle without specifying the center point.
+
+
+.. footbibliography::

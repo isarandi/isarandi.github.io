@@ -1,0 +1,76 @@
+RLEMask
+=======
+
+.. toctree::
+   :hidden:
+
+   /api/rlemasklib/oop/RLEMask.from_dict
+   /api/rlemasklib/oop/RLEMask.from_bbox
+   /api/rlemasklib/oop/RLEMask.from_polygon
+   /api/rlemasklib/oop/RLEMask.__getitem__
+   /api/rlemasklib/oop/RLEMask.__setitem__
+   /api/rlemasklib/oop/RLEMask.connected_components
+   /api/rlemasklib/oop/RLEMask.largest_connected_component
+   /api/rlemasklib/oop/RLEMask.remove_small_components
+   /api/rlemasklib/oop/RLEMask.fill_small_holes
+   /api/rlemasklib/oop/RLEMask.__and__
+   /api/rlemasklib/oop/RLEMask.__or__
+   /api/rlemasklib/oop/RLEMask.__xor__
+   /api/rlemasklib/oop/RLEMask.__sub__
+   /api/rlemasklib/oop/RLEMask.__invert__
+   /api/rlemasklib/oop/RLEMask.todict
+   /api/rlemasklib/oop/RLEMask.pad
+   /api/rlemasklib/oop/RLEMask.__eq__
+   /api/rlemasklib/oop/RLEMask.__array__
+   /api/rlemasklib/oop/RLEMask.area
+   /api/rlemasklib/oop/RLEMask.centroid
+   /api/rlemasklib/oop/RLEMask.shape
+   /api/rlemasklib/oop/RLEMask.ucounts
+
+.. py:class:: rlemasklib.oop.RLEMask(array)
+
+   Object-oriented manipulation of masks stored in RLE format.
+
+   :param array: a binary mask (numpy 2D array of any type, where zero is background and nonzero is
+                 foreground)
+
+Properties
+----------
+
+.. autoapisummary::
+
+   rlemasklib.oop.RLEMask.area
+   rlemasklib.oop.RLEMask.centroid
+   rlemasklib.oop.RLEMask.shape
+   rlemasklib.oop.RLEMask.ucounts
+
+
+Methods
+-------
+
+.. autoapisummary::
+
+   rlemasklib.oop.RLEMask.from_dict
+   rlemasklib.oop.RLEMask.from_bbox
+   rlemasklib.oop.RLEMask.from_polygon
+   rlemasklib.oop.RLEMask.__getitem__
+   rlemasklib.oop.RLEMask.__setitem__
+   rlemasklib.oop.RLEMask.connected_components
+   rlemasklib.oop.RLEMask.largest_connected_component
+   rlemasklib.oop.RLEMask.remove_small_components
+   rlemasklib.oop.RLEMask.fill_small_holes
+   rlemasklib.oop.RLEMask.__and__
+   rlemasklib.oop.RLEMask.__or__
+   rlemasklib.oop.RLEMask.__xor__
+   rlemasklib.oop.RLEMask.__sub__
+   rlemasklib.oop.RLEMask.__invert__
+   rlemasklib.oop.RLEMask.todict
+   rlemasklib.oop.RLEMask.pad
+   rlemasklib.oop.RLEMask.__eq__
+   rlemasklib.oop.RLEMask.__array__
+
+
+
+
+
+.. footbibliography::

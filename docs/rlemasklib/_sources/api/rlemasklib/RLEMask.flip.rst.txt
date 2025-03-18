@@ -1,0 +1,15 @@
+flip
+====
+
+.. py:method:: rlemasklib.RLEMask.flip(axis)
+
+   Flip the mask along an axis.
+
+   :param axis: 0 for vertical flip, 1 for horizontal flip
+
+   :returns: An RLEMask object of the flipped mask.
+
+   .. seealso:: :meth:`flipud`, :meth:`fliplr`
+
+
+.. footbibliography::

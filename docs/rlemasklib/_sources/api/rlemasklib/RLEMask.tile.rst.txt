@@ -1,0 +1,19 @@
+tile
+====
+
+.. py:method:: rlemasklib.RLEMask.tile(num_h, num_w)
+
+   Tile the mask multiple times along the axes, analogous to np.tile.
+
+   This repeats the mask `num_h` times along the vertical axis and `num_w` times along the
+   horizontal axis.
+
+   :param num_h: the number of times to repeat the mask along the vertical axis
+   :param num_w: the number of times to repeat the mask along the horizontal axis
+
+   :returns: A new RLEMask object representing the tiled mask.
+
+   .. seealso:: :meth:`repeat`
+
+
+.. footbibliography::

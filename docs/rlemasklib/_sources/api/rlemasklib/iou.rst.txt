@@ -1,0 +1,19 @@
+iou
+===
+
+.. py:function:: rlemasklib.iou(masks)
+
+   Compute the intersection-over-union (IoU) between the input masks.
+
+   This is typically used with two input masks, but more are also supported, in which case the
+   IoU as the ratio between the overall intersection and the overall union.
+
+   :param masks: a list of RLE masks
+
+   :returns:
+
+             A scalar IoU value, expressing the ratio of the intersection area to the union area of
+                 the masks.
+
+
+.. footbibliography::

@@ -1,0 +1,15 @@
+ones
+====
+
+.. py:method:: rlemasklib.RLEMask.ones(shape)
+   :staticmethod:
+
+
+   Create a new RLE mask of ones.
+
+   :param shape: the shape of the mask
+
+   :returns: A new RLEMask object representing a mask of ones.
+
+
+.. footbibliography::

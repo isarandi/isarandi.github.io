@@ -1,0 +1,1040 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; RLEMaskLib</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/my_theme.css?v=c8fa4242" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=19ed39ba"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RLEMaskLib</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#_"><strong>_</strong></a>
+ | <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ | <a href="#Z"><strong>Z</strong></a>
+ 
+</div>
+<h2 id="_">_</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.__and__.html#rlemasklib.RLEMask.__and__">__and__() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.__array__.html#rlemasklib.RLEMask.__array__">__array__() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.__eq__.html#rlemasklib.RLEMask.__eq__">__eq__() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.__getitem__.html#rlemasklib.RLEMask.__getitem__">__getitem__() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.__iand__.html#rlemasklib.RLEMask.__iand__">__iand__() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.__invert__.html#rlemasklib.RLEMask.__invert__">__invert__() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.__ior__.html#rlemasklib.RLEMask.__ior__">__ior__() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.__isub__.html#rlemasklib.RLEMask.__isub__">__isub__() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.__ixor__.html#rlemasklib.RLEMask.__ixor__">__ixor__() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.__or__.html#rlemasklib.RLEMask.__or__">__or__() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.__repr__.html#rlemasklib.RLEMask.__repr__">__repr__() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.__setitem__.html#rlemasklib.RLEMask.__setitem__">__setitem__() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.__sub__.html#rlemasklib.RLEMask.__sub__">__sub__() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.__xor__.html#rlemasklib.RLEMask.__xor__">__xor__() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.all.html#rlemasklib.RLEMask.all">all() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.any.html#rlemasklib.RLEMask.any">any() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.area.html#rlemasklib.RLEMask.area">area() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.avg_pool2d_valid.html#rlemasklib.RLEMask.avg_pool2d_valid">avg_pool2d_valid() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.avg_pool2x2.html#rlemasklib.RLEMask.avg_pool2x2">avg_pool2x2() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.bbox.html#rlemasklib.RLEMask.bbox">bbox() (rlemasklib.RLEMask method)</a>
+</li>
+      <li>
+    built-in function
+
+      <ul>
+        <li><a href="api/rlemasklib/area.html#rlemasklib.area">rlemasklib.area()</a>
+</li>
+        <li><a href="api/rlemasklib/centroid.html#rlemasklib.centroid">rlemasklib.centroid()</a>
+</li>
+        <li><a href="api/rlemasklib/closing.html#rlemasklib.closing">rlemasklib.closing()</a>
+</li>
+        <li><a href="api/rlemasklib/closing2.html#rlemasklib.closing2">rlemasklib.closing2()</a>
+</li>
+        <li><a href="api/rlemasklib/compress.html#rlemasklib.compress">rlemasklib.compress()</a>
+</li>
+        <li><a href="api/rlemasklib/connected_components.html#rlemasklib.connected_components">rlemasklib.connected_components()</a>
+</li>
+        <li><a href="api/rlemasklib/crop.html#rlemasklib.crop">rlemasklib.crop()</a>
+</li>
+        <li><a href="api/rlemasklib/decode.html#rlemasklib.decode">rlemasklib.decode()</a>
+</li>
+        <li><a href="api/rlemasklib/decompress.html#rlemasklib.decompress">rlemasklib.decompress()</a>
+</li>
+        <li><a href="api/rlemasklib/difference.html#rlemasklib.difference">rlemasklib.difference()</a>
+</li>
+        <li><a href="api/rlemasklib/dilate.html#rlemasklib.dilate">rlemasklib.dilate()</a>
+</li>
+        <li><a href="api/rlemasklib/dilate2.html#rlemasklib.dilate2">rlemasklib.dilate2()</a>
+</li>
+        <li><a href="api/rlemasklib/empty.html#rlemasklib.empty">rlemasklib.empty()</a>
+</li>
+        <li><a href="api/rlemasklib/encode.html#rlemasklib.encode">rlemasklib.encode()</a>
+</li>
+        <li><a href="api/rlemasklib/erode.html#rlemasklib.erode">rlemasklib.erode()</a>
+</li>
+        <li><a href="api/rlemasklib/erode2.html#rlemasklib.erode2">rlemasklib.erode2()</a>
+</li>
+        <li><a href="api/rlemasklib/fill_small_holes.html#rlemasklib.fill_small_holes">rlemasklib.fill_small_holes()</a>
+</li>
+        <li><a href="api/rlemasklib/from_bbox.html#rlemasklib.from_bbox">rlemasklib.from_bbox()</a>
+</li>
+        <li><a href="api/rlemasklib/from_polygon.html#rlemasklib.from_polygon">rlemasklib.from_polygon()</a>
+</li>
+        <li><a href="api/rlemasklib/full.html#rlemasklib.full">rlemasklib.full()</a>
+</li>
+        <li><a href="api/rlemasklib/intersection.html#rlemasklib.intersection">rlemasklib.intersection()</a>
+</li>
+        <li><a href="api/rlemasklib/iou.html#rlemasklib.iou">rlemasklib.iou()</a>
+</li>
+        <li><a href="api/rlemasklib/largest_connected_component.html#rlemasklib.largest_connected_component">rlemasklib.largest_connected_component()</a>
+</li>
+        <li><a href="api/rlemasklib/merge.html#rlemasklib.merge">rlemasklib.merge()</a>
+</li>
+        <li><a href="api/rlemasklib/ones.html#rlemasklib.ones">rlemasklib.ones()</a>
+</li>
+        <li><a href="api/rlemasklib/ones_like.html#rlemasklib.ones_like">rlemasklib.ones_like()</a>
+</li>
+        <li><a href="api/rlemasklib/opening.html#rlemasklib.opening">rlemasklib.opening()</a>
+</li>
+        <li><a href="api/rlemasklib/opening2.html#rlemasklib.opening2">rlemasklib.opening2()</a>
+</li>
+        <li><a href="api/rlemasklib/pad.html#rlemasklib.pad">rlemasklib.pad()</a>
+</li>
+        <li><a href="api/rlemasklib/remove_small_components.html#rlemasklib.remove_small_components">rlemasklib.remove_small_components()</a>
+</li>
+        <li><a href="api/rlemasklib/shift.html#rlemasklib.shift">rlemasklib.shift()</a>
+</li>
+        <li><a href="api/rlemasklib/symmetric_difference.html#rlemasklib.symmetric_difference">rlemasklib.symmetric_difference()</a>
+</li>
+        <li><a href="api/rlemasklib/to_bbox.html#rlemasklib.to_bbox">rlemasklib.to_bbox()</a>
+</li>
+        <li><a href="api/rlemasklib/union.html#rlemasklib.union">rlemasklib.union()</a>
+</li>
+        <li><a href="api/rlemasklib/zeros.html#rlemasklib.zeros">rlemasklib.zeros()</a>
+</li>
+        <li><a href="api/rlemasklib/zeros_like.html#rlemasklib.zeros_like">rlemasklib.zeros_like()</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.centroid.html#rlemasklib.RLEMask.centroid">centroid() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.complement.html#rlemasklib.RLEMask.complement">complement() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.concatenate.html#rlemasklib.RLEMask.concatenate">concatenate() (rlemasklib.RLEMask static method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.connected_components.html#rlemasklib.RLEMask.connected_components">connected_components() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.contours.html#rlemasklib.RLEMask.contours">contours() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.conv2d_valid.html#rlemasklib.RLEMask.conv2d_valid">conv2d_valid() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.copy.html#rlemasklib.RLEMask.copy">copy() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.count_nonzero.html#rlemasklib.RLEMask.count_nonzero">count_nonzero() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.counts.html#rlemasklib.RLEMask.counts">counts (rlemasklib.RLEMask property)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.counts_view.html#rlemasklib.RLEMask.counts_view">counts_view (rlemasklib.RLEMask property)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.crop.html#rlemasklib.RLEMask.crop">crop() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.density.html#rlemasklib.RLEMask.density">density (rlemasklib.RLEMask property)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.dilate.html#rlemasklib.RLEMask.dilate">dilate() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.dilate3x3.html#rlemasklib.RLEMask.dilate3x3">dilate3x3() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.dilate5x5.html#rlemasklib.RLEMask.dilate5x5">dilate5x5() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.dilate_vertical.html#rlemasklib.RLEMask.dilate_vertical">dilate_vertical() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.erode.html#rlemasklib.RLEMask.erode">erode() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.erode3x3.html#rlemasklib.RLEMask.erode3x3">erode3x3() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.erode5x5.html#rlemasklib.RLEMask.erode5x5">erode5x5() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.fill_circle.html#rlemasklib.RLEMask.fill_circle">fill_circle() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.fill_rectangle.html#rlemasklib.RLEMask.fill_rectangle">fill_rectangle() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.fill_small_holes.html#rlemasklib.RLEMask.fill_small_holes">fill_small_holes() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.flip.html#rlemasklib.RLEMask.flip">flip() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.fliplr.html#rlemasklib.RLEMask.fliplr">fliplr() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.flipud.html#rlemasklib.RLEMask.flipud">flipud() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.from_array.html#rlemasklib.RLEMask.from_array">from_array() (rlemasklib.RLEMask static method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.from_bbox.html#rlemasklib.RLEMask.from_bbox">from_bbox() (rlemasklib.RLEMask static method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.from_circle.html#rlemasklib.RLEMask.from_circle">from_circle() (rlemasklib.RLEMask static method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.from_counts.html#rlemasklib.RLEMask.from_counts">from_counts() (rlemasklib.RLEMask static method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.from_dict.html#rlemasklib.RLEMask.from_dict">from_dict() (rlemasklib.RLEMask static method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.from_polygon.html#rlemasklib.RLEMask.from_polygon">from_polygon() (rlemasklib.RLEMask static method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.hconcat.html#rlemasklib.RLEMask.hconcat">hconcat() (rlemasklib.RLEMask static method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.intersection.html#rlemasklib.RLEMask.intersection">intersection() (rlemasklib.RLEMask static method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.iou.html#rlemasklib.RLEMask.iou">iou() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.iou_matrix.html#rlemasklib.RLEMask.iou_matrix">iou_matrix() (rlemasklib.RLEMask static method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.is_valid_rle.html#rlemasklib.RLEMask.is_valid_rle">is_valid_rle() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.largest_connected_component.html#rlemasklib.RLEMask.largest_connected_component">largest_connected_component() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.largest_interior_rectangle.html#rlemasklib.RLEMask.largest_interior_rectangle">largest_interior_rectangle() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.largest_interior_rectangle_around.html#rlemasklib.RLEMask.largest_interior_rectangle_around">largest_interior_rectangle_around() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.make_merge_function.html#rlemasklib.RLEMask.make_merge_function">make_merge_function() (rlemasklib.RLEMask static method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.max_pool2x2.html#rlemasklib.RLEMask.max_pool2x2">max_pool2x2() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.merge.html#rlemasklib.RLEMask.merge">merge() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.merge_count.html#rlemasklib.RLEMask.merge_count">merge_count() (rlemasklib.RLEMask static method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.merge_many.html#rlemasklib.RLEMask.merge_many">merge_many() (rlemasklib.RLEMask static method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.merge_many_custom.html#rlemasklib.RLEMask.merge_many_custom">merge_many_custom() (rlemasklib.RLEMask static method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.merge_to_label_map.html#rlemasklib.RLEMask.merge_to_label_map">merge_to_label_map() (rlemasklib.RLEMask static method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.min_pool2x2.html#rlemasklib.RLEMask.min_pool2x2">min_pool2x2() (rlemasklib.RLEMask method)</a>
+</li>
+      <li>
+    module
+
+      <ul>
+        <li><a href="api/rlemasklib/index.html#module-rlemasklib">rlemasklib</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.nonzero.html#rlemasklib.RLEMask.nonzero">nonzero() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.ones.html#rlemasklib.RLEMask.ones">ones() (rlemasklib.RLEMask static method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.ones_like.html#rlemasklib.RLEMask.ones_like">ones_like() (rlemasklib.RLEMask static method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.pad.html#rlemasklib.RLEMask.pad">pad() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.perimeter.html#rlemasklib.RLEMask.perimeter">perimeter() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.remove_small_components.html#rlemasklib.RLEMask.remove_small_components">remove_small_components() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.repeat.html#rlemasklib.RLEMask.repeat">repeat() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.resize.html#rlemasklib.RLEMask.resize">resize() (rlemasklib.RLEMask method)</a>
+</li>
+      <li>
+    rlemasklib
+
+      <ul>
+        <li><a href="api/rlemasklib/index.html#module-rlemasklib">module</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.area()
+
+      <ul>
+        <li><a href="api/rlemasklib/area.html#rlemasklib.area">built-in function</a>
+</li>
+      </ul></li>
+      <li><a href="api/rlemasklib/BoolFunc.html#rlemasklib.BoolFunc">rlemasklib.BoolFunc (built-in class)</a>
+</li>
+      <li>
+    rlemasklib.centroid()
+
+      <ul>
+        <li><a href="api/rlemasklib/centroid.html#rlemasklib.centroid">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.closing()
+
+      <ul>
+        <li><a href="api/rlemasklib/closing.html#rlemasklib.closing">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.closing2()
+
+      <ul>
+        <li><a href="api/rlemasklib/closing2.html#rlemasklib.closing2">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.compress()
+
+      <ul>
+        <li><a href="api/rlemasklib/compress.html#rlemasklib.compress">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.connected_components()
+
+      <ul>
+        <li><a href="api/rlemasklib/connected_components.html#rlemasklib.connected_components">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.crop()
+
+      <ul>
+        <li><a href="api/rlemasklib/crop.html#rlemasklib.crop">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.decode()
+
+      <ul>
+        <li><a href="api/rlemasklib/decode.html#rlemasklib.decode">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.decompress()
+
+      <ul>
+        <li><a href="api/rlemasklib/decompress.html#rlemasklib.decompress">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.difference()
+
+      <ul>
+        <li><a href="api/rlemasklib/difference.html#rlemasklib.difference">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.dilate()
+
+      <ul>
+        <li><a href="api/rlemasklib/dilate.html#rlemasklib.dilate">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.dilate2()
+
+      <ul>
+        <li><a href="api/rlemasklib/dilate2.html#rlemasklib.dilate2">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.empty()
+
+      <ul>
+        <li><a href="api/rlemasklib/empty.html#rlemasklib.empty">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.encode()
+
+      <ul>
+        <li><a href="api/rlemasklib/encode.html#rlemasklib.encode">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.erode()
+
+      <ul>
+        <li><a href="api/rlemasklib/erode.html#rlemasklib.erode">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.erode2()
+
+      <ul>
+        <li><a href="api/rlemasklib/erode2.html#rlemasklib.erode2">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.fill_small_holes()
+
+      <ul>
+        <li><a href="api/rlemasklib/fill_small_holes.html#rlemasklib.fill_small_holes">built-in function</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    rlemasklib.from_bbox()
+
+      <ul>
+        <li><a href="api/rlemasklib/from_bbox.html#rlemasklib.from_bbox">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.from_polygon()
+
+      <ul>
+        <li><a href="api/rlemasklib/from_polygon.html#rlemasklib.from_polygon">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.full()
+
+      <ul>
+        <li><a href="api/rlemasklib/full.html#rlemasklib.full">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.intersection()
+
+      <ul>
+        <li><a href="api/rlemasklib/intersection.html#rlemasklib.intersection">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.iou()
+
+      <ul>
+        <li><a href="api/rlemasklib/iou.html#rlemasklib.iou">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.largest_connected_component()
+
+      <ul>
+        <li><a href="api/rlemasklib/largest_connected_component.html#rlemasklib.largest_connected_component">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.merge()
+
+      <ul>
+        <li><a href="api/rlemasklib/merge.html#rlemasklib.merge">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.ones()
+
+      <ul>
+        <li><a href="api/rlemasklib/ones.html#rlemasklib.ones">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.ones_like()
+
+      <ul>
+        <li><a href="api/rlemasklib/ones_like.html#rlemasklib.ones_like">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.opening()
+
+      <ul>
+        <li><a href="api/rlemasklib/opening.html#rlemasklib.opening">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.opening2()
+
+      <ul>
+        <li><a href="api/rlemasklib/opening2.html#rlemasklib.opening2">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.pad()
+
+      <ul>
+        <li><a href="api/rlemasklib/pad.html#rlemasklib.pad">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.remove_small_components()
+
+      <ul>
+        <li><a href="api/rlemasklib/remove_small_components.html#rlemasklib.remove_small_components">built-in function</a>
+</li>
+      </ul></li>
+      <li><a href="api/rlemasklib/RLEMask.html#rlemasklib.RLEMask">rlemasklib.RLEMask (built-in class)</a>
+</li>
+      <li>
+    rlemasklib.shift()
+
+      <ul>
+        <li><a href="api/rlemasklib/shift.html#rlemasklib.shift">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.symmetric_difference()
+
+      <ul>
+        <li><a href="api/rlemasklib/symmetric_difference.html#rlemasklib.symmetric_difference">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.to_bbox()
+
+      <ul>
+        <li><a href="api/rlemasklib/to_bbox.html#rlemasklib.to_bbox">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.union()
+
+      <ul>
+        <li><a href="api/rlemasklib/union.html#rlemasklib.union">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.zeros()
+
+      <ul>
+        <li><a href="api/rlemasklib/zeros.html#rlemasklib.zeros">built-in function</a>
+</li>
+      </ul></li>
+      <li>
+    rlemasklib.zeros_like()
+
+      <ul>
+        <li><a href="api/rlemasklib/zeros_like.html#rlemasklib.zeros_like">built-in function</a>
+</li>
+      </ul></li>
+      <li><a href="api/rlemasklib/RLEMask.rot90.html#rlemasklib.RLEMask.rot90">rot90() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.shape.html#rlemasklib.RLEMask.shape">shape (rlemasklib.RLEMask property)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.shift.html#rlemasklib.RLEMask.shift">shift() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.T.html#rlemasklib.RLEMask.T">T (rlemasklib.RLEMask property)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.tight_crop.html#rlemasklib.RLEMask.tight_crop">tight_crop() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.tile.html#rlemasklib.RLEMask.tile">tile() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.to_array.html#rlemasklib.RLEMask.to_array">to_array() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.to_dict.html#rlemasklib.RLEMask.to_dict">to_dict() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.transpose.html#rlemasklib.RLEMask.transpose">transpose() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.union.html#rlemasklib.RLEMask.union">union() (rlemasklib.RLEMask static method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.vconcat.html#rlemasklib.RLEMask.vconcat">vconcat() (rlemasklib.RLEMask static method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.warp_affine.html#rlemasklib.RLEMask.warp_affine">warp_affine() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.warp_distorted.html#rlemasklib.RLEMask.warp_distorted">warp_distorted() (rlemasklib.RLEMask method)</a>
+</li>
+      <li><a href="api/rlemasklib/RLEMask.warp_perspective.html#rlemasklib.RLEMask.warp_perspective">warp_perspective() (rlemasklib.RLEMask method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Z">Z</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.zeros.html#rlemasklib.RLEMask.zeros">zeros() (rlemasklib.RLEMask static method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/rlemasklib/RLEMask.zeros_like.html#rlemasklib.RLEMask.zeros_like">zeros_like() (rlemasklib.RLEMask static method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, István Sárándi.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

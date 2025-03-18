@@ -1,0 +1,17 @@
+fill_rectangle
+==============
+
+.. py:method:: rlemasklib.RLEMask.fill_rectangle(rect, value = 1, inplace = False)
+
+   Fill a rectangle in the mask.
+
+   :param rect: a rectangle, in the format [x_start, y_start, width, height]
+   :param value: the value to fill with (0 or 1)
+   :param inplace: whether to perform the operation in place or to return a new object
+
+   :returns: A new RLEMask object with the rectangle filled.
+
+   .. seealso:: :meth:`fill_circle`
+
+
+.. footbibliography::

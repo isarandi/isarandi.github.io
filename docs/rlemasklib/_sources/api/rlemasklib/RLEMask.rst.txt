@@ -1,0 +1,224 @@
+RLEMask
+=======
+
+.. toctree::
+   :hidden:
+
+   /api/rlemasklib/RLEMask.from_counts
+   /api/rlemasklib/RLEMask.from_array
+   /api/rlemasklib/RLEMask.from_dict
+   /api/rlemasklib/RLEMask.from_bbox
+   /api/rlemasklib/RLEMask.from_circle
+   /api/rlemasklib/RLEMask.from_polygon
+   /api/rlemasklib/RLEMask.zeros
+   /api/rlemasklib/RLEMask.ones
+   /api/rlemasklib/RLEMask.ones_like
+   /api/rlemasklib/RLEMask.zeros_like
+   /api/rlemasklib/RLEMask.shape
+   /api/rlemasklib/RLEMask.counts
+   /api/rlemasklib/RLEMask.counts_view
+   /api/rlemasklib/RLEMask.density
+   /api/rlemasklib/RLEMask.T
+   /api/rlemasklib/RLEMask.area
+   /api/rlemasklib/RLEMask.perimeter
+   /api/rlemasklib/RLEMask.is_valid_rle
+   /api/rlemasklib/RLEMask.count_nonzero
+   /api/rlemasklib/RLEMask.nonzero
+   /api/rlemasklib/RLEMask.__getitem__
+   /api/rlemasklib/RLEMask.__setitem__
+   /api/rlemasklib/RLEMask.__invert__
+   /api/rlemasklib/RLEMask.__or__
+   /api/rlemasklib/RLEMask.__ior__
+   /api/rlemasklib/RLEMask.__and__
+   /api/rlemasklib/RLEMask.__iand__
+   /api/rlemasklib/RLEMask.__xor__
+   /api/rlemasklib/RLEMask.__ixor__
+   /api/rlemasklib/RLEMask.__sub__
+   /api/rlemasklib/RLEMask.__isub__
+   /api/rlemasklib/RLEMask.__eq__
+   /api/rlemasklib/RLEMask.__repr__
+   /api/rlemasklib/RLEMask.__array__
+   /api/rlemasklib/RLEMask.any
+   /api/rlemasklib/RLEMask.all
+   /api/rlemasklib/RLEMask.dilate_vertical
+   /api/rlemasklib/RLEMask.merge_count
+   /api/rlemasklib/RLEMask.max_pool2x2
+   /api/rlemasklib/RLEMask.min_pool2x2
+   /api/rlemasklib/RLEMask.avg_pool2x2
+   /api/rlemasklib/RLEMask.avg_pool2d_valid
+   /api/rlemasklib/RLEMask.conv2d_valid
+   /api/rlemasklib/RLEMask.resize
+   /api/rlemasklib/RLEMask.warp_affine
+   /api/rlemasklib/RLEMask.warp_perspective
+   /api/rlemasklib/RLEMask.warp_distorted
+   /api/rlemasklib/RLEMask.pad
+   /api/rlemasklib/RLEMask.complement
+   /api/rlemasklib/RLEMask.shift
+   /api/rlemasklib/RLEMask.dilate
+   /api/rlemasklib/RLEMask.erode
+   /api/rlemasklib/RLEMask.dilate3x3
+   /api/rlemasklib/RLEMask.erode3x3
+   /api/rlemasklib/RLEMask.dilate5x5
+   /api/rlemasklib/RLEMask.erode5x5
+   /api/rlemasklib/RLEMask.contours
+   /api/rlemasklib/RLEMask.largest_interior_rectangle
+   /api/rlemasklib/RLEMask.largest_interior_rectangle_around
+   /api/rlemasklib/RLEMask.merge
+   /api/rlemasklib/RLEMask.intersection
+   /api/rlemasklib/RLEMask.union
+   /api/rlemasklib/RLEMask.merge_many
+   /api/rlemasklib/RLEMask.merge_many_custom
+   /api/rlemasklib/RLEMask.make_merge_function
+   /api/rlemasklib/RLEMask.merge_to_label_map
+   /api/rlemasklib/RLEMask.repeat
+   /api/rlemasklib/RLEMask.centroid
+   /api/rlemasklib/RLEMask.connected_components
+   /api/rlemasklib/RLEMask.largest_connected_component
+   /api/rlemasklib/RLEMask.remove_small_components
+   /api/rlemasklib/RLEMask.fill_small_holes
+   /api/rlemasklib/RLEMask.bbox
+   /api/rlemasklib/RLEMask.crop
+   /api/rlemasklib/RLEMask.tight_crop
+   /api/rlemasklib/RLEMask.transpose
+   /api/rlemasklib/RLEMask.rot90
+   /api/rlemasklib/RLEMask.flip
+   /api/rlemasklib/RLEMask.flipud
+   /api/rlemasklib/RLEMask.fliplr
+   /api/rlemasklib/RLEMask.concatenate
+   /api/rlemasklib/RLEMask.hconcat
+   /api/rlemasklib/RLEMask.vconcat
+   /api/rlemasklib/RLEMask.tile
+   /api/rlemasklib/RLEMask.copy
+   /api/rlemasklib/RLEMask.fill_rectangle
+   /api/rlemasklib/RLEMask.fill_circle
+   /api/rlemasklib/RLEMask.to_dict
+   /api/rlemasklib/RLEMask.to_array
+   /api/rlemasklib/RLEMask.iou
+   /api/rlemasklib/RLEMask.iou_matrix
+
+.. py:class:: rlemasklib.RLEMask(/, obj, *, shape = None)
+
+   Run-length encoded mask.
+
+   :param shape: [height, width] of the mask
+   :param counts: the run-length counts of the mask, as a list of integers or a numpy array,
+                  where odd-indexed elements are runs of 0s and even-indexed elements are runs of 1s.
+                  The sum of the counts must be equal to height * width.
+
+Properties
+----------
+
+.. autoapisummary::
+
+   rlemasklib.RLEMask.shape
+   rlemasklib.RLEMask.counts
+   rlemasklib.RLEMask.counts_view
+   rlemasklib.RLEMask.density
+   rlemasklib.RLEMask.T
+
+
+
+
+Instance Methods
+----------------
+
+.. autoapisummary::
+
+   rlemasklib.RLEMask.area
+   rlemasklib.RLEMask.perimeter
+   rlemasklib.RLEMask.is_valid_rle
+   rlemasklib.RLEMask.count_nonzero
+   rlemasklib.RLEMask.nonzero
+   rlemasklib.RLEMask.__getitem__
+   rlemasklib.RLEMask.__setitem__
+   rlemasklib.RLEMask.__invert__
+   rlemasklib.RLEMask.__or__
+   rlemasklib.RLEMask.__ior__
+   rlemasklib.RLEMask.__and__
+   rlemasklib.RLEMask.__iand__
+   rlemasklib.RLEMask.__xor__
+   rlemasklib.RLEMask.__ixor__
+   rlemasklib.RLEMask.__sub__
+   rlemasklib.RLEMask.__isub__
+   rlemasklib.RLEMask.__eq__
+   rlemasklib.RLEMask.__repr__
+   rlemasklib.RLEMask.__array__
+   rlemasklib.RLEMask.any
+   rlemasklib.RLEMask.all
+   rlemasklib.RLEMask.dilate_vertical
+   rlemasklib.RLEMask.max_pool2x2
+   rlemasklib.RLEMask.min_pool2x2
+   rlemasklib.RLEMask.avg_pool2x2
+   rlemasklib.RLEMask.avg_pool2d_valid
+   rlemasklib.RLEMask.conv2d_valid
+   rlemasklib.RLEMask.resize
+   rlemasklib.RLEMask.warp_affine
+   rlemasklib.RLEMask.warp_perspective
+   rlemasklib.RLEMask.warp_distorted
+   rlemasklib.RLEMask.pad
+   rlemasklib.RLEMask.complement
+   rlemasklib.RLEMask.shift
+   rlemasklib.RLEMask.dilate
+   rlemasklib.RLEMask.erode
+   rlemasklib.RLEMask.dilate3x3
+   rlemasklib.RLEMask.erode3x3
+   rlemasklib.RLEMask.dilate5x5
+   rlemasklib.RLEMask.erode5x5
+   rlemasklib.RLEMask.contours
+   rlemasklib.RLEMask.largest_interior_rectangle
+   rlemasklib.RLEMask.largest_interior_rectangle_around
+   rlemasklib.RLEMask.merge
+   rlemasklib.RLEMask.repeat
+   rlemasklib.RLEMask.centroid
+   rlemasklib.RLEMask.connected_components
+   rlemasklib.RLEMask.largest_connected_component
+   rlemasklib.RLEMask.remove_small_components
+   rlemasklib.RLEMask.fill_small_holes
+   rlemasklib.RLEMask.bbox
+   rlemasklib.RLEMask.crop
+   rlemasklib.RLEMask.tight_crop
+   rlemasklib.RLEMask.transpose
+   rlemasklib.RLEMask.rot90
+   rlemasklib.RLEMask.flip
+   rlemasklib.RLEMask.flipud
+   rlemasklib.RLEMask.fliplr
+   rlemasklib.RLEMask.tile
+   rlemasklib.RLEMask.copy
+   rlemasklib.RLEMask.fill_rectangle
+   rlemasklib.RLEMask.fill_circle
+   rlemasklib.RLEMask.to_dict
+   rlemasklib.RLEMask.to_array
+   rlemasklib.RLEMask.iou
+
+
+Static Methods
+--------------
+
+.. autoapisummary::
+
+   rlemasklib.RLEMask.from_counts
+   rlemasklib.RLEMask.from_array
+   rlemasklib.RLEMask.from_dict
+   rlemasklib.RLEMask.from_bbox
+   rlemasklib.RLEMask.from_circle
+   rlemasklib.RLEMask.from_polygon
+   rlemasklib.RLEMask.zeros
+   rlemasklib.RLEMask.ones
+   rlemasklib.RLEMask.ones_like
+   rlemasklib.RLEMask.zeros_like
+   rlemasklib.RLEMask.merge_count
+   rlemasklib.RLEMask.intersection
+   rlemasklib.RLEMask.union
+   rlemasklib.RLEMask.merge_many
+   rlemasklib.RLEMask.merge_many_custom
+   rlemasklib.RLEMask.make_merge_function
+   rlemasklib.RLEMask.merge_to_label_map
+   rlemasklib.RLEMask.concatenate
+   rlemasklib.RLEMask.hconcat
+   rlemasklib.RLEMask.vconcat
+   rlemasklib.RLEMask.iou_matrix
+
+
+
+
+.. footbibliography::

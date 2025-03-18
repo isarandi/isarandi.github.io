@@ -1,0 +1,11 @@
+density
+=======
+
+.. py:property:: rlemasklib.RLEMask.density
+   :type: float
+
+
+   The ratio of the number of runlengths vs number of pixels of the entire mask
+   (not just the foreground).
+
+.. footbibliography::

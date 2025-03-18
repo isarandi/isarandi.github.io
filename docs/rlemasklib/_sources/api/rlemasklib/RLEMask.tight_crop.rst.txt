@@ -1,0 +1,15 @@
+tight_crop
+==========
+
+.. py:method:: rlemasklib.RLEMask.tight_crop(inplace = False)
+
+   Crop the mask to the bounding box of the foreground.
+
+   :param inplace: whether to perform the operation in place or to return a new object
+
+   :returns: A tuple consisting of the cropped mask and the box.
+
+   .. seealso:: :meth:`crop`
+
+
+.. footbibliography::

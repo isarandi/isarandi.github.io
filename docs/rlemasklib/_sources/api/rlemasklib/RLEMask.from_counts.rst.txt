@@ -1,0 +1,18 @@
+from_counts
+===========
+
+.. py:method:: rlemasklib.RLEMask.from_counts(counts, shape, order='F', validate_sum = True)
+   :staticmethod:
+
+
+   Create an RLEMask object from run-length counts.
+
+   :param counts: the run-length counts of the mask, as a list of integers or a numpy array,
+                  where odd-indexed elements are runs of 0s and even-indexed elements are runs of 1s.
+                  The sum of the counts must be equal to height * width.
+   :param shape: [height, width] of the mask
+   :param order: the order of the counts in the list, either 'F' or 'C' for Fortran
+                 (column major) or C (row major) order
+
+
+.. footbibliography::

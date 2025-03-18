@@ -1,0 +1,13 @@
+bbox
+====
+
+.. py:method:: rlemasklib.RLEMask.bbox()
+
+   The bounding box of the foreground, i.e. the smallest rectangle that contains the mask.
+
+   :returns: A float32 numpy array [x, y, width, height] of the bounding box of the mask.
+
+   .. seealso:: :meth:`largest_interior_rectangle` for the largest rectangle inside the mask.
+
+
+.. footbibliography::

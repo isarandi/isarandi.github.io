@@ -1,0 +1,24 @@
+dilate3x3
+=========
+
+.. py:method:: rlemasklib.RLEMask.dilate3x3(connectivity = 4, inplace = False)
+
+   Dilate a mask with a 3x3 kernel.
+
+   After dilation, all pixels that were foreground before remain foreground and additionally any
+   pixel with at least one foreground neighbor (according to the specified connectivity, 4-way or
+   8-way) becomes also foreground.
+
+   :param connectivity: either 4 or 8, the connectivity of the dilation. 4 means a cross-shaped
+                        kernel, 8 means a square kernel.
+   :param inplace: whether to perform the operation in place or to return a new object
+
+   :returns: The RLEMask object representing the dilated mask (self if inplace=True)
+
+   .. seealso::
+
+      :meth:`dilate` for arbitrary kernel shapes.
+      :meth:`dilate5x5` for a 5x5 kernel.
+
+
+.. footbibliography::

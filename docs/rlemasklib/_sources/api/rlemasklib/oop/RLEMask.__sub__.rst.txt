@@ -1,0 +1,22 @@
+__sub__
+=======
+
+.. py:method:: rlemasklib.oop.RLEMask.__sub__(other)
+
+   Compute the difference of two RLE masks.
+
+   :param other: another RLE mask
+
+   :returns: A new RLEMask object representing the difference of the two masks.
+
+   .. rubric:: Examples
+
+   >>> rle1 = RLEMask(np.eye(3))
+   >>> rle2 = RLEMask(np.eye(3)[::-1])
+   >>> np.array(rle1 - rle2)
+   array([[1, 0, 0],
+          [0, 0, 0],
+          [0, 0, 1]], dtype=uint8)
+
+
+.. footbibliography::

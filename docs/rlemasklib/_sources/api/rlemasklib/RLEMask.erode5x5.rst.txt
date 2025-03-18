@@ -1,0 +1,28 @@
+erode5x5
+========
+
+.. py:method:: rlemasklib.RLEMask.erode5x5(inplace = False)
+
+   Erode a mask with a round 5x5 kernel.
+
+   The kernel is 0 in the four corners, otherwise 1.
+
+   ::
+
+       0 1 1 1 0
+       1 1 1 1 1
+       1 1 1 1 1
+       1 1 1 1 1
+       0 1 1 1 0
+
+   :param inplace: whether to perform the operation in place or to return a new object
+
+   :returns: The RLEMask object representing the eroded mask (self if inplace=True)
+
+   .. seealso::
+
+      :meth:`erode` for arbitrary kernel shapes.
+      :meth:`erode3x3` for a 3x3 kernel.
+
+
+.. footbibliography::

@@ -1,0 +1,9 @@
+count_nonzero
+=============
+
+.. py:method:: rlemasklib.RLEMask.count_nonzero()
+
+   The number of nonzero pixels in the mask, equivalent to :meth:`area`.
+
+
+.. footbibliography::

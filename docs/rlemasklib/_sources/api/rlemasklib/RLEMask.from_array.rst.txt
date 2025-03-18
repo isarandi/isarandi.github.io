@@ -1,0 +1,26 @@
+from_array
+==========
+
+.. py:method:: rlemasklib.RLEMask.from_array(mask_array, thresh128 = False, is_sparse = True)
+   :staticmethod:
+
+
+   Create an RLEMask object from a dense mask.
+
+   By default, any nonzero value is considered foreground and zero is considered background.
+   If ``thresh128`` is set to True, then values greater than or equal to 128 are considered
+   foreground and less than 128 are considered background.
+
+   If `mask_array` is C contiguous, a transpose has to take place since the internal RLE
+   format encodecs the mask in Fortran order. If `is_sparse` is set to True, the transpose,
+   if necessary, will be performed in RLE format, otherwise it will be performed in dense
+   array format.
+
+   :param mask_array: a numpy array of numerical type where nonzero means foreground and zero
+                      means background.
+   :param thresh128: whether to use 128 as the threshold for binarization (default is 1)
+   :param is_sparse: hint that it is more efficient to transpose the mask in RLE form, only
+                     affects efficiency when the mask is C contiguous.
+
+
+.. footbibliography::

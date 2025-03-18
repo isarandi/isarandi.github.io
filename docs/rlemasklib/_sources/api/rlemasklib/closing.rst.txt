@@ -1,0 +1,17 @@
+closing
+=======
+
+.. py:function:: rlemasklib.closing(rle, connectivity = 4)
+
+   Compute the closing of a mask.
+
+   The closing is defined as the erosion of the dilation.
+
+   :param rle: an RLE mask dictionary
+   :param connectivity: either 4 or 8, the connectivity of the closing. 4 means a cross-shaped
+                        kernel, 8 means a square kernel.
+
+   :returns: An RLE mask dictionary of the closed mask.
+
+
+.. footbibliography::

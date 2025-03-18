@@ -1,0 +1,21 @@
+__invert__
+==========
+
+.. py:method:: rlemasklib.RLEMask.__invert__()
+
+   Compute the complement of an RLE mask.
+
+   :returns: A new RLEMask object representing the complement of the mask.
+
+   .. rubric:: Examples
+
+   >>> rle = RLEMask(np.eye(3))
+   >>> np.array(~rle)
+   array([[0, 1, 1],
+          [1, 0, 1],
+          [1, 1, 0]], dtype=uint8)
+
+   .. seealso:: :meth:`complement`
+
+
+.. footbibliography::

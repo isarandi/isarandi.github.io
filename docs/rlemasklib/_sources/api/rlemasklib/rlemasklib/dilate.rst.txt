@@ -1,0 +1,19 @@
+dilate
+======
+
+.. py:function:: rlemasklib.rlemasklib.dilate(rle, connectivity = 4)
+
+   Dilate a mask with a 3x3 kernel.
+
+   After dilation, all pixels that were foreground before remain foreground and additionally any
+   pixel with at least one foreground neighbor (according to the specified connectivity, 4-way or
+   8-way) becomes also foreground.
+
+   :param rle: an RLE mask dictionary
+   :param connectivity: either 4 or 8, the connectivity of the dilation. 4 means a cross-shaped
+                        kernel, 8 means a square kernel.
+
+   :returns: An RLE mask dictionary of the dilated mask.
+
+
+.. footbibliography::

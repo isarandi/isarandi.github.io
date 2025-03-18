@@ -1,0 +1,17 @@
+merge
+=====
+
+.. py:function:: rlemasklib.rlemasklib.merge(masks, boolfunc)
+
+   Merge multiple RLE masks using a Boolean function.
+
+   The masks will be pairwise merged (reduced) from left to right, in the style of "reduce"
+   (or foldl) from functional programming.
+
+   :param masks: a list of RLE masks
+   :param boolfunc: a Boolean function to apply to the masks
+
+   :returns: An RLE mask dictionary of the merged masks.
+
+
+.. footbibliography::

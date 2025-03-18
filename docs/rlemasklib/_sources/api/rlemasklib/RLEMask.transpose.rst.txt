@@ -1,0 +1,13 @@
+transpose
+=========
+
+.. py:method:: rlemasklib.RLEMask.transpose()
+
+   Transpose the mask, i.e. swap the axes such that columns become rows and vice versa.
+
+   :returns: A new RLEMask object
+
+   .. seealso:: :meth:`T` for the transpose of the mask as a property.
+
+
+.. footbibliography::

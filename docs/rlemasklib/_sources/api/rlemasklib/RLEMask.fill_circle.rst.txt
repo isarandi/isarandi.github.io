@@ -1,0 +1,18 @@
+fill_circle
+===========
+
+.. py:method:: rlemasklib.RLEMask.fill_circle(center, radius, value = 1, inplace = False)
+
+   Fill a circle in the mask.
+
+   :param center: the center of the circle, in the format [x, y]
+   :param radius: the radius of the circle
+   :param value: the value to fill with (0 or 1)
+   :param inplace: whether to perform the operation in place or to return a new object
+
+   :returns: A new RLEMask object with the circle filled.
+
+   .. seealso:: :meth:`fill_rectangle`
+
+
+.. footbibliography::

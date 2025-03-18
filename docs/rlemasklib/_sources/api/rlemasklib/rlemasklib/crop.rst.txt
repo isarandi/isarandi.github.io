@@ -1,0 +1,16 @@
+crop
+====
+
+.. py:function:: rlemasklib.rlemasklib.crop(rleObjs, bbox)
+
+   Crop a mask or multiple masks (RLEs) by the given bounding box.
+   The size of each output RLE is the same as the size of the corresponding bounding box.
+
+   :param rleObjs: either a single RLE or a list of RLEs
+   :param bbox: either a single bounding box or a list of bounding boxes, in the format
+                [x_start, y_start, width, height]
+
+   :returns: Either a single RLE or a list of RLEs, depending on input type.
+
+
+.. footbibliography::

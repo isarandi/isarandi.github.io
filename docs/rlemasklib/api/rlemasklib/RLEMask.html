@@ -1,0 +1,872 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>RLEMask &#8212; RLEMaskLib</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/my_theme.css?v=c8fa4242" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=19ed39ba"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/rlemasklib/RLEMask';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="from_counts" href="RLEMask.from_counts.html" />
+    <link rel="prev" title="rlemasklib" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RLEMaskLib</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">rlemasklib</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">RLEMask</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.from_counts.html">from_counts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.from_array.html">from_array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.from_dict.html">from_dict</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.from_bbox.html">from_bbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.from_circle.html">from_circle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.from_polygon.html">from_polygon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.zeros.html">zeros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.ones.html">ones</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.ones_like.html">ones_like</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.zeros_like.html">zeros_like</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.shape.html">shape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.counts.html">counts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.counts_view.html">counts_view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.density.html">density</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.T.html">T</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.area.html">area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.perimeter.html">perimeter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.is_valid_rle.html">is_valid_rle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.count_nonzero.html">count_nonzero</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.nonzero.html">nonzero</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__getitem__.html">__getitem__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__setitem__.html">__setitem__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__invert__.html">__invert__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__or__.html">__or__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__ior__.html">__ior__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__and__.html">__and__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__iand__.html">__iand__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__xor__.html">__xor__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__ixor__.html">__ixor__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__sub__.html">__sub__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__isub__.html">__isub__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__eq__.html">__eq__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__repr__.html">__repr__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__array__.html">__array__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.all.html">all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.dilate_vertical.html">dilate_vertical</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.merge_count.html">merge_count</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.max_pool2x2.html">max_pool2x2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.min_pool2x2.html">min_pool2x2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.avg_pool2x2.html">avg_pool2x2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.avg_pool2d_valid.html">avg_pool2d_valid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.conv2d_valid.html">conv2d_valid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.resize.html">resize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.warp_affine.html">warp_affine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.warp_perspective.html">warp_perspective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.warp_distorted.html">warp_distorted</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.pad.html">pad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.complement.html">complement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.shift.html">shift</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.dilate.html">dilate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.erode.html">erode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.dilate3x3.html">dilate3x3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.erode3x3.html">erode3x3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.dilate5x5.html">dilate5x5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.erode5x5.html">erode5x5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.contours.html">contours</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.largest_interior_rectangle.html">largest_interior_rectangle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.largest_interior_rectangle_around.html">largest_interior_rectangle_around</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.merge.html">merge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.intersection.html">intersection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.union.html">union</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.merge_many.html">merge_many</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.merge_many_custom.html">merge_many_custom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.make_merge_function.html">make_merge_function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.merge_to_label_map.html">merge_to_label_map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.repeat.html">repeat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.centroid.html">centroid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.connected_components.html">connected_components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.largest_connected_component.html">largest_connected_component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.remove_small_components.html">remove_small_components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.fill_small_holes.html">fill_small_holes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.bbox.html">bbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.crop.html">crop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.tight_crop.html">tight_crop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.transpose.html">transpose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.rot90.html">rot90</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.flip.html">flip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.flipud.html">flipud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.fliplr.html">fliplr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.concatenate.html">concatenate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.hconcat.html">hconcat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.vconcat.html">vconcat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.tile.html">tile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.copy.html">copy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.fill_rectangle.html">fill_rectangle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.fill_circle.html">fill_circle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.to_dict.html">to_dict</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.to_array.html">to_array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.iou.html">iou</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.iou_matrix.html">iou_matrix</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="BoolFunc.html">BoolFunc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encode.html">encode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decode.html">decode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compress.html">compress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decompress.html">decompress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ones.html">ones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zeros.html">zeros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ones_like.html">ones_like</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zeros_like.html">zeros_like</a></li>
+<li class="toctree-l2"><a class="reference internal" href="full.html">full</a></li>
+<li class="toctree-l2"><a class="reference internal" href="empty.html">empty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="area.html">area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="centroid.html">centroid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intersection.html">intersection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="union.html">union</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iou.html">iou</a></li>
+<li class="toctree-l2"><a class="reference internal" href="difference.html">difference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetric_difference.html">symmetric_difference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_bbox.html">from_bbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="to_bbox.html">to_bbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_polygon.html">from_polygon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crop.html">crop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pad.html">pad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connected_components.html">connected_components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="largest_connected_component.html">largest_connected_component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remove_small_components.html">remove_small_components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fill_small_holes.html">fill_small_holes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="erode.html">erode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dilate.html">dilate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opening.html">opening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="closing.html">closing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="erode2.html">erode2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dilate2.html">dilate2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opening2.html">opening2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="closing2.html">closing2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shift.html">shift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merge.html">merge</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">rlemasklib</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">RLEMask</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="rlemask">
+<h1>RLEMask<a class="headerlink" href="#rlemask" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlemasklib.RLEMask">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rlemasklib.</span></span><span class="sig-name descname"><span class="pre">RLEMask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlemasklib.RLEMask" title="Link to this definition">#</a></dt>
+<dd><p>Run-length encoded mask.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shape</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a><em>]</em><em>]</em>) – [height, width] of the mask</p></li>
+<li><p><strong>counts</strong> – the run-length counts of the mask, as a list of integers or a numpy array,
+where odd-indexed elements are runs of 0s and even-indexed elements are runs of 1s.
+The sum of the counts must be equal to height * width.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.shape.html#rlemasklib.RLEMask.shape" title="rlemasklib.RLEMask.shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shape</span></code></a></p></td>
+<td><p>The shape of the mask (height, width).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.counts.html#rlemasklib.RLEMask.counts" title="rlemasklib.RLEMask.counts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">counts</span></code></a></p></td>
+<td><p>The run-length counts of the mask, as a copy of the underlying data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.counts_view.html#rlemasklib.RLEMask.counts_view" title="rlemasklib.RLEMask.counts_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">counts_view</span></code></a></p></td>
+<td><p>The run-length counts of the mask, as a direct view of the underlying memory.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.density.html#rlemasklib.RLEMask.density" title="rlemasklib.RLEMask.density"><code class="xref py py-obj docutils literal notranslate"><span class="pre">density</span></code></a></p></td>
+<td><p>The ratio of the number of runlengths vs number of pixels of the entire mask</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.T.html#rlemasklib.RLEMask.T" title="rlemasklib.RLEMask.T"><code class="xref py py-obj docutils literal notranslate"><span class="pre">T</span></code></a></p></td>
+<td><p>The transpose of the mask (i.e., columns become rows and vice versa)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="instance-methods">
+<h2>Instance Methods<a class="headerlink" href="#instance-methods" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.area.html#rlemasklib.RLEMask.area" title="rlemasklib.RLEMask.area"><code class="xref py py-obj docutils literal notranslate"><span class="pre">area</span></code></a>()</p></td>
+<td><p>The area of the mask (number of foreground pixels).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.perimeter.html#rlemasklib.RLEMask.perimeter" title="rlemasklib.RLEMask.perimeter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">perimeter</span></code></a>()</p></td>
+<td><p>The number of pixels along the contour of the mask.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.is_valid_rle.html#rlemasklib.RLEMask.is_valid_rle" title="rlemasklib.RLEMask.is_valid_rle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_rle</span></code></a>()</p></td>
+<td><p>Check if the RLE mask is valid (no nonfirst zero runs and runs summing to H*W).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.count_nonzero.html#rlemasklib.RLEMask.count_nonzero" title="rlemasklib.RLEMask.count_nonzero"><code class="xref py py-obj docutils literal notranslate"><span class="pre">count_nonzero</span></code></a>()</p></td>
+<td><p>The number of nonzero pixels in the mask, equivalent to <code class="xref py py-meth docutils literal notranslate"><span class="pre">area()</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.nonzero.html#rlemasklib.RLEMask.nonzero" title="rlemasklib.RLEMask.nonzero"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nonzero</span></code></a>()</p></td>
+<td><p>The indices of the nonzero elements in the mask as a 2D numpy array.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.__getitem__.html#rlemasklib.RLEMask.__getitem__" title="rlemasklib.RLEMask.__getitem__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__getitem__</span></code></a>(key)</p></td>
+<td><p>Crop the RLE mask to get a submask, by slicing, or retrieve a single pixel value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.__setitem__.html#rlemasklib.RLEMask.__setitem__" title="rlemasklib.RLEMask.__setitem__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__setitem__</span></code></a>(key, value)</p></td>
+<td><p>Set the value of a submask to either a constant or another RLE or dense mask.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.__invert__.html#rlemasklib.RLEMask.__invert__" title="rlemasklib.RLEMask.__invert__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__invert__</span></code></a>()</p></td>
+<td><p>Compute the complement of an RLE mask.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.__or__.html#rlemasklib.RLEMask.__or__" title="rlemasklib.RLEMask.__or__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__or__</span></code></a>(other)</p></td>
+<td><p>Compute the union of two RLE masks.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.__ior__.html#rlemasklib.RLEMask.__ior__" title="rlemasklib.RLEMask.__ior__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__ior__</span></code></a>(other)</p></td>
+<td><p>Compute the union with another RLE mask in place.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.__and__.html#rlemasklib.RLEMask.__and__" title="rlemasklib.RLEMask.__and__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__and__</span></code></a>(other)</p></td>
+<td><p>Compute the intersection of two RLE masks.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.__iand__.html#rlemasklib.RLEMask.__iand__" title="rlemasklib.RLEMask.__iand__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__iand__</span></code></a>(other)</p></td>
+<td><p>Compute the intersection with another RLE mask in place.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.__xor__.html#rlemasklib.RLEMask.__xor__" title="rlemasklib.RLEMask.__xor__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__xor__</span></code></a>(other)</p></td>
+<td><p>Compute the symmetric difference of two RLE masks.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.__ixor__.html#rlemasklib.RLEMask.__ixor__" title="rlemasklib.RLEMask.__ixor__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__ixor__</span></code></a>(other)</p></td>
+<td><p>Compute the symmetric difference with another RLE mask in place.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.__sub__.html#rlemasklib.RLEMask.__sub__" title="rlemasklib.RLEMask.__sub__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__sub__</span></code></a>(other)</p></td>
+<td><p>Compute the difference of two RLE masks.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.__isub__.html#rlemasklib.RLEMask.__isub__" title="rlemasklib.RLEMask.__isub__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__isub__</span></code></a>(other)</p></td>
+<td><p>Compute the difference with another RLE mask in place.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.__eq__.html#rlemasklib.RLEMask.__eq__" title="rlemasklib.RLEMask.__eq__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__eq__</span></code></a>(other)</p></td>
+<td><p>Check if two RLE masks are equal (same runlengths and shape).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.__repr__.html#rlemasklib.RLEMask.__repr__" title="rlemasklib.RLEMask.__repr__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__repr__</span></code></a>()</p></td>
+<td><p>A string representation of the RLE mask, containing the shape and the runlengths.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.__array__.html#rlemasklib.RLEMask.__array__" title="rlemasklib.RLEMask.__array__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__array__</span></code></a>([dtype, copy])</p></td>
+<td><p>Convert the RLE mask to a dense numpy array, used by numpy functions.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.any.html#rlemasklib.RLEMask.any" title="rlemasklib.RLEMask.any"><code class="xref py py-obj docutils literal notranslate"><span class="pre">any</span></code></a>()</p></td>
+<td><p>Check if any pixel in the mask is foreground.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.all.html#rlemasklib.RLEMask.all" title="rlemasklib.RLEMask.all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all</span></code></a>()</p></td>
+<td><p>Check if all pixels in the mask are foreground.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.dilate_vertical.html#rlemasklib.RLEMask.dilate_vertical" title="rlemasklib.RLEMask.dilate_vertical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dilate_vertical</span></code></a>([up, down, inplace])</p></td>
+<td><p>Dilate the mask vertically.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.max_pool2x2.html#rlemasklib.RLEMask.max_pool2x2" title="rlemasklib.RLEMask.max_pool2x2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_pool2x2</span></code></a>([inplace])</p></td>
+<td><p>Max-pool the mask by a factor of 2.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.min_pool2x2.html#rlemasklib.RLEMask.min_pool2x2" title="rlemasklib.RLEMask.min_pool2x2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min_pool2x2</span></code></a>([inplace])</p></td>
+<td><p>Min-pool the mask by a factor of 2.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.avg_pool2x2.html#rlemasklib.RLEMask.avg_pool2x2" title="rlemasklib.RLEMask.avg_pool2x2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">avg_pool2x2</span></code></a>()</p></td>
+<td><p>Average-pool the mask by a factor of 2.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.avg_pool2d_valid.html#rlemasklib.RLEMask.avg_pool2d_valid" title="rlemasklib.RLEMask.avg_pool2d_valid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">avg_pool2d_valid</span></code></a>(kernel_size[, stride, threshold])</p></td>
+<td><p>Perform a 2D average pooling with the given kernel size and threshold the result.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.conv2d_valid.html#rlemasklib.RLEMask.conv2d_valid" title="rlemasklib.RLEMask.conv2d_valid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv2d_valid</span></code></a>(kernel[, stride, threshold])</p></td>
+<td><p>Perform a 2D convolution with the given weighted kernel and threshold the result.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.resize.html#rlemasklib.RLEMask.resize" title="rlemasklib.RLEMask.resize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resize</span></code></a>(output_imshape[, fx, fy])</p></td>
+<td><p>Resize the mask to a new shape.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.warp_affine.html#rlemasklib.RLEMask.warp_affine" title="rlemasklib.RLEMask.warp_affine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">warp_affine</span></code></a>(M, output_imshape)</p></td>
+<td><p>Apply an affine warping transformation to the mask.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.warp_perspective.html#rlemasklib.RLEMask.warp_perspective" title="rlemasklib.RLEMask.warp_perspective"><code class="xref py py-obj docutils literal notranslate"><span class="pre">warp_perspective</span></code></a>(H, output_imshape)</p></td>
+<td><p>Apply a perspective warping (homography) transformation to the mask.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.warp_distorted.html#rlemasklib.RLEMask.warp_distorted" title="rlemasklib.RLEMask.warp_distorted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">warp_distorted</span></code></a>(R1, R2, K1, K2, d1, d2, polar_ud1, ...)</p></td>
+<td><p>[Experimental] Warp the mask according to changing lens-distorted camera parameters</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.pad.html#rlemasklib.RLEMask.pad" title="rlemasklib.RLEMask.pad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pad</span></code></a>(top, bottom, left, right[, border_type, value, ...])</p></td>
+<td><p>Pad the mask with constant values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.complement.html#rlemasklib.RLEMask.complement" title="rlemasklib.RLEMask.complement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">complement</span></code></a>([inplace])</p></td>
+<td><p>Compute the complement of an RLE mask.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.shift.html#rlemasklib.RLEMask.shift" title="rlemasklib.RLEMask.shift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shift</span></code></a>(offset[, border_value, inplace])</p></td>
+<td><p>Shift (translate) the mask by an offset vector.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.dilate.html#rlemasklib.RLEMask.dilate" title="rlemasklib.RLEMask.dilate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dilate</span></code></a>([kernel_shape, kernel_size, inplace])</p></td>
+<td><p>Dilate a mask with a kernel of a given shape and size.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.erode.html#rlemasklib.RLEMask.erode" title="rlemasklib.RLEMask.erode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">erode</span></code></a>([kernel_shape, kernel_size, inplace])</p></td>
+<td><p>Erode a mask with a kernel of a given shape and size.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.dilate3x3.html#rlemasklib.RLEMask.dilate3x3" title="rlemasklib.RLEMask.dilate3x3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dilate3x3</span></code></a>([connectivity, inplace])</p></td>
+<td><p>Dilate a mask with a 3x3 kernel.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.erode3x3.html#rlemasklib.RLEMask.erode3x3" title="rlemasklib.RLEMask.erode3x3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">erode3x3</span></code></a>([connectivity, inplace])</p></td>
+<td><p>Erode a mask with a 3x3 kernel.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.dilate5x5.html#rlemasklib.RLEMask.dilate5x5" title="rlemasklib.RLEMask.dilate5x5"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dilate5x5</span></code></a>([inplace])</p></td>
+<td><p>Dilate a mask with a round 5x5 kernel.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.erode5x5.html#rlemasklib.RLEMask.erode5x5" title="rlemasklib.RLEMask.erode5x5"><code class="xref py py-obj docutils literal notranslate"><span class="pre">erode5x5</span></code></a>([inplace])</p></td>
+<td><p>Erode a mask with a round 5x5 kernel.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.contours.html#rlemasklib.RLEMask.contours" title="rlemasklib.RLEMask.contours"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contours</span></code></a>()</p></td>
+<td><p>An RLE consisting of those foreground pixels that have a background neighbor.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.largest_interior_rectangle.html#rlemasklib.RLEMask.largest_interior_rectangle" title="rlemasklib.RLEMask.largest_interior_rectangle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">largest_interior_rectangle</span></code></a>([aspect_ratio])</p></td>
+<td><p>The largest axis-aligned rectangle that fits entirely inside the foreground.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.largest_interior_rectangle_around.html#rlemasklib.RLEMask.largest_interior_rectangle_around" title="rlemasklib.RLEMask.largest_interior_rectangle_around"><code class="xref py py-obj docutils literal notranslate"><span class="pre">largest_interior_rectangle_around</span></code></a>(center_point[, ...])</p></td>
+<td><p>The largest axis-aligned foreground rectangle with a given center point.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.merge.html#rlemasklib.RLEMask.merge" title="rlemasklib.RLEMask.merge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge</span></code></a>(other, func)</p></td>
+<td><p>Merge this mask with another using a Boolean function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.repeat.html#rlemasklib.RLEMask.repeat" title="rlemasklib.RLEMask.repeat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">repeat</span></code></a>(num_h, num_w[, inplace])</p></td>
+<td><p>Repeat the mask pixels multiple times along the axes, analogous to np.repeat (and not like np.tile).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.centroid.html#rlemasklib.RLEMask.centroid" title="rlemasklib.RLEMask.centroid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">centroid</span></code></a>()</p></td>
+<td><p>The centroid of the mask, as a numpy float32 array [x, y].</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.connected_components.html#rlemasklib.RLEMask.connected_components" title="rlemasklib.RLEMask.connected_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connected_components</span></code></a>([connectivity, min_size])</p></td>
+<td><p>Extract connected components from the mask.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.largest_connected_component.html#rlemasklib.RLEMask.largest_connected_component" title="rlemasklib.RLEMask.largest_connected_component"><code class="xref py py-obj docutils literal notranslate"><span class="pre">largest_connected_component</span></code></a>([connectivity, inplace])</p></td>
+<td><p>Extract the largest connected component of the mask.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.remove_small_components.html#rlemasklib.RLEMask.remove_small_components" title="rlemasklib.RLEMask.remove_small_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_small_components</span></code></a>([min_size, connectivity, inplace])</p></td>
+<td><p>Remove small connected components from the mask.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.fill_small_holes.html#rlemasklib.RLEMask.fill_small_holes" title="rlemasklib.RLEMask.fill_small_holes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_small_holes</span></code></a>([min_size, connectivity, inplace])</p></td>
+<td><p>Fill small holes (i.e., connected components of the background) in the mask.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.bbox.html#rlemasklib.RLEMask.bbox" title="rlemasklib.RLEMask.bbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bbox</span></code></a>()</p></td>
+<td><p>The bounding box of the foreground, i.e. the smallest rectangle that contains the mask.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.crop.html#rlemasklib.RLEMask.crop" title="rlemasklib.RLEMask.crop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">crop</span></code></a>(bbox[, inplace])</p></td>
+<td><p>Crop the mask to the bounding box.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.tight_crop.html#rlemasklib.RLEMask.tight_crop" title="rlemasklib.RLEMask.tight_crop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tight_crop</span></code></a>([inplace])</p></td>
+<td><p>Crop the mask to the bounding box of the foreground.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.transpose.html#rlemasklib.RLEMask.transpose" title="rlemasklib.RLEMask.transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code></a>()</p></td>
+<td><p>Transpose the mask, i.e. swap the axes such that columns become rows and vice versa.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.rot90.html#rlemasklib.RLEMask.rot90" title="rlemasklib.RLEMask.rot90"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rot90</span></code></a>([k, inplace])</p></td>
+<td><p>Rotate the mask by a multiple of 90 degrees.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.flip.html#rlemasklib.RLEMask.flip" title="rlemasklib.RLEMask.flip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flip</span></code></a>(axis)</p></td>
+<td><p>Flip the mask along an axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.flipud.html#rlemasklib.RLEMask.flipud" title="rlemasklib.RLEMask.flipud"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flipud</span></code></a>()</p></td>
+<td><p>Flip the mask vertically.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.fliplr.html#rlemasklib.RLEMask.fliplr" title="rlemasklib.RLEMask.fliplr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fliplr</span></code></a>()</p></td>
+<td><p>Flip the mask horizontally.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.tile.html#rlemasklib.RLEMask.tile" title="rlemasklib.RLEMask.tile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tile</span></code></a>(num_h, num_w)</p></td>
+<td><p>Tile the mask multiple times along the axes, analogous to np.tile.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.copy.html#rlemasklib.RLEMask.copy" title="rlemasklib.RLEMask.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
+<td><p>Clone the mask.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.fill_rectangle.html#rlemasklib.RLEMask.fill_rectangle" title="rlemasklib.RLEMask.fill_rectangle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_rectangle</span></code></a>(rect[, value, inplace])</p></td>
+<td><p>Fill a rectangle in the mask.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.fill_circle.html#rlemasklib.RLEMask.fill_circle" title="rlemasklib.RLEMask.fill_circle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_circle</span></code></a>(center, radius[, value, inplace])</p></td>
+<td><p>Fill a circle in the mask.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.to_dict.html#rlemasklib.RLEMask.to_dict" title="rlemasklib.RLEMask.to_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict</span></code></a>([zlevel])</p></td>
+<td><p>Convert the RLE mask to a dictionary.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.to_array.html#rlemasklib.RLEMask.to_array" title="rlemasklib.RLEMask.to_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_array</span></code></a>([value, order])</p></td>
+<td><p>Convert the RLE mask to a dense 2D uint8 numpy array.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.iou.html#rlemasklib.RLEMask.iou" title="rlemasklib.RLEMask.iou"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iou</span></code></a>(other)</p></td>
+<td><p>Compute the intersection-over-union (IoU) between two masks.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="static-methods">
+<h2>Static Methods<a class="headerlink" href="#static-methods" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.from_counts.html#rlemasklib.RLEMask.from_counts" title="rlemasklib.RLEMask.from_counts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_counts</span></code></a>(counts, shape[, order, validate_sum])</p></td>
+<td><p>Create an RLEMask object from run-length counts.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.from_array.html#rlemasklib.RLEMask.from_array" title="rlemasklib.RLEMask.from_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_array</span></code></a>(mask_array[, thresh128, is_sparse])</p></td>
+<td><p>Create an RLEMask object from a dense mask.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.from_dict.html#rlemasklib.RLEMask.from_dict" title="rlemasklib.RLEMask.from_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_dict</span></code></a>(d)</p></td>
+<td><p>Create an RLEMask object from an RLE dictionary.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.from_bbox.html#rlemasklib.RLEMask.from_bbox" title="rlemasklib.RLEMask.from_bbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_bbox</span></code></a>(bbox[, imshape, imsize])</p></td>
+<td><p>Create an RLEMask object from a bounding box.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.from_circle.html#rlemasklib.RLEMask.from_circle" title="rlemasklib.RLEMask.from_circle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_circle</span></code></a>(center, radius[, imshape, imsize])</p></td>
+<td><p>Create an RLEMask object representing a filled circle.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.from_polygon.html#rlemasklib.RLEMask.from_polygon" title="rlemasklib.RLEMask.from_polygon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_polygon</span></code></a>(poly[, imshape, imsize])</p></td>
+<td><p>Create an RLEMask object from a polygon.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.zeros.html#rlemasklib.RLEMask.zeros" title="rlemasklib.RLEMask.zeros"><code class="xref py py-obj docutils literal notranslate"><span class="pre">zeros</span></code></a>(shape)</p></td>
+<td><p>Create a new RLE mask of zeros.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.ones.html#rlemasklib.RLEMask.ones" title="rlemasklib.RLEMask.ones"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ones</span></code></a>(shape)</p></td>
+<td><p>Create a new RLE mask of ones.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.ones_like.html#rlemasklib.RLEMask.ones_like" title="rlemasklib.RLEMask.ones_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ones_like</span></code></a>(mask)</p></td>
+<td><p>Create a new RLE mask of ones with the same shape as another mask.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.zeros_like.html#rlemasklib.RLEMask.zeros_like" title="rlemasklib.RLEMask.zeros_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">zeros_like</span></code></a>(mask)</p></td>
+<td><p>Create a new RLE mask of zeros with the same shape as another mask.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.merge_count.html#rlemasklib.RLEMask.merge_count" title="rlemasklib.RLEMask.merge_count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge_count</span></code></a>(masks, threshold)</p></td>
+<td><p>Return a mask where each pixel is set if and only if at least <cite>threshold</cite> of the</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.intersection.html#rlemasklib.RLEMask.intersection" title="rlemasklib.RLEMask.intersection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">intersection</span></code></a>(masks)</p></td>
+<td><p>Return a mask where each pixel is set if and only if all input masks have the pixel set.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.union.html#rlemasklib.RLEMask.union" title="rlemasklib.RLEMask.union"><code class="xref py py-obj docutils literal notranslate"><span class="pre">union</span></code></a>(masks)</p></td>
+<td><p>Return a mask where each pixel is set if at least one of the input masks has the pixel set.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.merge_many.html#rlemasklib.RLEMask.merge_many" title="rlemasklib.RLEMask.merge_many"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge_many</span></code></a>(masks, func)</p></td>
+<td><p>Merge many masks using either the same or different Boolean functions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.merge_many_custom.html#rlemasklib.RLEMask.merge_many_custom" title="rlemasklib.RLEMask.merge_many_custom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge_many_custom</span></code></a>(masks, func)</p></td>
+<td><p>Merge many masks using a custom n-ary boolean function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.make_merge_function.html#rlemasklib.RLEMask.make_merge_function" title="rlemasklib.RLEMask.make_merge_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_merge_function</span></code></a>(func[, arity])</p></td>
+<td><p>Create a merge function from a custom n-ary boolean function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.merge_to_label_map.html#rlemasklib.RLEMask.merge_to_label_map" title="rlemasklib.RLEMask.merge_to_label_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge_to_label_map</span></code></a>(rles)</p></td>
+<td><p>Merge a list of RLE masks to a label map indicating which masks contains each pixel.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.concatenate.html#rlemasklib.RLEMask.concatenate" title="rlemasklib.RLEMask.concatenate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concatenate</span></code></a>(masks[, axis])</p></td>
+<td><p>Concatenate masks along an axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.hconcat.html#rlemasklib.RLEMask.hconcat" title="rlemasklib.RLEMask.hconcat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hconcat</span></code></a>(masks)</p></td>
+<td><p>Horizontally concatenate masks.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RLEMask.vconcat.html#rlemasklib.RLEMask.vconcat" title="rlemasklib.RLEMask.vconcat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vconcat</span></code></a>(masks)</p></td>
+<td><p>Vertically concatenate masks.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.iou_matrix.html#rlemasklib.RLEMask.iou_matrix" title="rlemasklib.RLEMask.iou_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iou_matrix</span></code></a>(masks1, masks2)</p></td>
+<td><p>Compute the intersection-over-union (IoU) between two sets of masks.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">rlemasklib</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="RLEMask.from_counts.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">from_counts</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rlemasklib.RLEMask"><code class="docutils literal notranslate"><span class="pre">RLEMask</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties">Properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instance-methods">Instance Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#static-methods">Static Methods</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/api/rlemasklib/RLEMask.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, István Sárándi.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

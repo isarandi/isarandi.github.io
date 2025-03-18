@@ -1,0 +1,9 @@
+union
+=====
+
+.. py:function:: rlemasklib.oop.union(masks)
+
+   Compute the union of multiple RLE masks.
+
+
+.. footbibliography::

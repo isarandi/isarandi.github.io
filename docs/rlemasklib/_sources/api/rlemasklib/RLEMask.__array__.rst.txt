@@ -1,0 +1,13 @@
+__array__
+=========
+
+.. py:method:: rlemasklib.RLEMask.__array__(dtype=None, copy=None)
+
+   Convert the RLE mask to a dense numpy array, used by numpy functions.
+
+   :returns: A numpy array of type uint8 representing the mask with 0 and 1 values.
+
+   .. seealso:: :meth:`to_array`
+
+
+.. footbibliography::

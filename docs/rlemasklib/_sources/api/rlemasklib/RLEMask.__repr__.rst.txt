@@ -1,0 +1,9 @@
+__repr__
+========
+
+.. py:method:: rlemasklib.RLEMask.__repr__()
+
+   A string representation of the RLE mask, containing the shape and the runlengths.
+
+
+.. footbibliography::

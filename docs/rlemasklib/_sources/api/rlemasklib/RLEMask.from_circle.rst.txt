@@ -1,0 +1,21 @@
+from_circle
+===========
+
+.. py:method:: rlemasklib.RLEMask.from_circle(center, radius, imshape=None, imsize=None)
+   :staticmethod:
+
+
+   Create an RLEMask object representing a filled circle.
+
+   :param center: the center of the circle, in the format [x, y]
+   :param radius: the radius of the circle
+   :param imshape: [height, width] of the desired mask (either this or imsize must be provided)
+   :param imsize: [width, height] of the desired mask (either this or imshape must be provided)
+
+   :returns:
+
+             An RLEMask object where the area of the provided circle has the value 1, and the
+                 rest is 0.
+
+
+.. footbibliography::

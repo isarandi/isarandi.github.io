@@ -1,0 +1,24 @@
+BoolFunc
+========
+
+.. py:class:: rlemasklib.boolfunc.BoolFunc
+
+   Bases: :py:obj:`enum.Enum`
+
+
+   Boolean functions for merging masks.
+
+   Any Boolean function can be expressed.
+
+   .. rubric:: Examples
+
+   >>> d1 = encode(np.eye(3))
+   >>> d2 = encode(np.eye(3)[::-1])
+   >>> d3 = merge([d1, d2], ~BoolFunc.X & BoolFunc.Y)
+   array([[0, 0, 1],
+          [0, 0, 0],
+          [1, 0, 0]], dtype=uint8)
+
+
+
+.. footbibliography::

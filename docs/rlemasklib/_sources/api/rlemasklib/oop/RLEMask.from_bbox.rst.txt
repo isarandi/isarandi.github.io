@@ -1,0 +1,20 @@
+from_bbox
+=========
+
+.. py:method:: rlemasklib.oop.RLEMask.from_bbox(bbox, imshape=None, imsize=None)
+   :staticmethod:
+
+
+   Create an RLEMask object from a bounding box.
+
+   :param bbox: a bounding box, in the format [x_start, y_start, width, height]
+   :param imshape: [height, width] of the desired mask (either this or imsize must be provided)
+   :param imsize: [width, height] of the desired mask (either this or imshape must be provided)
+
+   :returns:
+
+             An RLEMask object where the area of the provided bounding box has the value 1, and the
+                 rest is 0.
+
+
+.. footbibliography::

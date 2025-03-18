@@ -1,0 +1,16 @@
+rot90
+=====
+
+.. py:method:: rlemasklib.RLEMask.rot90(k=1, inplace=False)
+
+   Rotate the mask by a multiple of 90 degrees.
+
+   :param k: the number of counter-clockwise 90-degree rotations to apply
+   :param inplace: whether to perform the operation in place or to return a new object
+
+   :returns: The RLEMask object representing the rotated mask (self if inplace=True)
+
+   .. seealso:: :meth:`warp_affine` for arbitrary affine transformations including arbitrary rotations.
+
+
+.. footbibliography::

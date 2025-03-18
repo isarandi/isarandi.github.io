@@ -1,0 +1,9 @@
+area
+====
+
+.. py:method:: rlemasklib.RLEMask.area()
+
+   The area of the mask (number of foreground pixels).
+
+
+.. footbibliography::

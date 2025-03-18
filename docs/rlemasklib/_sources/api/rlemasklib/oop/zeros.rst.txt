@@ -1,0 +1,14 @@
+zeros
+=====
+
+.. py:function:: rlemasklib.oop.zeros(imshape=None, imsize=None)
+
+   Create an empty (fully background) RLE mask of the given size.
+
+   :param imshape: [height, width] of the desired mask (either this or imsize must be provided)
+   :param imsize: [width, height] of the desired mask (either this or imshape must be provided)
+
+   :returns: A fully-background RLE mask dictionary.
+
+
+.. footbibliography::

@@ -1,0 +1,19 @@
+resize
+======
+
+.. py:method:: rlemasklib.RLEMask.resize(output_imshape, fx = None, fy = None)
+
+   Resize the mask to a new shape.
+
+   It is enough to provide either the `output_imshape` or the scaling factors `fx` and `fy`.
+
+   Internally this is implemented as an affine transformation.
+
+   :param output_imshape: the shape of the output image as (height, width)
+   :param fx: the scaling factor along the horizontal axis
+   :param fy: the scaling factor along the vertical axis
+
+   :returns: A new RLEMask object representing the resized mask.
+
+
+.. footbibliography::

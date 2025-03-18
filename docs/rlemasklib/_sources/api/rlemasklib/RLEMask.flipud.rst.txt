@@ -1,0 +1,13 @@
+flipud
+======
+
+.. py:method:: rlemasklib.RLEMask.flipud()
+
+   Flip the mask vertically.
+
+   :returns: A new RLEMask object
+
+   .. seealso:: :meth:`fliplr`, :meth:`flip`
+
+
+.. footbibliography::

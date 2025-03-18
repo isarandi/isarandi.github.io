@@ -1,0 +1,571 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Run-Length Encoded Mask Operations &#8212; RLEMaskLib</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/my_theme.css?v=c8fa4242" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=19ed39ba"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API Reference" href="api/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RLEMaskLib</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="run-length-encoded-mask-operations">
+<h1>Run-Length Encoded Mask Operations<a class="headerlink" href="#run-length-encoded-mask-operations" title="Link to this heading">#</a></h1>
+<p>This library provides efficient run-length encoded (RLE) operations for binary masks in Python. It is designed to be fast and memory efficient, and is particularly useful for working with large datasets. The library provides an intuitive and extensive object-oriented interface as well as a simpler functional one. To achieve high efficiency, the core functionality is implemented in C, and wrapped via Cython.</p>
+<p>RLEMaskLib is fully compatible with the COCO mask format (in the form of dictionaries) but can also work directly with runlength sequences.</p>
+<p>The library provides many operations on masks, including:</p>
+<ul class="simple">
+<li><p>Set operations (complement, difference, symmetric difference) and custom boolean functions.</p></li>
+<li><p>Crop, pad, tile, concatenate</p></li>
+<li><p>Connected components extraction</p></li>
+<li><p>Warp (affine, perspective, lens distortion)</p></li>
+<li><p>Transpose, flip, rotate by multiples of 90 degrees</p></li>
+<li><p>Binary morphology: dilate, erode, open, close</p></li>
+<li><p>Convolve with arbitrary kernels</p></li>
+<li><p>Directly create fully foreground and fully background masks</p></li>
+<li><p>Decompress of COCO’s compressed RLE format to integer run-lengths, and vice versa</p></li>
+<li><p>Extra compression (optional) using gzip on top of the LEB128-like encoding used by the COCO API (~40% reduction beyond
+the COCO compression)</p></li>
+<li><p>Object oriented and functional APIs.</p></li>
+</ul>
+<p>This library originates as a fork of the COCO API’s <a class="footnote-reference brackets" href="#footcite-lin2014coco" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. <cite>pycocotools.mask</cite> module (which was originally written by Piotr Dollár and Tsung-Yi Lin) but now mostly consists of new code.</p>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<p>The library can be installed with pip from GitHub:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/isarandi/rlemasklib.git
+</pre></div>
+</div>
+</section>
+<section id="object-oriented-usage">
+<h2>Object-Oriented Usage<a class="headerlink" href="#object-oriented-usage" title="Link to this heading">#</a></h2>
+<p>The object-oriented API is the more recent one and is centered around the <a class="reference internal" href="api/rlemasklib/RLEMask.html#rlemasklib.RLEMask" title="rlemasklib.RLEMask"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlemasklib.RLEMask</span></code></a> class, which represents a single binary mask in run-length encoded form. The foreground is considered as 1s, and the background as 0s.</p>
+<p>The <a class="reference internal" href="api/rlemasklib/RLEMask.html#rlemasklib.RLEMask" title="rlemasklib.RLEMask"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlemasklib.RLEMask</span></code></a> class provides a NumPy array-like interface, with many additional methods inspired in part by OpenCV.</p>
+<p>This is the main recommended way to use the library.</p>
+<section id="creating-an-rlemask-from-a-numpy-array">
+<h3>Creating an RLEMask from a NumPy Array<a class="headerlink" href="#creating-an-rlemask-from-a-numpy-array" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">rlemasklib.oop</span> <span class="kn">import</span> <span class="n">RLEMask</span>
+
+<span class="c1"># Create a simple binary mask</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="c1"># Convert the NumPy mask into an RLEMask</span>
+<span class="n">rle_mask</span> <span class="o">=</span> <span class="n">RLEMask</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
+
+<span class="c1"># Print the RLE representation</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rle_mask</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This creates a run-length encoded (RLE) version of the given binary mask, allowing for more efficient storage and operations.</p>
+</section>
+<section id="boolean-operations-on-masks">
+<h3>Boolean Operations on Masks<a class="headerlink" href="#boolean-operations-on-masks" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mask1</span> <span class="o">=</span> <span class="n">RLEMask</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">]))</span>
+
+<span class="n">mask2</span> <span class="o">=</span> <span class="n">RLEMask</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">]))</span>
+
+<span class="n">union_mask</span> <span class="o">=</span> <span class="n">mask1</span> <span class="o">|</span> <span class="n">mask2</span>
+<span class="n">intersection_mask</span> <span class="o">=</span> <span class="n">mask1</span> <span class="o">&amp;</span> <span class="n">mask2</span>
+
+<span class="n">union_mask</span> <span class="o">=</span> <span class="n">RLEMask</span><span class="o">.</span><span class="n">union</span><span class="p">([</span><span class="n">mask1</span><span class="p">,</span> <span class="n">mask2</span><span class="p">])</span>  <span class="c1"># Any number of masks can be used</span>
+
+<span class="n">difference_mask</span> <span class="o">=</span> <span class="n">mask1</span> <span class="o">-</span> <span class="n">mask2</span>
+<span class="n">complement</span> <span class="o">=</span> <span class="o">~</span><span class="n">mask1</span>
+</pre></div>
+</div>
+</section>
+<section id="slicing">
+<h3>Slicing<a class="headerlink" href="#slicing" title="Link to this heading">#</a></h3>
+<p>To extract a subregion of the mask, you can use NumPy-style slicing:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sliced_mask</span> <span class="o">=</span> <span class="n">mask1</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">sliced_mask</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>A single pixel’s value can also be retrieved using indexing:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mask1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>  <span class="c1"># prints 1</span>
+</pre></div>
+</div>
+<p>To assign a value to a region of the mask, you can use NumPy-style slicing again:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">RLEMask</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">mask</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">mask</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="morphological-operations">
+<h3>Morphological Operations<a class="headerlink" href="#morphological-operations" title="Link to this heading">#</a></h3>
+<p>Erosion and dilation are supported with different kernel sizes and connectivity options.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">eroded_mask</span> <span class="o">=</span> <span class="n">mask1</span><span class="o">.</span><span class="n">erode3x3</span><span class="p">(</span><span class="n">connectivity</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">dilated_mask</span> <span class="o">=</span> <span class="n">mask1</span><span class="o">.</span><span class="n">dilate3x3</span><span class="p">(</span><span class="n">connectivity</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">eroded_mask</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Thresholded convolution is also supported.</p>
+</section>
+<section id="flipping-rotation-transpose">
+<h3>Flipping, Rotation, Transpose<a class="headerlink" href="#flipping-rotation-transpose" title="Link to this heading">#</a></h3>
+<p>The mask can be flipped, rotated, and transposed without decoding the RLE representation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">flipped_mask</span> <span class="o">=</span> <span class="n">mask1</span><span class="o">.</span><span class="n">fliplr</span><span class="p">()</span>
+<span class="n">transposed_mask</span> <span class="o">=</span> <span class="n">mask1</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>  <span class="c1"># Equivalent to mask1.T</span>
+<span class="n">rotated_mask</span> <span class="o">=</span> <span class="n">mask1</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Rotate 90 degrees counterclockwise</span>
+</pre></div>
+</div>
+<p>Connected Components and Filtering</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">RLEMask</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">]))</span>
+
+<span class="n">components</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">connected_components</span><span class="p">(</span><span class="n">connectivity</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">component</span> <span class="ow">in</span> <span class="n">components</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">component</span><span class="o">.</span><span class="n">area</span><span class="p">())</span>
+
+<span class="n">mask2</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">remove_small_components</span><span class="p">(</span><span class="n">connectivity</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">min_size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">largest_comp</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">largest_connected_component</span><span class="p">(</span><span class="n">connectivity</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See the full documentation of available features at <a class="reference internal" href="api/rlemasklib/RLEMask.html#rlemasklib.RLEMask" title="rlemasklib.RLEMask"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlemasklib.RLEMask</span></code></a>.</p>
+</section>
+</section>
+<section id="functional-usage">
+<h2>Functional Usage<a class="headerlink" href="#functional-usage" title="Link to this heading">#</a></h2>
+<p>The functional API is the original one and it works with dictionaries as in the COCO API. In this case, the masks are represented as
+dictionary entries with the keys ‘counts’ and ‘size’. The ‘counts’ field contains the runlengths compressed
+with a COCO-style encoding (difference encoding with LEB128-like byte encoding), and the ‘size’ field contains the mask’s dimensions (height, width).
+Alternatively, the dictionary can contain the ‘ucounts’ field with the uncompressed runlength sequence, or ‘zcounts’ which is the compressed ‘counts’ further compressed with with gzip.</p>
+<p>The functional API is more lightweight and is suitable for one-off operations or when the masks are already in the COCO dict format and need to be output in the same format.
+The object-oriented API is better if you need to perform multiple operations on the same mask, so you can work directly with runlengths without repeatedly decoding and encoding the COCO format. To clarify, the OOP version uses runlength encoding but the runlengths themselves are not compressed with COCO’s encoding unless explicitly requested.</p>
+<p>The functional API does not support inplace operations.</p>
+<p>Examples of the functional API and the equivalent object-oriented API are shown below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">rlemasklib</span>
+<span class="kn">from</span> <span class="nn">rlemasklib</span> <span class="kn">import</span> <span class="n">RLEMask</span>
+
+<span class="n">mask1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">])</span>
+<span class="n">mask2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="n">rle_dict1</span> <span class="o">=</span> <span class="n">rlemasklib</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>  <span class="c1"># functional API: array to dict directly)</span>
+<span class="n">rle1</span> <span class="o">=</span> <span class="n">RLEMask</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">rle_dict1</span><span class="p">)</span>  <span class="c1"># OOP: dict to RLEMask</span>
+<span class="n">rle2</span> <span class="o">=</span> <span class="n">RLEMask</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>  <span class="c1"># OOP: array to RLEMask</span>
+<span class="n">rle_dict2</span> <span class="o">=</span> <span class="n">rle2</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>  <span class="c1"># OOP: RLEMask to dict</span>
+<span class="n">intersection_dict</span> <span class="o">=</span> <span class="n">rlemasklib</span><span class="o">.</span><span class="n">intersection</span><span class="p">([</span><span class="n">rle_dict1</span><span class="p">,</span> <span class="n">rle_dict2</span><span class="p">])</span>
+<span class="n">intersection_rle</span> <span class="o">=</span> <span class="n">RLEMask</span><span class="o">.</span><span class="n">intersection</span><span class="p">([</span><span class="n">rle1</span><span class="p">,</span> <span class="n">rle2</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>In some cases the functional API can be slightly faster, as it avoids the overhead of object creation and destruction. However, the object-oriented API is more flexible and provides a richer set of operations.</p>
+<p>In other cases the object-oriented API is faster, especially when multiple operations are performed on the same mask.</p>
+<p>See the full documentation of the functional API at <a class="reference internal" href="api/rlemasklib/index.html#module-rlemasklib" title="rlemasklib"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rlemasklib</span></code></a>.</p>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/rlemasklib/index.html">rlemasklib</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/rlemasklib/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/rlemasklib/index.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+</ul>
+<div class="docutils container" id="id2">
+<p class="rubric">References</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="footcite-lin2014coco" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva Ramanan, Piotr Dollár, and C. Lawrence Zitnick. Microsoft COCO: common objects in context. In <em>European Conference on Computer Vision (ECCV)</em>. 2014. URL: <a class="reference external" href="https://cocodataset.org">https://cocodataset.org</a>, <a class="reference external" href="https://doi.org/10.1007/978-3-319-10602-1_48">doi:10.1007/978-3-319-10602-1_48</a>.</p>
+</aside>
+</aside>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="api/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">API Reference</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-oriented-usage">Object-Oriented Usage</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-rlemask-from-a-numpy-array">Creating an RLEMask from a NumPy Array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-operations-on-masks">Boolean Operations on Masks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">Slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#morphological-operations">Morphological Operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flipping-rotation-transpose">Flipping, Rotation, Transpose</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-usage">Functional Usage</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/index.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, István Sárándi.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

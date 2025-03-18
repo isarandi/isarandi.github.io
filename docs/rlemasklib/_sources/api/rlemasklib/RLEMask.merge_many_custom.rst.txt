@@ -1,0 +1,26 @@
+merge_many_custom
+=================
+
+.. py:method:: rlemasklib.RLEMask.merge_many_custom(masks, func)
+   :staticmethod:
+
+
+   Merge many masks using a custom n-ary boolean function.
+
+   This first calls func with all combinations of n boolean arguments and stores the resulting
+   truth table.
+   It then returns a new mask where the ith pixel is the result of func applied to the ith
+   pixel of all input masks.
+
+   :param masks: a sequence of at RLE masks
+   :param func: a callable that takes n bools and returns a bool
+
+   :returns: A new RLEMask with the merged result.
+
+   .. seealso::
+
+      :meth:`merge_many`, which allows merging with binary Boolean functions.
+      :meth:`make_merge_function`, which creates a merge function from a custom n-ary function.
+
+
+.. footbibliography::

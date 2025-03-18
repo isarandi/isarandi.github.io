@@ -1,0 +1,13 @@
+complement
+==========
+
+.. py:function:: rlemasklib.oop.complement(rleObjs)
+
+   Compute the complement of a mask or multiple masks.
+
+   :param rleObjs: either a single RLE or a list of RLEs
+
+   :returns: A single RLE or a list of RLEs, depending on input type.
+
+
+.. footbibliography::

@@ -1,0 +1,19 @@
+fill_small_holes
+================
+
+.. py:function:: rlemasklib.rlemasklib.fill_small_holes(rle, connectivity = 4, min_size = 1)
+
+   Fill small holes in a mask.
+
+   Holes are defined as connected components of the background.
+
+   :param rle: an RLE mask dictionary
+   :param connectivity: either 4 or 8, the connectivity of the connected components. 4 means only
+                        horizontal and vertical connections are considered, while 8 means also diagonal
+                        connections are considered.
+   :param min_size: the minimum size of the holes to keep. Smaller holes will be filled (set to 1).
+
+   :returns: An RLE mask dictionary of the mask with small holes filled.
+
+
+.. footbibliography::

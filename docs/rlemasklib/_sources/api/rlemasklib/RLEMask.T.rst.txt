@@ -1,0 +1,14 @@
+T
+=
+
+.. py:property:: rlemasklib.RLEMask.T
+   :type: RLEMask
+
+
+   The transpose of the mask (i.e., columns become rows and vice versa)
+
+   :returns: A new RLEMask object representing the transpose of the mask.
+
+   .. seealso:: :meth:`transpose`
+
+.. footbibliography::

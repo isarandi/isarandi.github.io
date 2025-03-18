@@ -1,0 +1,17 @@
+vconcat
+=======
+
+.. py:method:: rlemasklib.RLEMask.vconcat(masks)
+   :staticmethod:
+
+
+   Vertically concatenate masks.
+
+   :param masks: a sequence of RLE masks
+
+   :returns: A new RLEMask object representing the vertically concatenated masks.
+
+   .. seealso:: :meth:`hconcat`, :meth:`concatenate`
+
+
+.. footbibliography::

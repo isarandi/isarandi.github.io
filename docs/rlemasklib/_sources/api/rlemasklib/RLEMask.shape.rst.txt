@@ -1,0 +1,12 @@
+shape
+=====
+
+.. py:property:: rlemasklib.RLEMask.shape
+   :type: tuple[int, int]
+
+
+   The shape of the mask (height, width).
+
+   :returns: A tuple of the shape of the mask (height, width).
+
+.. footbibliography::

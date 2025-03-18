@@ -1,0 +1,11 @@
+to_array
+=======
+
+.. py:method:: rlemasklib.RLEMask.to_array()
+
+   Convert the RLEMask object to a dense binary mask.
+
+   :returns: A binary mask (numpy 2D array of type uint8, where 0 is background and 1 is foreground)
+
+
+.. footbibliography::

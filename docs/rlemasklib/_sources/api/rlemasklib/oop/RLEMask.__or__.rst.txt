@@ -1,0 +1,22 @@
+__or__
+======
+
+.. py:method:: rlemasklib.oop.RLEMask.__or__(other)
+
+   Compute the union of two RLE masks.
+
+   :param other: another RLE mask
+
+   :returns: A new RLEMask object representing the union of the two masks.
+
+   .. rubric:: Examples
+
+   >>> rle1 = RLEMask(np.eye(3))
+   >>> rle2 = RLEMask(np.eye(3)[::-1])
+   >>> np.array(rle1 | rle2)
+   array([[1, 0, 1],
+          [0, 1, 0],
+          [1, 0, 1]], dtype=uint8)
+
+
+.. footbibliography::

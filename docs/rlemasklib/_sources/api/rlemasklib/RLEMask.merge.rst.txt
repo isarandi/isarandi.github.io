@@ -1,0 +1,19 @@
+merge
+=====
+
+.. py:method:: rlemasklib.RLEMask.merge(other, func)
+
+   Merge this mask with another using a Boolean function.
+
+   :param other: the other RLE mask
+   :param func: the Boolean function to apply
+
+   :returns: A new RLEMask object representing the result of the merge.
+
+   .. seealso::
+
+      :meth:`merge_custom`, which allows merging with custom n-ary Boolean functions.
+      :meth:`merge_many`, which allows merging with different binary Boolean functions.
+
+
+.. footbibliography::

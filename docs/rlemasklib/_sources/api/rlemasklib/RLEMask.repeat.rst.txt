@@ -1,0 +1,20 @@
+repeat
+======
+
+.. py:method:: rlemasklib.RLEMask.repeat(num_h, num_w, inplace = False)
+
+   Repeat the mask pixels multiple times along the axes, analogous to np.repeat (and not like np.tile).
+
+   This repeats each pixel in the mask `num_h` times along the vertical axis and `num_w` times
+   along the horizontal axis.
+
+   :param num_h: the number of times to repeat the mask along the vertical axis
+   :param num_w: the number of times to repeat the mask along the horizontal axis
+   :param inplace: whether to perform the operation in place or to return a new object
+
+   :returns: An RLEMask object representing the repeated mask (self if inplace=True)
+
+   .. seealso:: :meth:`tile`
+
+
+.. footbibliography::

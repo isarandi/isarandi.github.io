@@ -1,0 +1,17 @@
+to_dict
+=======
+
+.. py:method:: rlemasklib.RLEMask.to_dict(zlevel = None)
+
+   Convert the RLE mask to a dictionary.
+
+   :returns: A dictionary with the keys ``"size"`` and ``"counts"`` or ``"zcounts"``.
+
+             - ``"size"`` -- [height, width] of the mask
+             - ``"counts"`` -- LEB128-like compressed run-length counts as in pycocotools, or
+             - ``"zcounts"``-- if zlevel is provided, ``"counts"`` is further compressed using zlib
+
+   .. seealso:: :meth:`from_dict`
+
+
+.. footbibliography::

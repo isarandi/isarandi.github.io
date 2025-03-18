@@ -1,0 +1,21 @@
+dilate
+======
+
+.. py:method:: rlemasklib.RLEMask.dilate(kernel_shape='circle', kernel_size=7, inplace=False)
+
+   Dilate a mask with a kernel of a given shape and size.
+
+   :param kernel_shape: the shape of the kernel, either 'circle' or 'square'
+   :param kernel_size: the size of the kernel
+   :param inplace: whether to perform the operation in place or to return a new object
+
+   :returns: The RLEMask object representing the dilated mask (self if inplace=True)
+
+   .. seealso::
+
+      :meth:`dilate3x3` for a 3x3 kernel.
+      :meth:`dilate5x5` for a 5x5 kernel.
+      :meth:`erode`
+
+
+.. footbibliography::

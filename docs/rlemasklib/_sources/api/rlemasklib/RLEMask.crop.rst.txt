@@ -1,0 +1,16 @@
+crop
+====
+
+.. py:method:: rlemasklib.RLEMask.crop(bbox, inplace=False)
+
+   Crop the mask to the bounding box.
+
+   :param bbox: a bounding box, in the format [x_start, y_start, width, height]
+   :param inplace: whether to perform the operation in place or to return a new object
+
+   :returns: An RLEMask object representing the cropped mask.
+
+   .. seealso:: :meth:`tight_crop`
+
+
+.. footbibliography::

@@ -1,0 +1,18 @@
+from_bbox
+=========
+
+.. py:function:: rlemasklib.from_bbox(bbox, imshape=None, imsize=None)
+
+   Connvert a bounding box to an RLE mask of the given size.
+
+   :param bbox: a bounding box, in the format [x_start, y_start, width, height]
+   :param imshape: [height, width] of the desired mask (either this or imsize must be provided)
+   :param imsize: [width, height] of the desired mask (either this or imshape must be provided)
+
+   :returns:
+
+             An RLE mask corresponding to the input bounding box, i.e., a mask with all zeros except
+                 for 1s within the bounding box.
+
+
+.. footbibliography::

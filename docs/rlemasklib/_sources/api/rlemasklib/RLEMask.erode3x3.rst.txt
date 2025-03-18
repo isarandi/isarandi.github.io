@@ -1,0 +1,24 @@
+erode3x3
+========
+
+.. py:method:: rlemasklib.RLEMask.erode3x3(connectivity = 4, inplace = False)
+
+   Erode a mask with a 3x3 kernel.
+
+   After erosion, only those pixels remain foreground that were foreground before and all its
+   neighbors (according to the specified connectivity, 4-way or 8-way) are also foreground.
+
+
+   :param connectivity: either 4 or 8, the connectivity of the erosion. 4 means a cross-shaped
+                        kernel, 8 means a square kernel.
+   :param inplace: whether to perform the operation in place or to return a new object
+
+   :returns: The RLEMask object representing the eroded mask (self if inplace=True)
+
+   .. seealso::
+
+      :meth:`erode` for arbitrary kernel shapes.
+      :meth:`erode5x5` for a 5x5 kernel.
+
+
+.. footbibliography::

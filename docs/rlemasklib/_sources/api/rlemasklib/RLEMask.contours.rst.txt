@@ -1,0 +1,13 @@
+contours
+========
+
+.. py:method:: rlemasklib.RLEMask.contours()
+
+   An RLE consisting of those foreground pixels that have a background neighbor.
+
+   4-neighbourhood is used.
+
+   .. seealso:: :meth:`perimeter` for the contour length.
+
+
+.. footbibliography::
