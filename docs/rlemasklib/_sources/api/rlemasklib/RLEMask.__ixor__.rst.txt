@@ -1,11 +1,13 @@
+:html_theme.sidebar_secondary.remove: true
+
 __ixor__
 ========
 
 .. py:method:: rlemasklib.RLEMask.__ixor__(other)
 
-   Compute the symmetric difference with another RLE mask in place.
+   Compute the symmetric difference with another RLEMasks in place.
 
-   :param other: the other RLE mask
+   :param other: the other RLEMask
 
    :returns: Self
 

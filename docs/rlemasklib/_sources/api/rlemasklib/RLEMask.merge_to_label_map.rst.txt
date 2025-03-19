@@ -1,3 +1,5 @@
+:html_theme.sidebar_secondary.remove: true
+
 merge_to_label_map
 ==================
 

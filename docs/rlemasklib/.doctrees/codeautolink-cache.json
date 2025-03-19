@@ -11,7 +11,7 @@
           "BoolFunc"
         ]
       },
-      "doc_lineno": 20
+      "doc_lineno": 22
     }
   ],
   "api/rlemasklib/RLEMask": [],
@@ -27,7 +27,7 @@
           "__and__"
         ]
       },
-      "doc_lineno": 19
+      "doc_lineno": 21
     }
   ],
   "api/rlemasklib/RLEMask.__array__": [],
@@ -43,7 +43,7 @@
           "__getitem__"
         ]
       },
-      "doc_lineno": 18
+      "doc_lineno": 20
     },
     {
       "source": ">>> rle = RLEMask(np.eye(4))\n>>> rle[1, 1]\n1",
@@ -55,7 +55,7 @@
           "__getitem__"
         ]
       },
-      "doc_lineno": 24
+      "doc_lineno": 26
     }
   ],
   "api/rlemasklib/RLEMask.__iand__": [
@@ -69,7 +69,7 @@
           "__iand__"
         ]
       },
-      "doc_lineno": 19
+      "doc_lineno": 21
     }
   ],
   "api/rlemasklib/RLEMask.__invert__": [
@@ -83,7 +83,7 @@
           "__invert__"
         ]
       },
-      "doc_lineno": 16
+      "doc_lineno": 18
     }
   ],
   "api/rlemasklib/RLEMask.__ior__": [
@@ -97,7 +97,7 @@
           "__ior__"
         ]
       },
-      "doc_lineno": 19
+      "doc_lineno": 21
     }
   ],
   "api/rlemasklib/RLEMask.__isub__": [
@@ -111,7 +111,7 @@
           "__isub__"
         ]
       },
-      "doc_lineno": 19
+      "doc_lineno": 21
     }
   ],
   "api/rlemasklib/RLEMask.__ixor__": [
@@ -125,7 +125,7 @@
           "__ixor__"
         ]
       },
-      "doc_lineno": 19
+      "doc_lineno": 21
     }
   ],
   "api/rlemasklib/RLEMask.__or__": [
@@ -139,7 +139,7 @@
           "__or__"
         ]
       },
-      "doc_lineno": 19
+      "doc_lineno": 21
     }
   ],
   "api/rlemasklib/RLEMask.__repr__": [],
@@ -154,7 +154,7 @@
           "__setitem__"
         ]
       },
-      "doc_lineno": 20
+      "doc_lineno": 22
     }
   ],
   "api/rlemasklib/RLEMask.__sub__": [
@@ -168,7 +168,7 @@
           "__sub__"
         ]
       },
-      "doc_lineno": 19
+      "doc_lineno": 21
     }
   ],
   "api/rlemasklib/RLEMask.__xor__": [
@@ -182,7 +182,7 @@
           "__xor__"
         ]
       },
-      "doc_lineno": 19
+      "doc_lineno": 21
     }
   ],
   "api/rlemasklib/RLEMask.all": [],
@@ -216,7 +216,7 @@
           "dilate5x5"
         ]
       },
-      "doc_lineno": 12
+      "doc_lineno": 14
     }
   ],
   "api/rlemasklib/RLEMask.dilate_vertical": [],
@@ -233,7 +233,7 @@
           "erode5x5"
         ]
       },
-      "doc_lineno": 12
+      "doc_lineno": 14
     }
   ],
   "api/rlemasklib/RLEMask.fill_circle": [],
@@ -267,7 +267,7 @@
           "make_merge_function"
         ]
       },
-      "doc_lineno": 30
+      "doc_lineno": 32
     }
   ],
   "api/rlemasklib/RLEMask.max_pool2x2": [],
@@ -314,7 +314,7 @@
           "closing2"
         ]
       },
-      "doc_lineno": 12
+      "doc_lineno": 14
     }
   ],
   "api/rlemasklib/compress": [],
@@ -335,7 +335,7 @@
           "dilate2"
         ]
       },
-      "doc_lineno": 12
+      "doc_lineno": 14
     }
   ],
   "api/rlemasklib/empty": [],
@@ -352,7 +352,7 @@
           "erode2"
         ]
       },
-      "doc_lineno": 12
+      "doc_lineno": 14
     }
   ],
   "api/rlemasklib/fill_small_holes": [],
@@ -378,7 +378,7 @@
           "opening2"
         ]
       },
-      "doc_lineno": 12
+      "doc_lineno": 14
     }
   ],
   "api/rlemasklib/pad": [],
@@ -842,11 +842,11 @@
       ],
       "example": {
         "document": "index",
-        "ref_id": "flipping-rotation-transpose",
+        "ref_id": "connected-components-and-filtering",
         "headings": [
           "Run-Length Encoded Mask Operations",
           "Object-Oriented Usage",
-          "Flipping, Rotation, Transpose"
+          "Connected Components and Filtering"
         ]
       },
       "doc_lineno": 153

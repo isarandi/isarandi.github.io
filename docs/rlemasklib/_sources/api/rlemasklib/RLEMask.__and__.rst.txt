@@ -1,11 +1,13 @@
+:html_theme.sidebar_secondary.remove: true
+
 __and__
 =======
 
 .. py:method:: rlemasklib.RLEMask.__and__(other)
 
-   Compute the intersection of two RLE masks.
+   Compute the intersection of two RLEMasks.
 
-   :param other: another RLE mask
+   :param other: another RLEMask
 
    :returns: A new RLEMask object representing the intersection of the two masks.
 

@@ -1,11 +1,13 @@
+:html_theme.sidebar_secondary.remove: true
+
 __ior__
 =======
 
 .. py:method:: rlemasklib.RLEMask.__ior__(other)
 
-   Compute the union with another RLE mask in place.
+   Compute the union with another RLEMask in place.
 
-   :param other: the other RLE mask
+   :param other: the other RLEMask
 
    :returns: Self
 

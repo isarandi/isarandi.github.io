@@ -1,3 +1,5 @@
+:html_theme.sidebar_secondary.remove: true
+
 from_circle
 ===========
 
@@ -12,10 +14,7 @@ from_circle
    :param imshape: [height, width] of the desired mask (either this or imsize must be provided)
    :param imsize: [width, height] of the desired mask (either this or imshape must be provided)
 
-   :returns:
-
-             An RLEMask object where the area of the provided circle has the value 1, and the
-                 rest is 0.
+   :returns: An RLEMask object where the area of the provided circle has the value 1, and the                 rest is 0.
 
 
 .. footbibliography::

@@ -25,13 +25,13 @@
 <link href="_static/pygments.css?v=a746c00c" rel="stylesheet" type="text/css"/>
 <link href="_static/graphviz.css?v=4ae1632d" rel="stylesheet" type="text/css"/>
 <link href="_static/sphinx-codeautolink.css?v=b2176991" rel="stylesheet" type="text/css"/>
-<link href="_static/styles/my_theme.css?v=2aaf556a" rel="stylesheet" type="text/css"/>
+<link href="_static/styles/my_theme.css?v=e0a5b87a" rel="stylesheet" type="text/css"/>
 <!-- So that users can add custom icons -->
 <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" rel="preload"/>
 <link as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" rel="preload"/>
-<script src="_static/documentation_options.js?v=19ed39ba"></script>
+<script src="_static/documentation_options.js?v=2e15b3d0"></script>
 <script src="_static/doctools.js?v=9bcbadda"></script>
 <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
 <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
@@ -95,6 +95,12 @@
 <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
 <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
 </button></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link pst-navbar-icon" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/isarandi/rlemasklib" rel="noopener" target="_blank" title="GitHub"><i aria-hidden="true" class="fa-brands fa-square-github fa-lg"></i>
+<span class="sr-only">GitHub</span></a>
+</li>
+</ul></div>
 </div>
 </div>
 <div class="navbar-persistent--mobile">
@@ -133,6 +139,12 @@
 <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
 <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
 </button></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link pst-navbar-icon" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/isarandi/rlemasklib" rel="noopener" target="_blank" title="GitHub"><i aria-hidden="true" class="fa-brands fa-square-github fa-lg"></i>
+<span class="sr-only">GitHub</span></a>
+</li>
+</ul></div>
 </div>
 </div>
 <div class="sidebar-primary-items__end sidebar-primary__section">
@@ -260,7 +272,9 @@ the COCO compression)</p></li>
 <span class="n">rotated_mask</span> <span class="o">=</span> <span class="n">mask1</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Rotate 90 degrees counterclockwise</span>
 </pre></div>
 </div>
-<p>Connected Components and Filtering</p>
+</section>
+<section id="connected-components-and-filtering">
+<h3>Connected Components and Filtering<a class="headerlink" href="#connected-components-and-filtering" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">RLEMask</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
@@ -369,18 +383,12 @@ The object-oriented API is better if you need to perform multiple operations on 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">Slicing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#morphological-operations">Morphological Operations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flipping-rotation-transpose">Flipping, Rotation, Transpose</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connected-components-and-filtering">Connected Components and Filtering</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-usage">Functional Usage</a></li>
 </ul>
 </nav></div>
-<div class="sidebar-secondary-item">
-<div class="tocsection sourcelink">
-<a href="_sources/index.rst.txt">
-<i class="fa-solid fa-file-lines"></i> Show Source
-    </a>
-</div>
-</div>
 </div></div>
 </div>
 <footer class="bd-footer-content">

@@ -1,9 +1,13 @@
+:html_theme.sidebar_secondary.remove: true
+
 repeat
 ======
 
 .. py:method:: rlemasklib.RLEMask.repeat(num_h, num_w, inplace = False)
 
-   Repeat the mask pixels multiple times along the axes, analogous to np.repeat (and not like np.tile).
+   Repeat the mask pixels multiple times along the axes.
+
+   This method is analogous to :func:`np.repeat <numpy.repeat>` (not :func:`np.tile <numpy.tile>`).
 
    This repeats each pixel in the mask `num_h` times along the vertical axis and `num_w` times
    along the horizontal axis.

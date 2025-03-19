@@ -1,9 +1,11 @@
+:html_theme.sidebar_secondary.remove: true
+
 __array__
 =========
 
 .. py:method:: rlemasklib.RLEMask.__array__(dtype=None, copy=None)
 
-   Convert the RLE mask to a dense numpy array, used by numpy functions.
+   Convert the RLEMask to a dense numpy array, used by numpy functions.
 
    :returns: A numpy array of type uint8 representing the mask with 0 and 1 values.
 

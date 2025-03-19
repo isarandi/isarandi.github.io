@@ -1,3 +1,5 @@
+:html_theme.sidebar_secondary.remove: true
+
 perimeter
 =========
 
@@ -5,7 +7,7 @@ perimeter
 
    The number of pixels along the contour of the mask.
 
-   .. seealso:: :meth:`contour`
+   .. seealso:: :meth:`contours`
 
 
 .. footbibliography::

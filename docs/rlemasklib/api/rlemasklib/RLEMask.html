@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-codeautolink.css?v=b2176991" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/my_theme.css?v=2aaf556a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/my_theme.css?v=e0a5b87a" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
@@ -41,7 +41,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script src="../../_static/documentation_options.js?v=19ed39ba"></script>
+    <script src="../../_static/documentation_options.js?v=2e15b3d0"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api/rlemasklib/RLEMask';</script>
@@ -160,6 +160,22 @@
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
       
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/isarandi/rlemasklib" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
     </div>
     
   </div>
@@ -175,10 +191,6 @@
     </div>
   
 
-  
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
-      <span class="fa-solid fa-outdent"></span>
-    </button>
   
 </div>
 
@@ -229,6 +241,22 @@
   <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/isarandi/rlemasklib" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
         
       </div>
     
@@ -438,7 +466,7 @@
 </div>
 <dl class="py class">
 <dt class="sig sig-object py" id="rlemasklib.RLEMask">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rlemasklib.</span></span><span class="sig-name descname"><span class="pre">RLEMask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlemasklib.RLEMask" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rlemasklib.</span></span><span class="sig-name descname"><span class="pre">RLEMask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/isarandi/rlemasklib/blob/main/src/rlemasklib/oop.py#L10-L1937"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rlemasklib.RLEMask" title="Link to this definition">#</a></dt>
 <dd><p>Run-length encoded mask.</p>
 <p>The RLEMask class represents a binary mask using run-length encoding. The mask can be
 created from a dense array, a bounding box, a polygon, or a circle, or from run-length
@@ -516,34 +544,34 @@ a list/1D-array of run-length counts.</p></li>
 <td><p>Compute the union of two RLE masks.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="RLEMask.__ior__.html#rlemasklib.RLEMask.__ior__" title="rlemasklib.RLEMask.__ior__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__ior__</span></code></a>(other)</p></td>
-<td><p>Compute the union with another RLE mask in place.</p></td>
+<td><p>Compute the union with another RLEMask in place.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.__and__.html#rlemasklib.RLEMask.__and__" title="rlemasklib.RLEMask.__and__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__and__</span></code></a>(other)</p></td>
-<td><p>Compute the intersection of two RLE masks.</p></td>
+<td><p>Compute the intersection of two RLEMasks.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="RLEMask.__iand__.html#rlemasklib.RLEMask.__iand__" title="rlemasklib.RLEMask.__iand__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__iand__</span></code></a>(other)</p></td>
-<td><p>Compute the intersection with another RLE mask in place.</p></td>
+<td><p>Compute the intersection with another RLEMask in place.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.__xor__.html#rlemasklib.RLEMask.__xor__" title="rlemasklib.RLEMask.__xor__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__xor__</span></code></a>(other)</p></td>
-<td><p>Compute the symmetric difference of two RLE masks.</p></td>
+<td><p>Compute the symmetric difference of two RLEMasks.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="RLEMask.__ixor__.html#rlemasklib.RLEMask.__ixor__" title="rlemasklib.RLEMask.__ixor__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__ixor__</span></code></a>(other)</p></td>
-<td><p>Compute the symmetric difference with another RLE mask in place.</p></td>
+<td><p>Compute the symmetric difference with another RLEMasks in place.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.__sub__.html#rlemasklib.RLEMask.__sub__" title="rlemasklib.RLEMask.__sub__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__sub__</span></code></a>(other)</p></td>
-<td><p>Compute the difference of two RLE masks.</p></td>
+<td><p>Compute the difference of two RLEMasks.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="RLEMask.__isub__.html#rlemasklib.RLEMask.__isub__" title="rlemasklib.RLEMask.__isub__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__isub__</span></code></a>(other)</p></td>
-<td><p>Compute the difference with another RLE mask in place.</p></td>
+<td><p>Compute the difference with another RLEMask in place.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.__eq__.html#rlemasklib.RLEMask.__eq__" title="rlemasklib.RLEMask.__eq__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__eq__</span></code></a>(other)</p></td>
-<td><p>Check if two RLE masks are equal (same runlengths and shape).</p></td>
+<td><p>Check if two RLEMasks are equal (same runlengths and shape).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="RLEMask.__repr__.html#rlemasklib.RLEMask.__repr__" title="rlemasklib.RLEMask.__repr__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__repr__</span></code></a>()</p></td>
-<td><p>A string representation of the RLE mask, containing the shape and the runlengths.</p></td>
+<td><p>A string representation of the RLEMask, containing the shape and the runlengths.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.__array__.html#rlemasklib.RLEMask.__array__" title="rlemasklib.RLEMask.__array__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__array__</span></code></a>([dtype, copy])</p></td>
-<td><p>Convert the RLE mask to a dense numpy array, used by numpy functions.</p></td>
+<td><p>Convert the RLEMask to a dense numpy array, used by numpy functions.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="RLEMask.any.html#rlemasklib.RLEMask.any" title="rlemasklib.RLEMask.any"><code class="xref py py-obj docutils literal notranslate"><span class="pre">any</span></code></a>()</p></td>
 <td><p>Check if any pixel in the mask is foreground.</p></td>
@@ -621,7 +649,7 @@ a list/1D-array of run-length counts.</p></li>
 <td><p>Merge this mask with another using a Boolean function.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.repeat.html#rlemasklib.RLEMask.repeat" title="rlemasklib.RLEMask.repeat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">repeat</span></code></a>(num_h, num_w[, inplace])</p></td>
-<td><p>Repeat the mask pixels multiple times along the axes, analogous to np.repeat (and not like np.tile).</p></td>
+<td><p>Repeat the mask pixels multiple times along the axes.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="RLEMask.centroid.html#rlemasklib.RLEMask.centroid" title="rlemasklib.RLEMask.centroid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">centroid</span></code></a>()</p></td>
 <td><p>The centroid of the mask, as a numpy float32 array [x, y].</p></td>
@@ -663,7 +691,7 @@ a list/1D-array of run-length counts.</p></li>
 <td><p>Flip the mask horizontally.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="RLEMask.tile.html#rlemasklib.RLEMask.tile" title="rlemasklib.RLEMask.tile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tile</span></code></a>(num_h, num_w)</p></td>
-<td><p>Tile the mask multiple times along the axes, analogous to np.tile.</p></td>
+<td><p>Tile the mask multiple times along the axes, analogous to <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.tile.html#numpy.tile" title="(in NumPy v2.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">np.tile</span></code></a>.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="RLEMask.copy.html#rlemasklib.RLEMask.copy" title="rlemasklib.RLEMask.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
 <td><p>Clone the mask.</p></td>
@@ -794,36 +822,6 @@ a list/1D-array of run-length counts.</p></li>
             </div>
             
             
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-<div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rlemasklib.RLEMask"><code class="docutils literal notranslate"><span class="pre">RLEMask</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties">Properties</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instance-methods">Instance Methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#static-methods">Static Methods</a></li>
-</ul>
-  </nav></div>
-
-  <div class="sidebar-secondary-item">
-
-  <div class="tocsection sourcelink">
-    <a href="../../_sources/api/rlemasklib/RLEMask.rst.txt">
-      <i class="fa-solid fa-file-lines"></i> Show Source
-    </a>
-  </div>
-</div>
-
-</div></div>
               
             
           </div>

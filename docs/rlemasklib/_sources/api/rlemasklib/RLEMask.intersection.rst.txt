@@ -1,3 +1,5 @@
+:html_theme.sidebar_secondary.remove: true
+
 intersection
 ============
 
@@ -13,7 +15,7 @@ intersection
 
    .. seealso::
 
-      :meth:`__and__`, which provides the intersection as the `&` operator.
+      :meth:`__and__`, which provides the intersection as the ``&`` operator.
       :meth:`merge_many`, which allows merging with different binary Boolean functions.
       :meth:`merge_many_custom`, which allows merging with custom n-ary Boolean functions.
 

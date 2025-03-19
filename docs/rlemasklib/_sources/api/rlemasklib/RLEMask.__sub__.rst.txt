@@ -1,9 +1,11 @@
+:html_theme.sidebar_secondary.remove: true
+
 __sub__
 =======
 
 .. py:method:: rlemasklib.RLEMask.__sub__(other)
 
-   Compute the difference of two RLE masks.
+   Compute the difference of two RLEMasks.
 
    :param other: another RLE mask
 

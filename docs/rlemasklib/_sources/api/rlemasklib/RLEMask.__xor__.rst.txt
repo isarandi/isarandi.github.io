@@ -1,11 +1,13 @@
+:html_theme.sidebar_secondary.remove: true
+
 __xor__
 =======
 
 .. py:method:: rlemasklib.RLEMask.__xor__(other)
 
-   Compute the symmetric difference of two RLE masks.
+   Compute the symmetric difference of two RLEMasks.
 
-   :param other: another RLE mask
+   :param other: another RLEMask
 
    :returns: A new RLEMask object representing the symmetric difference of the two masks.
 

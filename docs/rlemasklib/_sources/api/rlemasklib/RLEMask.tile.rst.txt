@@ -1,9 +1,11 @@
+:html_theme.sidebar_secondary.remove: true
+
 tile
 ====
 
 .. py:method:: rlemasklib.RLEMask.tile(num_h, num_w)
 
-   Tile the mask multiple times along the axes, analogous to np.tile.
+   Tile the mask multiple times along the axes, analogous to :func:`np.tile <numpy.tile>`.
 
    This repeats the mask `num_h` times along the vertical axis and `num_w` times along the
    horizontal axis.

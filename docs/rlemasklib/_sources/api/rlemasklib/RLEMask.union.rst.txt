@@ -1,3 +1,5 @@
+:html_theme.sidebar_secondary.remove: true
+
 union
 =====
 
@@ -11,7 +13,7 @@ union
 
    :returns: A new RLEMask object representing the union of the masks.
 
-   .. seealso:: :meth:`__or__`, which provides the union as the `|` operator.
+   .. seealso:: :meth:`__or__`, which provides the union as the ``|`` operator.
 
 
 .. footbibliography::

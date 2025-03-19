@@ -1,3 +1,5 @@
+:html_theme.sidebar_secondary.remove: true
+
 ones_like
 =========
 
@@ -10,10 +12,7 @@ ones_like
    :param mask: any other object with a mask.shape[0] and mask.shape[1]
                 (e.g., RLEMask, NumPy array)
 
-   :returns:
-
-             A new RLEMask object representing a mask of ones with the same shape as the input
-                 mask.
+   :returns: A new RLEMask object representing a mask of ones with the same shape as the input                 mask.
 
 
 .. footbibliography::

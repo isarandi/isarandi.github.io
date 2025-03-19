@@ -1,3 +1,5 @@
+:html_theme.sidebar_secondary.remove: true
+
 __setitem__
 ===========
 
@@ -6,7 +8,7 @@ __setitem__
    Set the value of a submask to either a constant or another RLE or dense mask.
 
    :param key: a tuple of two slices, one for height and one for width
-   :param value: either a constant (0 or 1) or another RLE or a numpy mask with the same size
+   :param value: either a constant (0 or 1) or another RLEMask or a numpy mask with the same size
                  as the submask
 
    .. rubric:: Examples

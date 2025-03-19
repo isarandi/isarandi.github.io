@@ -1,3 +1,5 @@
+:html_theme.sidebar_secondary.remove: true
+
 fill_circle
 ===========
 
@@ -10,7 +12,7 @@ fill_circle
    :param value: the value to fill with (0 or 1)
    :param inplace: whether to perform the operation in place or to return a new object
 
-   :returns: A new RLEMask object with the circle filled.
+   :returns: An RLEMask object with the circle filled (self if inplace=True)
 
    .. seealso:: :meth:`fill_rectangle`
 

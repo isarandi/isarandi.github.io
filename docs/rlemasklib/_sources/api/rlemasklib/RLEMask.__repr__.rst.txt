@@ -1,9 +1,11 @@
+:html_theme.sidebar_secondary.remove: true
+
 __repr__
 ========
 
 .. py:method:: rlemasklib.RLEMask.__repr__()
 
-   A string representation of the RLE mask, containing the shape and the runlengths.
+   A string representation of the RLEMask, containing the shape and the runlengths.
 
 
 .. footbibliography::

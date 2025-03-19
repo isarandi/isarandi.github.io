@@ -1,3 +1,5 @@
+:html_theme.sidebar_secondary.remove: true
+
 is_valid_rle
 ============
 
