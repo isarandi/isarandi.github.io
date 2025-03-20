@@ -14,7 +14,8 @@ merge_count
    be the majority vote of the masks.
 
    :param masks: a list of RLEMask objects
-   :param threshold: the threshold for merging
+   :param threshold: the minimum number of masks that must have a pixel set for it to be set
+                     in the result
 
    :returns: A new RLEMask object representing the merged mask.
 

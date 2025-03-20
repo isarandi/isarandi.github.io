@@ -1,0 +1,12 @@
+:html_theme.sidebar_secondary.remove: true
+
+XOR
+===
+
+.. py:attribute:: rlemasklib.BoolFunc.XOR
+   :value: 6
+
+
+   Symmetric difference (exclusive or) of the two arguments (same as :attr:`SYMMETRIC_DIFFERENCE`).
+
+.. footbibliography::

@@ -1,0 +1,12 @@
+:html_theme.sidebar_secondary.remove: true
+
+EQUIVALENCE
+===========
+
+.. py:attribute:: rlemasklib.BoolFunc.EQUIVALENCE
+   :value: -7
+
+
+   Equivalence (biconditional) of the two arguments (same as :attr:`XNOR`).
+
+.. footbibliography::

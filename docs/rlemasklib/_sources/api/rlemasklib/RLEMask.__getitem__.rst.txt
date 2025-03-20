@@ -7,9 +7,11 @@ __getitem__
 
    Crop the RLE mask to get a submask, by slicing, or retrieve a single pixel value.
 
-   :param key: a tuple of two slices or two ints, one for height and one for width
+   :param key: a slice, a tuple of two slices or two ints (one for height and one for width)
 
    :returns: A new RLEMask object representing the submask.
+
+   :raises ValueError: if the key is not a tuple of two slices or two integers.
 
    .. rubric:: Examples
 

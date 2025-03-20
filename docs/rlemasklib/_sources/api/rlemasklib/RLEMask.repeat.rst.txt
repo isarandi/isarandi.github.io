@@ -18,7 +18,7 @@ repeat
 
    :returns: An RLEMask object representing the repeated mask (self if inplace=True)
 
-   .. seealso:: :meth:`tile`
+   .. seealso:: Not to be confused with :meth:`tile`
 
 
 .. footbibliography::

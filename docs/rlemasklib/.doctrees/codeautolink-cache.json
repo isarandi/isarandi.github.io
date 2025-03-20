@@ -2,8 +2,173 @@
   "api/index": [],
   "api/rlemasklib/BoolFunc": [
     {
-      "source": ">>> d1 = encode(np.eye(3))\n>>> d2 = encode(np.eye(3)[::-1])\n>>> d3 = merge([d1, d2], ~BoolFunc.X & BoolFunc.Y)\narray([[0, 0, 1],\n       [0, 0, 0],\n       [1, 0, 0]], dtype=uint8)",
-      "names": [],
+      "source": ">>> from rlemasklib import RLEMask, BoolFunc\n>>> m1 = RLEMask.from_array(np.eye(3))\n>>> m2 = RLEMask.from_array(np.eye(3)[::-1])\n>>> m3 = m1.merge(m2, ~BoolFunc.A & BoolFunc.B)\n>>> m3.to_array()\narray([[0, 0, 1],\n       [0, 0, 0],\n       [1, 0, 0]], dtype=uint8)",
+      "names": [
+        {
+          "import_components": [
+            "rlemasklib"
+          ],
+          "code_str": "rlemasklib",
+          "lineno": 1,
+          "end_lineno": 1,
+          "context": "import_from",
+          "resolved_location": "rlemasklib"
+        },
+        {
+          "import_components": [
+            "rlemasklib",
+            "RLEMask"
+          ],
+          "code_str": "RLEMask",
+          "lineno": 1,
+          "end_lineno": 1,
+          "context": "import_target",
+          "resolved_location": "rlemasklib.RLEMask"
+        },
+        {
+          "import_components": [
+            "rlemasklib",
+            "BoolFunc"
+          ],
+          "code_str": "BoolFunc",
+          "lineno": 1,
+          "end_lineno": 1,
+          "context": "import_target",
+          "resolved_location": "rlemasklib.BoolFunc"
+        },
+        {
+          "import_components": [
+            "rlemasklib",
+            "RLEMask",
+            "from_array"
+          ],
+          "code_str": "RLEMask.from_array",
+          "lineno": 2,
+          "end_lineno": 2,
+          "context": "none",
+          "resolved_location": "rlemasklib.RLEMask.from_array"
+        },
+        {
+          "import_components": [
+            "rlemasklib",
+            "RLEMask",
+            "from_array",
+            "()"
+          ],
+          "code_str": "m1",
+          "lineno": 2,
+          "end_lineno": 2,
+          "context": "none",
+          "resolved_location": "rlemasklib.RLEMask"
+        },
+        {
+          "import_components": [
+            "rlemasklib",
+            "RLEMask",
+            "from_array"
+          ],
+          "code_str": "RLEMask.from_array",
+          "lineno": 3,
+          "end_lineno": 3,
+          "context": "none",
+          "resolved_location": "rlemasklib.RLEMask.from_array"
+        },
+        {
+          "import_components": [
+            "rlemasklib",
+            "RLEMask",
+            "from_array",
+            "()"
+          ],
+          "code_str": "m2",
+          "lineno": 3,
+          "end_lineno": 3,
+          "context": "none",
+          "resolved_location": "rlemasklib.RLEMask"
+        },
+        {
+          "import_components": [
+            "rlemasklib",
+            "RLEMask",
+            "from_array",
+            "()",
+            "merge"
+          ],
+          "code_str": "m1.merge",
+          "lineno": 4,
+          "end_lineno": 4,
+          "context": "none",
+          "resolved_location": "rlemasklib.RLEMask.merge"
+        },
+        {
+          "import_components": [
+            "rlemasklib",
+            "RLEMask",
+            "from_array",
+            "()"
+          ],
+          "code_str": "m2",
+          "lineno": 4,
+          "end_lineno": 4,
+          "context": "none",
+          "resolved_location": "rlemasklib.RLEMask"
+        },
+        {
+          "import_components": [
+            "rlemasklib",
+            "BoolFunc",
+            "A"
+          ],
+          "code_str": "BoolFunc.A",
+          "lineno": 4,
+          "end_lineno": 4,
+          "context": "none",
+          "resolved_location": "rlemasklib.BoolFunc.A"
+        },
+        {
+          "import_components": [
+            "rlemasklib",
+            "BoolFunc",
+            "B"
+          ],
+          "code_str": "BoolFunc.B",
+          "lineno": 4,
+          "end_lineno": 4,
+          "context": "none",
+          "resolved_location": "rlemasklib.BoolFunc.B"
+        },
+        {
+          "import_components": [
+            "rlemasklib",
+            "RLEMask",
+            "from_array",
+            "()",
+            "merge",
+            "()"
+          ],
+          "code_str": "m3",
+          "lineno": 4,
+          "end_lineno": 4,
+          "context": "none",
+          "resolved_location": "rlemasklib.RLEMask"
+        },
+        {
+          "import_components": [
+            "rlemasklib",
+            "RLEMask",
+            "from_array",
+            "()",
+            "merge",
+            "()",
+            "to_array"
+          ],
+          "code_str": "m3.to_array",
+          "lineno": 5,
+          "end_lineno": 5,
+          "context": "none",
+          "resolved_location": "rlemasklib.RLEMask.to_array"
+        }
+      ],
       "example": {
         "document": "api/rlemasklib/BoolFunc",
         "ref_id": "boolfunc",
@@ -11,9 +176,154 @@
           "BoolFunc"
         ]
       },
-      "doc_lineno": 22
+      "doc_lineno": 39
+    },
+    {
+      "source": ">>> from rlemasklib import encode, merge, decode, BoolFunc\n>>> d1 = encode(np.eye(3))\n>>> d2 = encode(np.eye(3)[::-1])\n>>> d3 = merge([d1, d2], ~BoolFunc.A & BoolFunc.B)\n>>> decode(d3)\narray([[0, 0, 1],\n       [0, 0, 0],\n       [1, 0, 0]], dtype=uint8)",
+      "names": [
+        {
+          "import_components": [
+            "rlemasklib"
+          ],
+          "code_str": "rlemasklib",
+          "lineno": 1,
+          "end_lineno": 1,
+          "context": "import_from",
+          "resolved_location": "rlemasklib"
+        },
+        {
+          "import_components": [
+            "rlemasklib",
+            "encode"
+          ],
+          "code_str": "encode",
+          "lineno": 1,
+          "end_lineno": 1,
+          "context": "import_target",
+          "resolved_location": "rlemasklib.encode"
+        },
+        {
+          "import_components": [
+            "rlemasklib",
+            "merge"
+          ],
+          "code_str": "merge",
+          "lineno": 1,
+          "end_lineno": 1,
+          "context": "import_target",
+          "resolved_location": "rlemasklib.merge"
+        },
+        {
+          "import_components": [
+            "rlemasklib",
+            "decode"
+          ],
+          "code_str": "decode",
+          "lineno": 1,
+          "end_lineno": 1,
+          "context": "import_target",
+          "resolved_location": "rlemasklib.decode"
+        },
+        {
+          "import_components": [
+            "rlemasklib",
+            "BoolFunc"
+          ],
+          "code_str": "BoolFunc",
+          "lineno": 1,
+          "end_lineno": 1,
+          "context": "import_target",
+          "resolved_location": "rlemasklib.BoolFunc"
+        },
+        {
+          "import_components": [
+            "rlemasklib",
+            "encode"
+          ],
+          "code_str": "encode",
+          "lineno": 2,
+          "end_lineno": 2,
+          "context": "none",
+          "resolved_location": "rlemasklib.encode"
+        },
+        {
+          "import_components": [
+            "rlemasklib",
+            "encode"
+          ],
+          "code_str": "encode",
+          "lineno": 3,
+          "end_lineno": 3,
+          "context": "none",
+          "resolved_location": "rlemasklib.encode"
+        },
+        {
+          "import_components": [
+            "rlemasklib",
+            "merge"
+          ],
+          "code_str": "merge",
+          "lineno": 4,
+          "end_lineno": 4,
+          "context": "none",
+          "resolved_location": "rlemasklib.merge"
+        },
+        {
+          "import_components": [
+            "rlemasklib",
+            "BoolFunc",
+            "A"
+          ],
+          "code_str": "BoolFunc.A",
+          "lineno": 4,
+          "end_lineno": 4,
+          "context": "none",
+          "resolved_location": "rlemasklib.BoolFunc.A"
+        },
+        {
+          "import_components": [
+            "rlemasklib",
+            "BoolFunc",
+            "B"
+          ],
+          "code_str": "BoolFunc.B",
+          "lineno": 4,
+          "end_lineno": 4,
+          "context": "none",
+          "resolved_location": "rlemasklib.BoolFunc.B"
+        },
+        {
+          "import_components": [
+            "rlemasklib",
+            "decode"
+          ],
+          "code_str": "decode",
+          "lineno": 5,
+          "end_lineno": 5,
+          "context": "none",
+          "resolved_location": "rlemasklib.decode"
+        }
+      ],
+      "example": {
+        "document": "api/rlemasklib/BoolFunc",
+        "ref_id": "boolfunc",
+        "headings": [
+          "BoolFunc"
+        ]
+      },
+      "doc_lineno": 48
     }
   ],
+  "api/rlemasklib/BoolFunc.A": [],
+  "api/rlemasklib/BoolFunc.B": [],
+  "api/rlemasklib/BoolFunc.DIFFERENCE": [],
+  "api/rlemasklib/BoolFunc.EQUIVALENCE": [],
+  "api/rlemasklib/BoolFunc.IMPLICATION": [],
+  "api/rlemasklib/BoolFunc.NAND": [],
+  "api/rlemasklib/BoolFunc.NOR": [],
+  "api/rlemasklib/BoolFunc.SYMMETRIC_DIFFERENCE": [],
+  "api/rlemasklib/BoolFunc.XNOR": [],
+  "api/rlemasklib/BoolFunc.XOR": [],
   "api/rlemasklib/RLEMask": [],
   "api/rlemasklib/RLEMask.T": [],
   "api/rlemasklib/RLEMask.__and__": [
@@ -43,7 +353,7 @@
           "__getitem__"
         ]
       },
-      "doc_lineno": 20
+      "doc_lineno": 22
     },
     {
       "source": ">>> rle = RLEMask(np.eye(4))\n>>> rle[1, 1]\n1",
@@ -55,12 +365,12 @@
           "__getitem__"
         ]
       },
-      "doc_lineno": 26
+      "doc_lineno": 28
     }
   ],
   "api/rlemasklib/RLEMask.__iand__": [
     {
-      "source": ">>> rle1 = RLEMask(np.eye(3))\n>>> rle2 = RLEMask(np.eye(3)[::-1])\n>>> np.array(rle1 & rle2)\narray([[0, 0, 0],\n       [0, 1, 0],\n       [0, 0, 0]], dtype=uint8)",
+      "source": ">>> rle1 = RLEMask(np.eye(3))\n>>> rle2 = RLEMask(np.eye(3)[::-1])\n>>> rle1 &= rle2\n>>> np.array(rle1)\narray([[0, 0, 0],\n       [0, 1, 0],\n       [0, 0, 0]], dtype=uint8)",
       "names": [],
       "example": {
         "document": "api/rlemasklib/RLEMask.__iand__",
@@ -69,7 +379,7 @@
           "__iand__"
         ]
       },
-      "doc_lineno": 21
+      "doc_lineno": 22
     }
   ],
   "api/rlemasklib/RLEMask.__invert__": [
@@ -88,7 +398,7 @@
   ],
   "api/rlemasklib/RLEMask.__ior__": [
     {
-      "source": ">>> rle1 = RLEMask(np.eye(3))\n>>> rle2 = RLEMask(np.eye(3, k=-1))\n>>> np.array(rle1 | rle2)\narray([[1, 1, 1],\n       [1, 1, 1],\n       [1, 1, 1]], dtype=uint8)",
+      "source": ">>> rle1 = RLEMask(np.eye(3))\n>>> rle2 = RLEMask(np.eye(3, k=-1))\n>>> rle1 |= rle2\n>>> np.array(rle1)\narray([[1, 1, 1],\n       [1, 1, 1],\n       [1, 1, 1]], dtype=uint8)",
       "names": [],
       "example": {
         "document": "api/rlemasklib/RLEMask.__ior__",
@@ -97,12 +407,12 @@
           "__ior__"
         ]
       },
-      "doc_lineno": 21
+      "doc_lineno": 22
     }
   ],
   "api/rlemasklib/RLEMask.__isub__": [
     {
-      "source": ">>> rle1 = RLEMask(np.eye(3))\n>>> rle2 = RLEMask(np.eye(3)[::-1])\n>>> np.array(rle1 - rle2)\narray([[1, 0, 0],\n       [0, 0, 0],\n       [0, 0, 1]], dtype=uint8)",
+      "source": ">>> rle1 = RLEMask(np.eye(3))\n>>> rle2 = RLEMask(np.eye(3)[::-1])\n>>> rle1 -= rle2\n>>> np.array(rle1)\narray([[1, 0, 0],\n       [0, 0, 0],\n       [0, 0, 1]], dtype=uint8)",
       "names": [],
       "example": {
         "document": "api/rlemasklib/RLEMask.__isub__",
@@ -111,12 +421,12 @@
           "__isub__"
         ]
       },
-      "doc_lineno": 21
+      "doc_lineno": 22
     }
   ],
   "api/rlemasklib/RLEMask.__ixor__": [
     {
-      "source": ">>> rle1 = RLEMask(np.eye(3))\n>>> rle2 = RLEMask(np.eye(3)[::-1])\n>>> np.array(rle1 ^ rle2)\narray([[1, 0, 1],\n       [0, 1, 0],\n       [1, 0, 1]], dtype=uint8)",
+      "source": ">>> rle1 = RLEMask(np.eye(3))\n>>> rle2 = RLEMask(np.eye(3)[::-1])\n>>> rle1 ^= rle2\n>>> np.array(rle1)\narray([[1, 0, 1],\n       [0, 1, 0],\n       [1, 0, 1]], dtype=uint8)",
       "names": [],
       "example": {
         "document": "api/rlemasklib/RLEMask.__ixor__",
@@ -125,7 +435,7 @@
           "__ixor__"
         ]
       },
-      "doc_lineno": 21
+      "doc_lineno": 22
     }
   ],
   "api/rlemasklib/RLEMask.__or__": [
@@ -258,7 +568,7 @@
   "api/rlemasklib/RLEMask.largest_interior_rectangle_around": [],
   "api/rlemasklib/RLEMask.make_merge_function": [
     {
-      "source": ">>> mergefun = RLEMask.make_merge_function(lambda a, b, c: (a | b) & ~c)\n>>> rle1 = RLEMask(np.eye(3))\n>>> rle2 = RLEMask(np.eye(3)[::-1])\n>>> rle3 = RLEMask(np.eye(3, k=-1))\n>>> rle = mergefun(rle1, rle2, rle3)\n>>> np.array(rle)\narray([[1, 0, 0],\n       [0, 0, 0],\n       [0, 0, 1]], dtype=uint8)",
+      "source": ">>> mergefun = RLEMask.make_merge_function(lambda a, b, c: (a | b) & ~c)\n>>> rle1 = RLEMask(np.eye(3))\n>>> rle2 = RLEMask(np.eye(3)[::-1])\n>>> rle3 = RLEMask(np.eye(3, k=-2))\n>>> rle = mergefun(rle1, rle2, rle3)\n>>> np.array(rle)\narray([[1, 0, 1],\n       [0, 1, 0],\n       [0, 0, 1]], dtype=uint8)",
       "names": [],
       "example": {
         "document": "api/rlemasklib/RLEMask.make_merge_function",
@@ -493,7 +803,7 @@
           "Creating an RLEMask from a NumPy Array"
         ]
       },
-      "doc_lineno": 48
+      "doc_lineno": 49
     },
     {
       "source": "from rlemasklib import RLEMask\n\nmask1 = RLEMask.from_array(np.array([\n    [1, 0, 1],\n    [0, 1, 0],\n    [1, 0, 1]\n]))\n\nmask2 = RLEMask.from_array(np.array([\n    [0, 1, 0],\n    [1, 1, 1],\n    [0, 1, 0]\n]))\n\nunion_mask = mask1 | mask2\nintersection_mask = mask1 & mask2\n\nunion_mask = RLEMask.union([mask1, mask2])  # Any number of masks can be used\n\ndifference_mask = mask1 - mask2\ncomplement = ~mask1",
@@ -721,7 +1031,7 @@
           "Boolean Operations on Masks"
         ]
       },
-      "doc_lineno": 71
+      "doc_lineno": 72
     },
     {
       "source": "sliced_mask = mask1[1:3, 1:3]\nprint(np.array(sliced_mask))",
@@ -746,7 +1056,7 @@
           "Slicing"
         ]
       },
-      "doc_lineno": 101
+      "doc_lineno": 102
     },
     {
       "source": "print(mask1[1, 1])  # prints 1",
@@ -771,7 +1081,7 @@
           "Slicing"
         ]
       },
-      "doc_lineno": 109
+      "doc_lineno": 110
     },
     {
       "source": "mask = RLEMask.zeros((3, 3))\nmask[1:3, 1:3] = 1\nmask[0, 0] = 1",
@@ -785,7 +1095,7 @@
           "Slicing"
         ]
       },
-      "doc_lineno": 116
+      "doc_lineno": 117
     },
     {
       "source": "eroded_mask = mask1.erode3x3(connectivity=4)\ndilated_mask = mask1.dilate3x3(connectivity=4)\nprint(np.array(eroded_mask))",
@@ -810,7 +1120,7 @@
           "Morphological Operations"
         ]
       },
-      "doc_lineno": 129
+      "doc_lineno": 130
     },
     {
       "source": "flipped_mask = mask1.fliplr()\ntransposed_mask = mask1.transpose()  # Equivalent to mask1.T\nrotated_mask = mask1.rot90(k=1)  # Rotate 90 degrees counterclockwise",
@@ -824,7 +1134,7 @@
           "Flipping, Rotation, Transpose"
         ]
       },
-      "doc_lineno": 142
+      "doc_lineno": 143
     },
     {
       "source": "mask = RLEMask.from_array(np.array([\n    [0, 1, 1],\n    [1, 1, 1],\n    [0, 0, 0]\n]))\n\ncomponents = mask.connected_components(connectivity=4)\nfor component in components:\n    print(component.area())\n\nmask2 = mask.remove_small_components(connectivity=4, min_size=3)\nlargest_comp = mask.largest_connected_component(connectivity=8)",
@@ -849,10 +1159,10 @@
           "Connected Components and Filtering"
         ]
       },
-      "doc_lineno": 153
+      "doc_lineno": 154
     },
     {
-      "source": "import numpy as np\nimport rlemasklib\nfrom rlemasklib import RLEMask\n\nmask1 = np.array([\n    [0, 1, 1],\n    [1, 1, 0],\n    [0, 0, 1]\n])\nmask2 = np.array([\n    [1, 1, 1],\n    [1, 1, 0],\n    [0, 0, 1]\n])\n\nrle_dict1 = rlemasklib.encode(mask)  # functional API: array to dict directly)\nrle1 = RLEMask.from_dict(rle_dict1)  # OOP: dict to RLEMask\nrle2 = RLEMask.from_array(mask)  # OOP: array to RLEMask\nrle_dict2 = rle2.to_dict()  # OOP: RLEMask to dict\nintersection_dict = rlemasklib.intersection([rle_dict1, rle_dict2])\nintersection_rle = RLEMask.intersection([rle1, rle2])",
+      "source": "import numpy as np\nimport rlemasklib\nfrom rlemasklib import RLEMask\n\nmask1 = np.array([\n    [0, 1, 1],\n    [1, 1, 0],\n    [0, 0, 1]\n])\nmask2 = np.array([\n    [1, 1, 1],\n    [1, 1, 0],\n    [0, 0, 1]\n])\n\nrle_dict1 = rlemasklib.encode(mask1)  # functional API: array to dict directly)\nrle1 = RLEMask.from_dict(rle_dict1)  # OOP: dict to RLEMask\nrle2 = RLEMask.from_array(mask2)  # OOP: array to RLEMask\nrle_dict2 = rle2.to_dict()  # OOP: RLEMask to dict\nintersection_dict = rlemasklib.intersection([rle_dict1, rle_dict2])\nintersection_rle = RLEMask.intersection([rle1, rle2])",
       "names": [
         {
           "import_components": [
@@ -1063,7 +1373,7 @@
           "Functional Usage"
         ]
       },
-      "doc_lineno": 187
+      "doc_lineno": 188
     }
   ]
 }

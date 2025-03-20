@@ -1,0 +1,12 @@
+:html_theme.sidebar_secondary.remove: true
+
+DIFFERENCE
+==========
+
+.. py:attribute:: rlemasklib.BoolFunc.DIFFERENCE
+   :value: 4
+
+
+   Difference (subtraction) of the two arguments.
+
+.. footbibliography::

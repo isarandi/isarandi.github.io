@@ -13,6 +13,9 @@ hconcat
 
    :returns: A new RLEMask object representing the horizontally concatenated masks.
 
+   :raises ValueError: if the masks have different heights
+   :raises ValueError: if the iterable is empty
+
    .. seealso:: :meth:`vconcat`, :meth:`concatenate`
 
 

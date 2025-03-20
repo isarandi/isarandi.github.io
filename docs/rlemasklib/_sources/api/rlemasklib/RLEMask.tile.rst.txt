@@ -15,7 +15,7 @@ tile
 
    :returns: A new RLEMask object representing the tiled mask.
 
-   .. seealso:: :meth:`repeat`
+   .. seealso:: Not to be confused with :meth:`repeat`
 
 
 .. footbibliography::

@@ -14,6 +14,10 @@ concatenate
 
    :returns: A new RLEMask object representing the concatenated masks.
 
+   :raises ValueError: if the masks have different shapes along the axis
+   :raises ValueError: if the iterable is empty
+   :raises ValueError: if the axis is not 0 or 1
+
    .. seealso:: :meth:`hconcat`, :meth:`vconcat`
 
 

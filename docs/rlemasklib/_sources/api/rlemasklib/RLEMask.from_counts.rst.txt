@@ -16,5 +16,8 @@ from_counts
    :param order: the order of the counts in the list, either 'F' or 'C' for Fortran
                  (column major) or C (row major) order
 
+   :raises ValueError: if the sum of the counts is not equal to height * width.
+   :raises ValueError: if the order is not 'F' or 'C'.
+
 
 .. footbibliography::

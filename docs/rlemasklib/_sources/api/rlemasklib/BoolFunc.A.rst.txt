@@ -1,0 +1,12 @@
+:html_theme.sidebar_secondary.remove: true
+
+A
+=
+
+.. py:attribute:: rlemasklib.BoolFunc.A
+   :value: 12
+
+
+   The first argument.
+
+.. footbibliography::

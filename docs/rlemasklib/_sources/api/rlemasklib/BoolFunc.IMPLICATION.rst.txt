@@ -1,0 +1,12 @@
+:html_theme.sidebar_secondary.remove: true
+
+IMPLICATION
+===========
+
+.. py:attribute:: rlemasklib.BoolFunc.IMPLICATION
+   :value: -5
+
+
+   Implication (conditional) of the two arguments.
+
+.. footbibliography::

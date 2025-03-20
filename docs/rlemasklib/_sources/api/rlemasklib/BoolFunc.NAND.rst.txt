@@ -1,0 +1,12 @@
+:html_theme.sidebar_secondary.remove: true
+
+NAND
+====
+
+.. py:attribute:: rlemasklib.BoolFunc.NAND
+   :value: -9
+
+
+   NAND (not both) of the two arguments.
+
+.. footbibliography::

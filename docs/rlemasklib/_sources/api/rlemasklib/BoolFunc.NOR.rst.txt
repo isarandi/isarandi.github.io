@@ -1,0 +1,12 @@
+:html_theme.sidebar_secondary.remove: true
+
+NOR
+===
+
+.. py:attribute:: rlemasklib.BoolFunc.NOR
+   :value: -15
+
+
+   NOR (neither) of the two arguments.
+
+.. footbibliography::

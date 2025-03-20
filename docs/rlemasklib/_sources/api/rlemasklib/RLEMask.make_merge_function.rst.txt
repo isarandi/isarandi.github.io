@@ -24,11 +24,11 @@ make_merge_function
    >>> mergefun = RLEMask.make_merge_function(lambda a, b, c: (a | b) & ~c)
    >>> rle1 = RLEMask(np.eye(3))
    >>> rle2 = RLEMask(np.eye(3)[::-1])
-   >>> rle3 = RLEMask(np.eye(3, k=-1))
+   >>> rle3 = RLEMask(np.eye(3, k=-2))
    >>> rle = mergefun(rle1, rle2, rle3)
    >>> np.array(rle)
-   array([[1, 0, 0],
-          [0, 0, 0],
+   array([[1, 0, 1],
+          [0, 1, 0],
           [0, 0, 1]], dtype=uint8)
 
    .. seealso:: :meth:`merge_many_custom`

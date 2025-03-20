@@ -119,6 +119,11 @@ RLEMask
                a list/1D-array of run-length counts.
    :param shape: [height, width] of the mask, in case the input is a list of run-length counts.
 
+   :raises ValueError: if the input is not a dense 2D array, a dictionary, or a sequence of run-length
+       counts.
+   :raises ValueError: if the sum of the counts is not equal to height * width when counts are given.
+   :raises ValueError: if the shape is not provided when counts are given.
+
 Properties
 ----------
 

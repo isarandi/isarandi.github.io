@@ -15,7 +15,8 @@ __ior__
 
    >>> rle1 = RLEMask(np.eye(3))
    >>> rle2 = RLEMask(np.eye(3, k=-1))
-   >>> np.array(rle1 | rle2)
+   >>> rle1 |= rle2
+   >>> np.array(rle1)
    array([[1, 1, 1],
           [1, 1, 1],
           [1, 1, 1]], dtype=uint8)

@@ -25,13 +25,13 @@
 <link href="_static/pygments.css?v=a746c00c" rel="stylesheet" type="text/css"/>
 <link href="_static/graphviz.css?v=4ae1632d" rel="stylesheet" type="text/css"/>
 <link href="_static/sphinx-codeautolink.css?v=b2176991" rel="stylesheet" type="text/css"/>
-<link href="_static/styles/my_theme.css?v=e0a5b87a" rel="stylesheet" type="text/css"/>
+<link href="_static/styles/my_theme.css?v=e9692b10" rel="stylesheet" type="text/css"/>
 <!-- So that users can add custom icons -->
 <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" rel="preload"/>
 <link as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" rel="preload"/>
-<script src="_static/documentation_options.js?v=2e15b3d0"></script>
+<script src="_static/documentation_options.js?v=e59c231d"></script>
 <script src="_static/doctools.js?v=9bcbadda"></script>
 <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
 <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
@@ -163,12 +163,13 @@
 <p>RLEMaskLib is fully compatible with the COCO mask format (in the form of dictionaries) but can also work directly with runlength sequences.</p>
 <p>The library provides many operations on masks, including:</p>
 <ul class="simple">
-<li><p>Set operations (complement, difference, symmetric difference) and custom boolean functions.</p></li>
+<li><p>Set operations (and, or, xor, complement, difference) and custom boolean functions.</p></li>
 <li><p>Crop, pad, tile, concatenate</p></li>
 <li><p>Connected components extraction</p></li>
 <li><p>Warp (affine, perspective, lens distortion)</p></li>
 <li><p>Transpose, flip, rotate by multiples of 90 degrees</p></li>
 <li><p>Binary morphology: dilate, erode, open, close</p></li>
+<li><p>Determine the bounding box and the largest internal rectangle</p></li>
 <li><p>Convolve with arbitrary kernels</p></li>
 <li><p>Directly create fully foreground and fully background masks</p></li>
 <li><p>Decompress of COCO’s compressed RLE format to integer run-lengths, and vice versa</p></li>
@@ -317,9 +318,9 @@ The object-oriented API is better if you need to perform multiple operations on 
     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="p">])</span>
 
-<span class="n">rle_dict1</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/rlemasklib/encode.html#rlemasklib.encode" title="rlemasklib.encode"><span class="n">rlemasklib</span><span class="o">.</span><span class="n">encode</span></a><span class="p">(</span><span class="n">mask</span><span class="p">)</span>  <span class="c1"># functional API: array to dict directly)</span>
+<span class="n">rle_dict1</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/rlemasklib/encode.html#rlemasklib.encode" title="rlemasklib.encode"><span class="n">rlemasklib</span><span class="o">.</span><span class="n">encode</span></a><span class="p">(</span><span class="n">mask1</span><span class="p">)</span>  <span class="c1"># functional API: array to dict directly)</span>
 <a class="sphinx-codeautolink-a" href="api/rlemasklib/RLEMask.html#rlemasklib.RLEMask" title="rlemasklib.RLEMask"><span class="n">rle1</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/rlemasklib/RLEMask.from_dict.html#rlemasklib.RLEMask.from_dict" title="rlemasklib.RLEMask.from_dict"><span class="n">RLEMask</span><span class="o">.</span><span class="n">from_dict</span></a><span class="p">(</span><span class="n">rle_dict1</span><span class="p">)</span>  <span class="c1"># OOP: dict to RLEMask</span>
-<a class="sphinx-codeautolink-a" href="api/rlemasklib/RLEMask.html#rlemasklib.RLEMask" title="rlemasklib.RLEMask"><span class="n">rle2</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/rlemasklib/RLEMask.from_array.html#rlemasklib.RLEMask.from_array" title="rlemasklib.RLEMask.from_array"><span class="n">RLEMask</span><span class="o">.</span><span class="n">from_array</span></a><span class="p">(</span><span class="n">mask</span><span class="p">)</span>  <span class="c1"># OOP: array to RLEMask</span>
+<a class="sphinx-codeautolink-a" href="api/rlemasklib/RLEMask.html#rlemasklib.RLEMask" title="rlemasklib.RLEMask"><span class="n">rle2</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/rlemasklib/RLEMask.from_array.html#rlemasklib.RLEMask.from_array" title="rlemasklib.RLEMask.from_array"><span class="n">RLEMask</span><span class="o">.</span><span class="n">from_array</span></a><span class="p">(</span><span class="n">mask2</span><span class="p">)</span>  <span class="c1"># OOP: array to RLEMask</span>
 <span class="n">rle_dict2</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/rlemasklib/RLEMask.to_dict.html#rlemasklib.RLEMask.to_dict" title="rlemasklib.RLEMask.to_dict"><span class="n">rle2</span><span class="o">.</span><span class="n">to_dict</span></a><span class="p">()</span>  <span class="c1"># OOP: RLEMask to dict</span>
 <span class="n">intersection_dict</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/rlemasklib/intersection.html#rlemasklib.intersection" title="rlemasklib.intersection"><span class="n">rlemasklib</span><span class="o">.</span><span class="n">intersection</span></a><span class="p">([</span><span class="n">rle_dict1</span><span class="p">,</span> <span class="n">rle_dict2</span><span class="p">])</span>
 <a class="sphinx-codeautolink-a" href="api/rlemasklib/RLEMask.html#rlemasklib.RLEMask" title="rlemasklib.RLEMask"><span class="n">intersection_rle</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/rlemasklib/RLEMask.intersection.html#rlemasklib.RLEMask.intersection" title="rlemasklib.RLEMask.intersection"><span class="n">RLEMask</span><span class="o">.</span><span class="n">intersection</span></a><span class="p">([</span><a class="sphinx-codeautolink-a" href="api/rlemasklib/RLEMask.html#rlemasklib.RLEMask" title="rlemasklib.RLEMask"><span class="n">rle1</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="api/rlemasklib/RLEMask.html#rlemasklib.RLEMask" title="rlemasklib.RLEMask"><span class="n">rle2</span></a><span class="p">])</span>

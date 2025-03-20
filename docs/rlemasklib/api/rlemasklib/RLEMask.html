@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-codeautolink.css?v=b2176991" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/my_theme.css?v=e0a5b87a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/my_theme.css?v=e9692b10" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
@@ -41,7 +41,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script src="../../_static/documentation_options.js?v=2e15b3d0"></script>
+    <script src="../../_static/documentation_options.js?v=e59c231d"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api/rlemasklib/RLEMask';</script>
@@ -363,7 +363,19 @@
 <li class="toctree-l3"><a class="reference internal" href="RLEMask.iou_matrix.html">iou_matrix</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2"><a class="reference internal" href="BoolFunc.html">BoolFunc</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="BoolFunc.html">BoolFunc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="BoolFunc.A.html">A</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BoolFunc.B.html">B</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BoolFunc.DIFFERENCE.html">DIFFERENCE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BoolFunc.SYMMETRIC_DIFFERENCE.html">SYMMETRIC_DIFFERENCE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BoolFunc.XOR.html">XOR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BoolFunc.EQUIVALENCE.html">EQUIVALENCE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BoolFunc.XNOR.html">XNOR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BoolFunc.IMPLICATION.html">IMPLICATION</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BoolFunc.NOR.html">NOR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BoolFunc.NAND.html">NAND</a></li>
+</ul>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="encode.html">encode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="decode.html">decode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compress.html">compress</a></li>
@@ -466,7 +478,7 @@
 </div>
 <dl class="py class">
 <dt class="sig sig-object py" id="rlemasklib.RLEMask">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rlemasklib.</span></span><span class="sig-name descname"><span class="pre">RLEMask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/isarandi/rlemasklib/blob/main/src/rlemasklib/oop.py#L10-L1937"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rlemasklib.RLEMask" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rlemasklib.</span></span><span class="sig-name descname"><span class="pre">RLEMask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/isarandi/rlemasklib/blob/main/src/rlemasklib/oop.py#L10-L1971"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rlemasklib.RLEMask" title="Link to this definition">#</a></dt>
 <dd><p>Run-length encoded mask.</p>
 <p>The RLEMask class represents a binary mask using run-length encoding. The mask can be
 created from a dense array, a bounding box, a polygon, or a circle, or from run-length
@@ -484,6 +496,14 @@ to create new RLEMask objects, as they are more explicit.</p>
 <li><p><strong>obj</strong> – the input object to create the mask from. It can be a dense 2D array, a dictionary, or
 a list/1D-array of run-length counts.</p></li>
 <li><p><strong>shape</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a><em>]</em><em>]</em>) – [height, width] of the mask, in case the input is a list of run-length counts.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.13)"><strong>ValueError</strong></a> – if the input is not a dense 2D array, a dictionary, or a sequence of run-length
+counts.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.13)"><strong>ValueError</strong></a> – if the sum of the counts is not equal to height * width when counts are given.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.13)"><strong>ValueError</strong></a> – if the shape is not provided when counts are given.</p></li>
 </ul>
 </dd>
 </dl>

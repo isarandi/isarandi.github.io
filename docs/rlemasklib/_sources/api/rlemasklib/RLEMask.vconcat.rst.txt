@@ -13,6 +13,9 @@ vconcat
 
    :returns: A new RLEMask object representing the vertically concatenated masks.
 
+   :raises ValueError: if the masks have different widths
+   :raises ValueError: if the iterable is empty
+
    .. seealso:: :meth:`hconcat`, :meth:`concatenate`
 
 

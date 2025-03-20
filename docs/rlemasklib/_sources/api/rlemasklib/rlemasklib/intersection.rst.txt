@@ -1,9 +1,0 @@
-intersection
-============
-
-.. py:function:: rlemasklib.rlemasklib.intersection(masks)
-
-   Compute the intersection of multiple RLE masks.
-
-
-.. footbibliography::

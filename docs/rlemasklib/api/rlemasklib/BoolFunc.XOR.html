@@ -1,0 +1,577 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>XOR &#8212; RLEMaskLib</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-codeautolink.css?v=b2176991" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/my_theme.css?v=e9692b10" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=e59c231d"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/rlemasklib/BoolFunc.XOR';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="EQUIVALENCE" href="BoolFunc.EQUIVALENCE.html" />
+    <link rel="prev" title="SYMMETRIC_DIFFERENCE" href="BoolFunc.SYMMETRIC_DIFFERENCE.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RLEMaskLib</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/isarandi/rlemasklib" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/isarandi/rlemasklib" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">rlemasklib</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="RLEMask.html">RLEMask</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.from_counts.html">from_counts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.from_array.html">from_array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.from_dict.html">from_dict</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.from_bbox.html">from_bbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.from_circle.html">from_circle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.from_polygon.html">from_polygon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.zeros.html">zeros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.ones.html">ones</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.ones_like.html">ones_like</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.zeros_like.html">zeros_like</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.shape.html">shape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.counts.html">counts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.counts_view.html">counts_view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.density.html">density</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.T.html">T</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.area.html">area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.perimeter.html">perimeter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.is_valid_rle.html">is_valid_rle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.count_nonzero.html">count_nonzero</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.nonzero.html">nonzero</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__getitem__.html">__getitem__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__setitem__.html">__setitem__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__invert__.html">__invert__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__or__.html">__or__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__ior__.html">__ior__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__and__.html">__and__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__iand__.html">__iand__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__xor__.html">__xor__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__ixor__.html">__ixor__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__sub__.html">__sub__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__isub__.html">__isub__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__eq__.html">__eq__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__repr__.html">__repr__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.__array__.html">__array__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.all.html">all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.dilate_vertical.html">dilate_vertical</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.merge_count.html">merge_count</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.max_pool2x2.html">max_pool2x2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.min_pool2x2.html">min_pool2x2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.avg_pool2x2.html">avg_pool2x2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.avg_pool2d_valid.html">avg_pool2d_valid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.conv2d_valid.html">conv2d_valid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.resize.html">resize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.warp_affine.html">warp_affine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.warp_perspective.html">warp_perspective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.warp_distorted.html">warp_distorted</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.pad.html">pad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.complement.html">complement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.shift.html">shift</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.dilate.html">dilate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.erode.html">erode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.dilate3x3.html">dilate3x3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.erode3x3.html">erode3x3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.dilate5x5.html">dilate5x5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.erode5x5.html">erode5x5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.contours.html">contours</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.largest_interior_rectangle.html">largest_interior_rectangle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.largest_interior_rectangle_around.html">largest_interior_rectangle_around</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.merge.html">merge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.intersection.html">intersection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.union.html">union</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.merge_many.html">merge_many</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.merge_many_custom.html">merge_many_custom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.make_merge_function.html">make_merge_function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.merge_to_label_map.html">merge_to_label_map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.repeat.html">repeat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.centroid.html">centroid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.connected_components.html">connected_components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.largest_connected_component.html">largest_connected_component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.remove_small_components.html">remove_small_components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.fill_small_holes.html">fill_small_holes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.bbox.html">bbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.crop.html">crop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.tight_crop.html">tight_crop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.transpose.html">transpose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.rot90.html">rot90</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.flip.html">flip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.flipud.html">flipud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.fliplr.html">fliplr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.concatenate.html">concatenate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.hconcat.html">hconcat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.vconcat.html">vconcat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.tile.html">tile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.copy.html">copy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.fill_rectangle.html">fill_rectangle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.fill_circle.html">fill_circle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.to_dict.html">to_dict</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.to_array.html">to_array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.iou.html">iou</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RLEMask.iou_matrix.html">iou_matrix</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="BoolFunc.html">BoolFunc</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="BoolFunc.A.html">A</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BoolFunc.B.html">B</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BoolFunc.DIFFERENCE.html">DIFFERENCE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BoolFunc.SYMMETRIC_DIFFERENCE.html">SYMMETRIC_DIFFERENCE</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">XOR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BoolFunc.EQUIVALENCE.html">EQUIVALENCE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BoolFunc.XNOR.html">XNOR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BoolFunc.IMPLICATION.html">IMPLICATION</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BoolFunc.NOR.html">NOR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BoolFunc.NAND.html">NAND</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="encode.html">encode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decode.html">decode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compress.html">compress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decompress.html">decompress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ones.html">ones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zeros.html">zeros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ones_like.html">ones_like</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zeros_like.html">zeros_like</a></li>
+<li class="toctree-l2"><a class="reference internal" href="full.html">full</a></li>
+<li class="toctree-l2"><a class="reference internal" href="empty.html">empty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="area.html">area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="centroid.html">centroid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intersection.html">intersection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="union.html">union</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iou.html">iou</a></li>
+<li class="toctree-l2"><a class="reference internal" href="difference.html">difference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetric_difference.html">symmetric_difference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_bbox.html">from_bbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="to_bbox.html">to_bbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_polygon.html">from_polygon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crop.html">crop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pad.html">pad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connected_components.html">connected_components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="largest_connected_component.html">largest_connected_component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remove_small_components.html">remove_small_components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fill_small_holes.html">fill_small_holes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="erode.html">erode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dilate.html">dilate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opening.html">opening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="closing.html">closing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="erode2.html">erode2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dilate2.html">dilate2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opening2.html">opening2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="closing2.html">closing2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shift.html">shift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merge.html">merge</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">rlemasklib</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="BoolFunc.html" class="nav-link">BoolFunc</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">XOR</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="xor">
+<h1>XOR<a class="headerlink" href="#xor" title="Link to this heading">#</a></h1>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rlemasklib.BoolFunc.XOR">
+<span class="sig-prename descclassname"><span class="pre">rlemasklib.BoolFunc.</span></span><span class="sig-name descname"><span class="pre">XOR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="reference external" href="https://github.com/isarandi/rlemasklib/blob/main/src/rlemasklib/boolfunc.py#L52-L52"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rlemasklib.BoolFunc.XOR" title="Link to this definition">#</a></dt>
+<dd><p>Symmetric difference (exclusive or) of the two arguments (same as <a class="reference internal" href="BoolFunc.SYMMETRIC_DIFFERENCE.html#rlemasklib.BoolFunc.SYMMETRIC_DIFFERENCE" title="rlemasklib.BoolFunc.SYMMETRIC_DIFFERENCE"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SYMMETRIC_DIFFERENCE</span></code></a>).</p>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="BoolFunc.SYMMETRIC_DIFFERENCE.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">SYMMETRIC_DIFFERENCE</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="BoolFunc.EQUIVALENCE.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">EQUIVALENCE</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, István Sárándi.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
